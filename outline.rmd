@@ -1,7 +1,11 @@
 # Outline
 
+1. Ist dieses Buch für Dich geeignet?
+
 1. Einführung
     + Hallo Welt
+    + Was ist R?
+    + Learning by doing
     + Was macht R besonders?
         + 'Sprache der Daten-Wissenschaft.'
         + 'R als Werkzeug.'
@@ -27,6 +31,7 @@
     + Variablen
     + Zuweisungen
     + Blöcke und Einrückungen
+    + Coding Guidelines
 1. Datentypen
     + Vektoren
     + NA und NAN
@@ -43,7 +48,16 @@
     + Variablenkontext
     + Closures
     + Klassen und Objekte
+1. Functionals
+    + lapply()
+    + sapply()
+    + vapply()
+    + map(), mapply()
+    + mclapply(), mcMap()
+1. Testing
+    +
 1. Bibliotheken
     + dplyr
     + ggplot2
+    + knitr
 

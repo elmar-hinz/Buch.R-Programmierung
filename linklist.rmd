@@ -1,0 +1,14 @@
+
+
+* https://de.wikipedia.org/wiki/R_(Programmiersprache)
+* https://en.wikipedia.org/wiki/R_(programming_language)
+* https://www.r-project.org
+* https://cran.r-project.org/doc/manuals/r-release/R-intro.html
+* https://www.r-project.org/doc/bib/R-books.html
+* http://www.r-bloggers.com
+* http://www.r-statistics.com/2009/03/what-is-r/
+* http://rgm3.lab.nig.ac.jp/RGM/top
+* https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html
+* http://adv-r.had.co.nz/Functionals.html
+
+
