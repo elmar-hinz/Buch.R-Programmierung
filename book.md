@@ -1,6 +1,7 @@
 ---
 title: "Einführung in die Programmierung mit R"
 author: "Elmar Alexander Hinz"
+date: "2015"
 output: 
   html_document:
     toc: true
@@ -212,4 +213,85 @@ und Python eher der Generalist, der es mit der Welt verbindet.
 
 
 ## Los geht's
+### Hardware Anforderungen
+### Installation
+#### R
+#### R Studio
+### Programmausführung
+#### R Shell
+#### R Studio
+#### Aufruf von der Kommandozeile
+### Hilfe
+
+
+
+## Syntax
+
+### Kommentare
+
+### Variablen
+
+### Zuweisungen
+
+### Blöcke und Einrückungen
+
+### Coding Guidelines
+
+
+
+
+## Datentypen
+
+### Vektoren
+
+### NA und NAN
+
+### Wahr und falsch
+
+### Text
+
+### Zahlen
+
+### Funktionen
+
+
+## Operatoren
+
+
+
+## Kontrollstrukturen
+
+
+
+## Komplexe Datentypen
+
+### Matrix
+
+### Data Frame
+
+
+## Sichtbarkeitsbereiche (Scopes)
+
+### Lexikalische Sichtbarkeitsbereiche
+
+### Closures
+
+### Klassen und Objekte
+
+
+## Functionals
+
+
+
+## Testen
+
+
+## Bibliotheken
+
+### dplyr
+
+### ggplot2
+
+### knitr
+
 
