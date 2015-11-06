@@ -1,11 +1,6 @@
----
-title: "Einführung in die Programmierung mit R"
-author: "Elmar Alexander Hinz"
-date: "2015"
-output: 
-  html_document:
-    toc: true
----
+# Einführung in die Programmierung mit R
+Elmar Alexander Hinz  
+2015  
 
 
 ## Ist das Dein Buch?
@@ -91,7 +86,7 @@ wie die Fläche im Quadrat ansteigt.
 plot(radii, surfaces)
 ```
 
-![plot of chunk planetsPlot](figure/planetsPlot-1.png) 
+![](book_files/figure-html/planetsPlot-1.png) 
 
 Wie viel Zeilen Code wäre in anderen Sprachen nötig, um Listen von Daten zu
 berechnen und in einem Diagramm zu visualieren?
