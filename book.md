@@ -2,15 +2,17 @@
 
 Du willst also R lernen? Dafür kann es viele Gründe geben, aber wahrscheinlich
 willst Du in Zukunft R benutzen, um Daten zu analysieren und zu visualisieren.
-Du bist also kein Grundschüler mehr, aber ob Du bereits Erfahrung mit
+Wenn Du dieses Buch liest, hast Du Dich bereits grundlegend über R informiert.
+Du bist sicher kein Grundschüler mehr, aber ob Du bereits Erfahrung mit
 Programmiersprachen gesammelt hast oder nicht, kann ich nicht wissen.
 
-Das Buch ist dazu gedacht, R zu lernen, aber nicht als genereller Einstieg in
-die Programmierung. Wenn Du bereits Erfahrung mit anderen Sprachen gesammelt
-hast, macht das die Dinge einfacher, weil Du die Denkmuster und die Ausdrücke
-bereits kennst.
+Das Buch ist primär dazu gedacht, R zu lernen, sekundär als möglicher
+Einstieg in die Programmierung. Wenn Du bereits Erfahrung mit anderen Sprachen
+gesammelt hast, macht das die Dinge einfacher, weil Du die Denkmuster und die
+Ausdrücke bereits kennst. Als Nachschlagewerk ist es nicht gedacht. R hat
+eine gut Online-Hilfe zum Nachschlagen.
 
-Ich versuche die Beispiele aber einfach genug zu halten, dass Du auch ohne
+Ich versuche die Beispiele einfach genug zu halten, dass Du auch ohne
 vorherige Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine
 aktivere Herangehensweise von Deiner Seite voraus.
 
@@ -21,12 +23,11 @@ auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee verstanden zu
 haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort verstehst, zu
 überspringen und das vor zu ziehen, was Dir zugänglicher erscheint.
 
-Wenn diese aktive Herangehensweise nicht Deinem Naturel entspricht, empfehle
+Wenn diese aktive Herangehensweise nicht Deinem Naturell entspricht, empfehle
 ich, die Grundlagen des Programmierens auf andere Weise zu lernen, insbesondere
 in einem Kursus unter Anleitung. Solche Kurse als Einstieg in die
-Programmierung findest Du wahrscheinlich leichter für andere Sprachen, wie
-Python, Java oder JavaScript. Die modernen Programmiersprachen sind sich
-ähnlicher als Du denkst.
+Programmierung findest Du häufiger für andere Sprachen, wie Python, Java oder
+JavaScript. Die modernen Programmiersprachen sind sich ähnlicher als Du denkst.
 
 ## Einführung
 
@@ -42,25 +43,26 @@ print("Hallo Welt!")
 ```
 
 Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?
-R ist nicht schwer zu lernen. Das ist erst einmal gut so.
+R ist einfach zu lernen. Das ist gut so.
 
-Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die Umfänge
-meherer Planeten anhand des Radius, ohne dass eine Schleife nötig wird.
+Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die
+Oberflächen meherer Planeten anhand ihres Radius, ohne dass eine Schleife
+nötig wird.
 
 
 ```r
 names <- c("Merkur", "Venus", "Erde", "Mars")
 radii <- c(2440, 6052, 6371, 3389)
 surfaces <- round(4 * pi * radii^2 / 1000) * 1000
-paste(names, radii, "km", surfaces, "km^2")
+paste(names, ":", radii, "km, ", surfaces, "km^2")
 ```
 
 ```
-## [1] "Merkur 2440 km 74815000 km^2" "Venus 6052 km 460265000 km^2"
-## [3] "Erde 6371 km 510064000 km^2"  "Mars 3389 km 144329000 km^2"
+## [1] "Merkur : 2440 km,  74815000 km^2" "Venus : 6052 km,  460265000 km^2"
+## [3] "Erde : 6371 km,  510064000 km^2"  "Mars : 3389 km,  144329000 km^2"
 ```
 
-Davon machen wir - quick and dirty - einen explorativen Plot, um zu sehen,
+Davon machen wir noch - quick and dirty - einen explorativen Plot, um zu sehen,
 wie die Fläche im Quadrat ansteigt.
 
 
@@ -70,9 +72,23 @@ plot(radii, surfaces)
 
 ![plot of chunk planetsPlot](figure/planetsPlot-1.png) 
 
-Wie viel Zeilen Code wäre in anderen Sprachen nötig?
+Wie viel Zeilen Code wäre in anderen Sprachen nötig, um Listen von Daten zu
+berechnen und in einem Diagramm zu visualieren?
 
 ### Was ist R?
+
+* R ist eine Multiparadigmensprache:
+    * dynamisch
+    * funktional
+    * eingeschränkt objektorientiert
+* R ist eine freie Software Suite
+    * für statisiche Berechnungen und ihre Visualisierung
+    * mit Interpreter, Shell, IDE und Bibliotheken
+    * die auf Unix, MacOs und Windows installiert werden kann
+* R ist in vielen Bereichen der Wissenschaft der de facto Standard zur
+  Erstellung und Veröffentlichung von statistischen Forschungsergebnissen.
+* R ist ein Werkzeug, das als Schnittstelle von allen grossen IT-Firmen
+  in ihre Produkte implementiert wird.
 
 ### Was macht R besonders?
 
@@ -90,7 +106,9 @@ als "historisch bedingt". Zur Geschichte gibt es noch ein eigenes Kapitel.
 
 Das Alleinstellungsmerkmal von R sind aber sicherlich die umfangreichen
 frei verfügbaren Bibliotheken, die dem Wissenschaftler zur Verfügung stehen,
-um Daten aufzuarbeiten, zu analysiern und zu visualisieren.
+um Daten aufzuarbeiten, zu analysiern und zu visualisieren. Auch wie
+das getan wird, ist wissenschaftlich fundiert. Die Schritte folgen
+definierten Grammatiken.
 
 Natürlich verabeiten alle Programmiersprachen Daten. Entscheidend ist also,
 wie die Daten betrachtet und genutzt werden. In der Wissenschaft steht der
@@ -104,11 +122,13 @@ der Hardware im Vordergrund, sowie die Aufteilung der Rechenzeit, was wiederum
 ganz andere Anforderungen an die Software stellt.
 
 Im Regelfall lädt R die Daten komplett in den Arbeitsspeicher, bevor es mit der
-weiteren Verarbeitung beginnt. Für Twitter oder ein Betriebssystem wäre diese
-Herangehensweise gar nicht möglich, weil die Daten kontinuierlich strömen.
-Für die Verabeitung von Datenstömen ist R nicht optimiert.
+weiteren Verarbeitung beginnt. Das hat den Vorteil, dass Du sehr schnell und
+flexibel auch mit grossen Datenmengen jonglieren kannst, Stichwort Exploration.
+Für Twitter oder ein Betriebssystem wäre diese Herangehensweise gar nicht
+möglich, weil die Daten kontinuierlich strömen. Für die Verabeitung von
+Datenstömen ist R nicht optimiert.
 
-### Ist R eine vollwertige Programmiersprache oder ein Werkzeug?
+### Ist R eine vollwertige Programmiersprache oder eher ein Werkzeug?
 
 Die kurze Antwort ist, dass beides richtig ist. R ist durchaus eine
 Programmiersprache, mit der man theoretisch alles programmieren kann.
@@ -144,8 +164,8 @@ seinen Versprung eher noch aus.
 R besetzte eine verwandte Lücke, für die Perl ursprünglich konzeptioniert war,
 als "Practical Extraction and Report Language". Perl hat diese Nische
 unerwartet verlassen und wurde die erste Sprache der Internet Programmierung.
-In der Folge wurde es beiden Gebieten abgelöst, u.a wegen seiner Grenzen bei
-der Objektorientieren Programmierung und der zu langsamen Erneuerung der
+In der Folge wurde es auf beiden Gebieten abgelöst, u.a wegen seiner Grenzen
+bei der Objektorientieren Programmierung und der zu langsamen Erneuerung der
 Sprache, aber vielleicht auch wegen dem Verlust seiner Spezialisierung. Wir
 finden Parallelen in R, sowohl bei den Chancen als auch bei den Risiken.
 
@@ -155,5 +175,4 @@ einsetzen, möglicherweise gerade mti Python, oder auch mit völlig fachfremden
 Sprachen. Dabei stellt sich im konkreten Fall die Frage, wo man die Daten
 übergibt und in welcher Form. Im Verbund mit Python ist R der Daten-Spezialist
 und Python eher der Generalist, der es mit der Welt verbindet.
-
 
