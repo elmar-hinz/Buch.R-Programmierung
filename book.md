@@ -209,6 +209,47 @@ und Python eher der Generalist, der es mit der Welt verbindet.
 
 ### Die Geschichte von R
 
+### Programmausführung
+
+R ist eine interpretierte Sprache. Ein Programm muss nicht als Ganzes
+kompiliert werden um ausfürbar zu sein. Stattdessen wird eine Instruktion nach
+der anderen entgegengenommen und direkt ausgeführt. Diese Instruktionen können
+entweder einzeln in der Shell eingegeben oder als Liste in eine Datei
+geschrieben werden. Damit erhältst Du dann ein Programmskript.
+
+#### Shell
+
+In der Shell gibtst Du Instruktionen ein, die Du nur einmalig ausführen willst
+und nicht speichern. Beispiele sind:
+
+* Aufruf von Programmenskripten.
+* Aufruf der Hilfe.
+* Austesten von Funktionen, um mehr über R zu lernen.
+* Testen von Programmschnipseln, bevor Du sie in Dateien einfügst.
+* Exploration von Daten. Nur was brauchbar ist, schreibst Du in Dateien.
+* Benutzung der Shell als wissenschaftlicher Taschenrechner.
+
+Es kann also sinnvoll sein, mehrere Shells parallel zu benutzen.
+
+#### Dateien
+
+Alles, was Du wiederholt ausführen oder aufheben willst, schreibst Du in
+Dateien.  Das fängt beim Austesten mehrzeiliger Programmschnipsel, die du so
+oft ausführst, bis sie funktionieren.
+
+#### Bibliotheken
+
+Bibliotheken sind Dateien, die Funktionen enthalten, die Du aus verschiedenen
+Programmen heraus immer wieder benutzen willst. Entweder Du schreibst sie
+selbst oder Du lädst Bibliotheken aus öffentlichen und privaten Repositories.
+
+#### IDE RStudio
+
+IDE heisst *integrated development environment*. *RStudio* integriert nicht nur
+Shell und Editor für Programmscripte, sondern zeigt zum Beispiel auch direk die
+erzeugten Diagramme an. Sie vereint also die verschiedenen Möglichkeiten zur
+Programmausführung, mit weiteren nützlichen Werkzeugen.
+
 
 
 

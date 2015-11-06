@@ -77,11 +77,12 @@ img {
 <li><a href="#ist-r-eine-vollwertige-programmiersprache-oder-eher-ein-werkzeug">Ist R eine vollwertige Programmiersprache oder eher ein Werkzeug?</a></li>
 <li><a href="#die-r-infrastruktur">Die R-Infrastruktur</a></li>
 <li><a href="#die-geschichte-von-r">Die Geschichte von R</a></li>
+<li><a href="#programmausfuhrung">Programmausführung</a></li>
 </ul></li>
 <li><a href="#los-gehts">Los geht’s</a><ul>
 <li><a href="#hardware-anforderungen">Hardware Anforderungen</a></li>
 <li><a href="#installation">Installation</a></li>
-<li><a href="#programmausfuhrung">Programmausführung</a></li>
+<li><a href="#programmausfuhrung-1">Programmausführung</a></li>
 <li><a href="#hilfe">Hilfe</a></li>
 </ul></li>
 <li><a href="#syntax">Syntax</a><ul>
@@ -112,7 +113,7 @@ img {
 </ul></li>
 <li><a href="#functionals">Functionals</a></li>
 <li><a href="#testen">Testen</a></li>
-<li><a href="#bibliotheken">Bibliotheken</a><ul>
+<li><a href="#bibliotheken-1">Bibliotheken</a><ul>
 <li><a href="#dplyr">dplyr</a></li>
 <li><a href="#ggplot2">ggplot2</a></li>
 <li><a href="#knitr">knitr</a></li>
@@ -195,6 +196,35 @@ paste(names, &quot;:&quot;, radii, &quot;km, &quot;, surfaces, &quot;km^2&quot;)
 <div id="die-geschichte-von-r" class="section level3">
 <h3>Die Geschichte von R</h3>
 </div>
+<div id="programmausfuhrung" class="section level3">
+<h3>Programmausführung</h3>
+<p>R ist eine interpretierte Sprache. Ein Programm muss nicht als Ganzes kompiliert werden um ausfürbar zu sein. Stattdessen wird eine Instruktion nach der anderen entgegengenommen und direkt ausgeführt. Diese Instruktionen können entweder einzeln in der Shell eingegeben oder als Liste in eine Datei geschrieben werden. Damit erhältst Du dann ein Programmskript.</p>
+<div id="shell" class="section level4">
+<h4>Shell</h4>
+<p>In der Shell gibtst Du Instruktionen ein, die Du nur einmalig ausführen willst und nicht speichern. Beispiele sind:</p>
+<ul>
+<li>Aufruf von Programmenskripten.</li>
+<li>Aufruf der Hilfe.</li>
+<li>Austesten von Funktionen, um mehr über R zu lernen.</li>
+<li>Testen von Programmschnipseln, bevor Du sie in Dateien einfügst.</li>
+<li>Exploration von Daten. Nur was brauchbar ist, schreibst Du in Dateien.</li>
+<li>Benutzung der Shell als wissenschaftlicher Taschenrechner.</li>
+</ul>
+<p>Es kann also sinnvoll sein, mehrere Shells parallel zu benutzen.</p>
+</div>
+<div id="dateien" class="section level4">
+<h4>Dateien</h4>
+<p>Alles, was Du wiederholt ausführen oder aufheben willst, schreibst Du in Dateien. Das fängt beim Austesten mehrzeiliger Programmschnipsel, die du so oft ausführst, bis sie funktionieren.</p>
+</div>
+<div id="bibliotheken" class="section level4">
+<h4>Bibliotheken</h4>
+<p>Bibliotheken sind Dateien, die Funktionen enthalten, die Du aus verschiedenen Programmen heraus immer wieder benutzen willst. Entweder Du schreibst sie selbst oder Du lädst Bibliotheken aus öffentlichen und privaten Repositories.</p>
+</div>
+<div id="ide-rstudio" class="section level4">
+<h4>IDE RStudio</h4>
+<p>IDE heisst <em>integrated development environment</em>. <em>RStudio</em> integriert nicht nur Shell und Editor für Programmscripte, sondern zeigt zum Beispiel auch direk die erzeugten Diagramme an. Sie vereint also die verschiedenen Möglichkeiten zur Programmausführung, mit weiteren nützlichen Werkzeugen.</p>
+</div>
+</div>
 </div>
 <div id="los-gehts" class="section level2">
 <h2>Los geht’s</h2>
@@ -210,7 +240,7 @@ paste(names, &quot;:&quot;, radii, &quot;km, &quot;, surfaces, &quot;km^2&quot;)
 <h4>R Studio</h4>
 </div>
 </div>
-<div id="programmausfuhrung" class="section level3">
+<div id="programmausfuhrung-1" class="section level3">
 <h3>Programmausführung</h3>
 <div id="r-shell" class="section level4">
 <h4>R Shell</h4>
@@ -298,7 +328,7 @@ paste(names, &quot;:&quot;, radii, &quot;km, &quot;, surfaces, &quot;km^2&quot;)
 <div id="testen" class="section level2">
 <h2>Testen</h2>
 </div>
-<div id="bibliotheken" class="section level2">
+<div id="bibliotheken-1" class="section level2">
 <h2>Bibliotheken</h2>
 <div id="dplyr" class="section level3">
 <h3>dplyr</h3>
