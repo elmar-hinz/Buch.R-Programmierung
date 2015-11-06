@@ -136,18 +136,24 @@ Werkzeug, das über eine eigene Programmiersprache verfügt.
 
 Ich finde, dass R im Vergleich zu andern Sprachen noch zu viele Grenzen
 hat, um es uneigeschränkt als Programmiersprache für generelle Bereiche zu
-empfeheln, wie zum Beispiel Java oder C++. Neben seinem Speicherhalten erreicht
-es schnell Grenzen bei den Möglichkeiten der Objektorientieren Programmierung.
-Geht es um Datenanalyse, ist es aber herausragend und baut seinen Versprung
-eher noch aus.
+empfeheln, wie zum Beispiel Java oder C++. Neben seinem Speicherverhalten
+erreicht es schnell Grenzen bei den Möglichkeiten der Objektorientieren
+Programmierung. Geht es um Datenanalyse, ist es aber herausragend und baut
+seinen Versprung eher noch aus.
 
-R besetzte eine ähnliche Lücke, für die Perl ursprünglich konzeptioniert war,
-als "Practical Extraction and Report Language". Perl hat diese Nische plötzlich
-verlassen und wurde die erste Sprache der Internet Programmierung, um später
-auf beiden Gebieten abgelöst zu werden, u.a wegen seiner Grenzen bei der
-Objektorientieren Programmierung und der zu langsamen Erneuerung der Sprache.
+R besetzte eine verwandte Lücke, für die Perl ursprünglich konzeptioniert war,
+als "Practical Extraction and Report Language". Perl hat diese Nische
+unerwartet verlassen und wurde die erste Sprache der Internet Programmierung.
+In der Folge wurde es beiden Gebieten abgelöst, u.a wegen seiner Grenzen bei
+der Objektorientieren Programmierung und der zu langsamen Erneuerung der
+Sprache, aber vielleicht auch wegen dem Verlust seiner Spezialisierung. Wir
+finden Parallelen in R, sowohl bei den Chancen als auch bei den Risiken.
 
-Für komplexe Anwendungsbereich wird man R also im Verbund mit anderer Software
-einsetzen. Dabei stellt sich im konkreten Fall die Frage, wo man die Daten
-übergibt und in welcher Form.
+In der Data Science ist derzeit Python der einzige ernst zu nehmende Konkurrent.
+Für komplexe Anforderungen wird man R im Verbund mit anderer Software
+einsetzen, möglicherweise gerade mti Python, oder auch mit völlig fachfremden
+Sprachen. Dabei stellt sich im konkreten Fall die Frage, wo man die Daten
+übergibt und in welcher Form. Im Verbund mit Python ist R der Daten-Spezialist
+und Python eher der Generalist, der es mit der Welt verbindet.
+
 
