@@ -44,8 +44,8 @@
 1. Komplexe Datentypen
     + Matrix
     + Data Frame
-1. Kontext
-    + Variablenkontext
+1. Sichtbarkeitsbereiche (Scopes)
+    + Lexikalische Sichtbarkeitsbereiche
     + Closures
     + Klassen und Objekte
 1. Functionals

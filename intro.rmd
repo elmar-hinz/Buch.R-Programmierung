@@ -1,7 +1,7 @@
 ## Ist das Dein Buch?
 
 Du willst also R lernen? Cool! Dafür kann es manche Gründe geben, aber sehr
-wahrscheinlich willst Du in Zukunft R benutzen, um Daten zu analysieren und zu
+wahrscheinlich willst Du R in Zukunft benutzen, um Daten zu analysieren und zu
 visualisieren. Wenn Du dieses Buch liest, hast Du Dich bereits grundlegend über
 R informiert.
 

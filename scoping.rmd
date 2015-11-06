@@ -1,0 +1,7 @@
+## Sichtbarkeitsbereiche (Scopes)
+
+### Lexikalische Sichtbarkeitsbereiche
+
+### Closures
+
+### Klassen und Objekte

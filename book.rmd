@@ -1,10 +1,42 @@
-# Einführung in die Programmierung mit R
+---
+title: "Einführung in die Programmierung mit R"
+author: "Elmar Alexander Hinz"
+date: "2015"
+output: 
+  html_document:
+    toc: true
+---
 
---
-Autor: Elmar Alexander Hinz
-
---
-
-
-```{r child="intro.rmd"}
+```{r intro, child="intro.rmd"}
 ```
+
+```{r gettingStarted, child="gettingStarted.rmd"}
+```
+
+```{r sytax, child="syntax.rmd"}
+```
+
+```{r dataTypes, child="dataTypes.rmd"}
+```
+
+```{r operators, child="operators.rmd"}
+```
+
+```{r controlStructures, child="controlStructures.rmd"}
+```
+
+```{r complexDataTypes, child="complexDataTypes.rmd"}
+```
+
+```{r scoping, child="scoping.rmd"}
+```
+
+```{r functionals, child="functionals.rmd"}
+```
+
+```{r testing, child="testing.rmd"}
+```
+
+```{r libraries, child="libraries.rmd"}
+```
+

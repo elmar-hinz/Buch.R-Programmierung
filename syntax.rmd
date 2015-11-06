@@ -1,0 +1,13 @@
+## Syntax
+
+### Kommentare
+
+### Variablen
+
+### Zuweisungen
+
+### Blöcke und Einrückungen
+
+### Coding Guidelines
+
+

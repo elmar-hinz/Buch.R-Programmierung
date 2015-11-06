@@ -1,16 +1,16 @@
-# Einführung in die Programmierung mit R
-
---
-Autor: Elmar Alexander Hinz
-
---
-
+---
+title: "Einführung in die Programmierung mit R"
+author: "Elmar Alexander Hinz"
+output: 
+  html_document:
+    toc: true
+---
 
 
 ## Ist das Dein Buch?
 
 Du willst also R lernen? Cool! Dafür kann es manche Gründe geben, aber sehr
-wahrscheinlich willst Du in Zukunft R benutzen, um Daten zu analysieren und zu
+wahrscheinlich willst Du R in Zukunft benutzen, um Daten zu analysieren und zu
 visualisieren. Wenn Du dieses Buch liest, hast Du Dich bereits grundlegend über
 R informiert.
 
@@ -208,4 +208,8 @@ und Python eher der Generalist, der es mit der Welt verbindet.
 
 ### Die Geschichte von R
 
+
+
+
+## Los geht's
 

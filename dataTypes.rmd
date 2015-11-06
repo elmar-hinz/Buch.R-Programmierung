@@ -1,0 +1,13 @@
+## Datentypen
+
+### Vektoren
+
+### NA und NAN
+
+### Wahr und falsch
+
+### Text
+
+### Zahlen
+
+### Funktionen
