@@ -1,12 +1,3 @@
-# Einführung in die Programmierung mit R
-
---
-Autor: Elmar Alexander Hinz
-
---
-
-
-
 ## Ist das Dein Buch?
 
 Du willst also R lernen? Cool! Dafür kann es manche Gründe geben, aber sehr
@@ -53,13 +44,8 @@ findest Du sowieso am besten mit Hilfe einer Suchmaschine.
 
 ### Hallo Welt in R
 
-
-```r
+```{r helloWorld}
 print("Hallo Welt!")
-```
-
-```
-## [1] "Hallo Welt!"
 ```
 
 Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?
@@ -69,28 +55,19 @@ Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die
 Oberflächen meherer Planeten anhand ihres Radius, ohne dass eine Schleife
 nötig wird.
 
-
-```r
+```{r planets}
 names <- c("Merkur", "Venus", "Erde", "Mars")
 radii <- c(2440, 6052, 6371, 3389)
 surfaces <- round(4 * pi * radii^2 / 1000) * 1000
 paste(names, ":", radii, "km, ", surfaces, "km^2")
 ```
 
-```
-## [1] "Merkur : 2440 km,  74815000 km^2" "Venus : 6052 km,  460265000 km^2"
-## [3] "Erde : 6371 km,  510064000 km^2"  "Mars : 3389 km,  144329000 km^2"
-```
-
 Davon machen wir noch - quick and dirty - einen explorativen Plot, um zu sehen,
 wie die Fläche im Quadrat ansteigt.
 
-
-```r
+```{r planetsPlot}
 plot(radii, surfaces)
 ```
-
-![plot of chunk planetsPlot](figure/planetsPlot-1.png) 
 
 Wie viel Zeilen Code wäre in anderen Sprachen nötig, um Listen von Daten zu
 berechnen und in einem Diagramm zu visualieren?
