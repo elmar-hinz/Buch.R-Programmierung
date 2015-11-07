@@ -1,0 +1,10 @@
+- vectors are like SQL:
+    quote: "One observation I would make is that with vectorisation and subsetting, a lot of operations in R are more like SQL operations on databases than linear programming. If people can wrap their heads around that concept it often helps them he a good feel for why things are done in the way that they are."
+    who: David Hood
+    source: https://class.coursera.org/repdata-034/forum/thread?thread_id=26
+- a toolbox with a scripting language:
+    quote: "R is more than a programming language. It is an interactive environment for doing statistics. I find it more helpful to think of R as having a programming language than being a programming language. The R language is the scripting language for the R environment, just as VBA is the scripting language for Microsoft Excel. Some of the more unusual features of the R language begin to make sense when viewed from this perspective."
+    who: John D. Cook
+    source: http://www.johndcook.com/blog/r_language_for_programmers/#scope
+
+
