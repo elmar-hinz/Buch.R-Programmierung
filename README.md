@@ -1,3 +1,3 @@
-# Buch.R-Programmierung
+# Buch: Einführung in die Programmierung mit R
 
-Im Aufbau
+[Work in progress](./book.md)
