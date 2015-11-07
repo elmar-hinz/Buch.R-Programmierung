@@ -2,9 +2,76 @@
 
 ### Kommentare
 
+Kommentare werden in R wie in Bash, Python oder Perl mit einer Raute
+eingeleitet.
+
+```{r comments}
+
+# Dies ist ein Kommentar.
+
+##################################################
+# Dies ist ein Kommentar
+# über mehrere Zeilen.
+##################################################
+
+print("Hallo Welt!") # Der Kommentar kann auch dahinter stehen.
+
+```
+
 ### Variablen
 
-### Zuweisungen
+Variablennamen folgen grundsätzlich den Mustern verbreiteter Sprachen.
+
+* Namen bestehen aus Buchstaben, Ziffern, Unterstrichen oder Punkten.
+* Namen starten mit einem Buchstaben oder mit einem Punkt.
+* Nach einem anführenden Punkt darf keine Ziffer folgen (falsch: .2x).
+* Reservierte Worte dürfen nicht verwendet werden.
+
+Reservierte Worte sind kein Ding. Du erkennst das automatisch an der
+Fehlermeldung.
+
+Das überraschende ist der Punkt als gültiger Bestandteil von Variablennamen. In
+anderen Sprachen werden damit Elemente eines Objektes angesprochen. Das
+geschieht in R mittels des Dollarzeichens.
+
+```{r}
+a <- list("alpha" = 1, "beta" = 2) # Variable a befüllt mit einer Liste.
+a.punkt <- "Punkt" # Eine ganz andere Variable, die nur aussieht wie a.
+print(a) # Die Liste a enthält nicht "Punkt" und wurde auch nicht überschrieben.
+print(a.punkt) # "Punkt" wird unabhängig ausgegeben.
+print(a$beta) # Mit dem $-Zeichen wird ein Element von a angesprochen.
+print(a$punkt) # Dieses gibt es dagegen nicht.
+```
+
+Tip: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst, verwendest Du
+den Punkt nicht. Er ist eher eine historische Erblast als ein Feature. Die
+besseren Alternativen sind Unterstrich oder CamelCase.
+
+
+## Zuweisungen
+
+Variablen können bereits Funktionen oder Daten enthalten, auch die aus
+den Basis-Paketen und die aus den Bibliotheken, die Du lädst. Du musst also
+aufpassen, dass Du keine Namen von Funktionen oder Daten überschreibst,
+jedenfalls nicht solche, die Du später noch verwenden willst.
+
+```{r}
+# Die Funktion print ist im Paket base
+base::print("Hallo")
+# Das Paket base ist per default geladen.
+# Darum kann base::print() verkürzt angesprochen werden.
+print("Hallo")
+# Die Variable print wird hier mit einer Funktion definiert.
+print <- function(...) { "Nope" }
+# Was passiert jetzt?
+print("Welt")
+# Der Fully Qualified Name funktioniert weiterhin.
+base::print("Welt")
+# Definition aufheben.
+remove(print)
+# Jetzt wird wieder base::print() angesprochen.
+print("Welt")
+```
 
 ### Blöcke und Einrückungen
 

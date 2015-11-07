@@ -487,9 +487,120 @@ Programmausführung, mit weiteren nützlichen Werkzeugen.</p>
 
 <h3>Kommentare</h3>
 
+<p>Kommentare werden in R wie in Bash, Python oder Perl mit einer Raute
+eingeleitet.</p>
+
+<pre><code class="r"># Dies ist ein Kommentar.
+
+##################################################
+# Dies ist ein Kommentar
+# über mehrere Zeilen.
+##################################################
+
+print(&quot;Hallo Welt!&quot;) # Der Kommentar kann auch dahinter stehen.
+</code></pre>
+
+<pre><code>## [1] &quot;Hallo Welt!&quot;
+</code></pre>
+
 <h3>Variablen</h3>
 
-<h3>Zuweisungen</h3>
+<p>Variablennamen folgen grundsätzlich den Mustern verbreiteter Sprachen.</p>
+
+<ul>
+<li>Namen bestehen aus Buchstaben, Ziffern, Unterstrichen oder Punkten.</li>
+<li>Namen starten mit einem Buchstaben oder mit einem Punkt.</li>
+<li>Nach einem anführenden Punkt darf keine Ziffer folgen (falsch: .2x).</li>
+<li>Reservierte Worte dürfen nicht verwendet werden.</li>
+</ul>
+
+<p>Reservierte Worte sind kein Ding. Du erkennst das automatisch an der
+Fehlermeldung.</p>
+
+<p>Das überraschende ist der Punkt als gültiger Bestandteil von Variablennamen. In
+anderen Sprachen werden damit Elemente eines Objektes angesprochen. Das
+geschieht in R mittels des Dollarzeichens.</p>
+
+<pre><code class="r">a &lt;- list(&quot;alpha&quot; = 1, &quot;beta&quot; = 2) # Variable a befüllt mit einer Liste.
+a.punkt &lt;- &quot;Punkt&quot; # Eine ganz andere Variable, die nur aussieht wie a.
+print(a) # Die Liste a enthält nicht &quot;Punkt&quot; und wurde auch nicht überschrieben.
+</code></pre>
+
+<pre><code>## $alpha
+## [1] 1
+## 
+## $beta
+## [1] 2
+</code></pre>
+
+<pre><code class="r">print(a.punkt) # &quot;Punkt&quot; wird unabhängig ausgegeben.
+</code></pre>
+
+<pre><code>## [1] &quot;Punkt&quot;
+</code></pre>
+
+<pre><code class="r">print(a$beta) # Mit dem $-Zeichen wird ein Element von a angesprochen.
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+<pre><code class="r">print(a$punkt) # Dieses gibt es dagegen nicht.
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<p>Tip: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst, verwendest Du
+den Punkt nicht. Er ist eher eine historische Erblast als ein Feature. Die
+besseren Alternativen sind Unterstrich oder CamelCase.</p>
+
+<h2>Zuweisungen</h2>
+
+<p>Variablen können bereits Funktionen oder Daten enthalten, auch die aus
+den Basis-Paketen und die aus den Bibliotheken, die Du lädst. Du musst also
+aufpassen, dass Du keine Namen von Funktionen oder Daten überschreibst,
+jedenfalls nicht solche, die Du später noch verwenden willst.</p>
+
+<pre><code class="r"># Die Funktion print ist im Paket base
+base::print(&quot;Hallo&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Hallo&quot;
+</code></pre>
+
+<pre><code class="r"># Das Paket base ist per default geladen.
+# Darum kann base::print() verkürzt angesprochen werden.
+print(&quot;Hallo&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Hallo&quot;
+</code></pre>
+
+<pre><code class="r"># Die Variable print wird hier mit einer Funktion definiert.
+print &lt;- function(...) { &quot;Nope&quot; }
+# Was passiert jetzt?
+print(&quot;Welt&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Nope&quot;
+</code></pre>
+
+<pre><code class="r"># Der Fully Qualified Name funktioniert weiterhin.
+base::print(&quot;Welt&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Welt&quot;
+</code></pre>
+
+<pre><code class="r"># Definition aufheben.
+remove(print)
+# Jetzt wird wieder base::print() angesprochen.
+print(&quot;Welt&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Welt&quot;
+</code></pre>
 
 <h3>Blöcke und Einrückungen</h3>
 
