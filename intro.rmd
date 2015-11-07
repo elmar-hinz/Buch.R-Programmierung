@@ -74,14 +74,19 @@ berechnen und in einem Diagramm zu visualieren?
 
 ### Was ist R?
 
+> R is a free software environment for statistical computing and graphics.
+> It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS.
+>
+> https://www.r-project.org
+
 * R ist eine Multiparadigmensprache:
     * dynamisch
     * funktional
     * eingeschränkt objektorientiert
-* R ist eine freie Software Suite
+* R ist eine freie Software Sammlung
     * für statisiche Berechnungen und ihre Visualisierung
     * mit Interpreter, Shell, IDE und Bibliotheken
-    * die auf Unix, MacOs und Windows installiert werden kann
+    * die unter Unix, MacOs und Windows benutzt werden kann
 * R ist in vielen Bereichen der Wissenschaft der de facto Standard zur
   Erstellung und Veröffentlichung von statistischen Forschungsergebnissen.
 * R ist ein Werkzeug, das als Schnittstelle von grossen IT-Firmen in ihre
@@ -89,9 +94,10 @@ berechnen und in einem Diagramm zu visualieren?
 
 ### Was macht R besonders?
 
-Zwei der Besonderheiten von R hast Du gerade kennen gerlernt. Erstens die
-unkomplizierte Weise, ganze Listen von Daten zu verarbeiten, zweitens die
-komfortablen Möglichkeiten, Daten als Diagramme zu visualisieren.
+Zwei der besondere Stärken von R hast Du gerade kennen gerlernt. Erstens die
+unkomplizierte Weise, ganze Listen von Daten so einfach zu verarbeiten, als sei
+das ein einzelner Wert, zweitens die komfortablen Möglichkeiten, Daten als
+Diagramme zu visualisieren.
 
 R versucht dem möglichst nahe zu kommen, wie der Wissenschaftler denkt.
 Einerseits sind das nicht unbedingt Schleifen, wie beim Programmierer.
@@ -126,22 +132,44 @@ möglich, weil die Daten kontinuierlich strömen. Mit diesem Feature setzt sich 
 also zugleich auch eine wichtige Grenze. Für die Verabeitung von Datenstömen
 ist R nicht optimiert.
 
-### Ist R eine vollwertige Programmiersprache oder eher ein Werkzeug?
+### Ist R eine Programmiersprache oder ein Werkzeug?
 
-Die kurze Antwort ist, dass beides richtig ist. R ist durchaus eine
-Programmiersprache, mit der man theoretisch alles programmieren kann.
-Aber wie bereits angedeutet, ist jede Programmiersprache für bestimmte
-Anwendungsbereiche optimiert.
+> R is a free software environment for statistical computing and graphics.
+> It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS.
+>
+> https://www.r-project.org
+
+> R is more than a programming language. It is an interactive
+> environment for doing statistics. I find it more helpful to think of R as
+> having a programming language than being a programming language. The R
+> language is the scripting language for the R environment, just as VBA is the
+> scripting language for Microsoft Excel. Some of the more unusual features of
+> the R language begin to make sense when viewed from this perspective."
+>
+> [John D. Cook](http://www.johndcook.com/blog/r_language_for_programmers/)
+
+Die offizielle Definition lautet, R ist eine Entwicklungsumgebung für
+statistische Berechnungen und Graphiken. John D. Cook gibt die sehr
+diplomatische Definition R, sei eine Entwicklungsumgebung mit einer
+Skriptsprache und damit mehr als eine Programmiersprache.
+
+Tatsächlich stellt sich die Frage, wie weit R auch eine allgemein einsetzbare
+Programmiersprache ist im Vergleich zu Java, C oder C++. Sicherlich ist es
+heute noch nicht so allgemein einsetzbar, wie weitreichend es aber einsetzbar
+ist, darauf fällt die Antwort sehr unterschiedlich aus, je nach Blickwinkel.
+
+Oft lautet auch Frage auch, was im Bereich der Datanwissenschaft die bessere
+Sprache ist, Python oder R. R hat in diesem Bereich die umfangreichere
+Werkzeugsammlung, Python ist als Sprache genereller aufgestellt. Beide sind so
+leicht zu lernen, dass nichts dagegen spricht sie gemeinsam einzusetzten.
 
 Die Sprache alleine ist auch nicht das alles Entscheidende. Genauso wichtig
 sind die verfügbaren Bibliotheken, Interpreter und Compiler, um das optimale
 Einsatzgebiet einer Sprache zu bestimmen. R wurde von Wissenschaftleren für
 Wissenschaftler entwickelt und gepflegt. Das hat das Profil der vorhandenen
-Werkzeuge geprägt.
-
-Datenanalyse wird aber auch in weiten Bereichen der Wirtschaft, der Politik
-oder des Journalismus immer wichtiger. Ensprechend weitet sich aus das Spektrum
-der Bibliotheken aus.
+Werkzeuge geprägt. Datenanalyse wird aber auch in weiten Bereichen der
+Wirtschaft, der Politik oder des Journalismus immer wichtiger. Ensprechend
+weitet sich aus das Spektrum der Bibliotheken aus.
 
 R ist heute u.a. geeignet, um datenzentierte Artikel und Bücher zu verfassen.
 Dieses Buch ist mithilfe solcher Bibliotheken erstellt. Es enstehen
@@ -150,19 +178,11 @@ unterstützen, mit zunehmenden interaktiven Möglichkeiten. IBM, Oracle,
 Microsoft, SAP, etc. implementieren Schnittstellen, um R als Werkzeug einbinden
 zu können.
 
-Die Entscheidung für die Sprache R wird also stark von den Bibliotheken
-bestimmt, die für unterschiedliche Bereiche zur Verfügung stehen. Man kann R
-als eine Sprache mit Bibilotheken betrachten. Die umgekehrte Perspektive ist
-für viele Anwendungsfälle genauso wichtig, R als ein Werkzeug zu betrachten,
-das über eine eigene Programmiersprache verfügt, so wie eine Datanbank über SQL
-als Sprache verfügt.
-
-Ich finde, dass R im Vergleich zu andern Sprachen noch zu viele Grenzen
-hat, um es uneigeschränkt als Programmiersprache für generelle Bereiche zu
-empfeheln, wie zum Beispiel Java oder C++. Neben seinem Speicherverhalten
-erreicht es schnell Grenzen bei den Möglichkeiten der Objektorientieren
-Programmierung. Geht es um Datenanalyse, ist es aber herausragend und baut
-seinen Versprung eher noch aus.
+Im Vergleich zu Java oder C++ ist R als universelle Programmiersprache heute
+noch weniger geeignet. Erstens ist sind seine objektorientieren Möglichkeiten
+noch nicht voll entwickelt, zweitens sind seine Bibliotheken sehr spezialisert
+und drittens setzt sein Speicherverhalten konzeptionlle Grenzen, die aber
+überwindbar sind.
 
 R besetzte eine verwandte Lücke, für die Perl ursprünglich konzeptioniert war,
 als "Practical Extraction and Report Language". Perl hat diese Nische
@@ -171,59 +191,12 @@ In der Folge wurde es auf beiden Gebieten abgelöst, u.a wegen seiner Grenzen
 bei der Objektorientieren Programmierung und der zu langsamen Erneuerung der
 Sprache, aber vielleicht auch wegen dem Verlust seiner Spezialisierung. Wir
 finden Parallelen in R, sowohl bei den Chancen als auch bei den Risiken. Die
-Unterstützung durch Industrie und Wissenschaft ist aber viel massiver als in
+Unterstützung durch Industrie und Wissenschaft ist aber viel umfassender als in
 der Geschichte von Perl.
-
-In der Data Science ist derzeit Python der einzige ernst zu nehmende Konkurrent.
-Für komplexe Anforderungen wird man R im Verbund mit anderer Software
-einsetzen, möglicherweise gerade mit Python, oder auch mit völlig fachfremden
-Sprachen. Dabei stellt sich im konkreten Fall die Frage, wo man die Daten
-übergibt und in welcher Form. Im Verbund mit Python ist R der Daten-Spezialist
-und Python eher der Generalist, der es mit der Welt verbindet.
 
 ### Die R-Infrastruktur
 
 ### Die Geschichte von R
 
-### Programmausführung
-
-R ist eine interpretierte Sprache. Ein Programm muss nicht als Ganzes
-kompiliert werden um ausfürbar zu sein. Stattdessen wird eine Instruktion nach
-der anderen entgegengenommen und direkt ausgeführt. Diese Instruktionen können
-entweder einzeln in der Shell eingegeben oder als Liste in eine Datei
-geschrieben werden. Damit erhältst Du dann ein Programmskript.
-
-#### Shell
-
-In der Shell gibtst Du Instruktionen ein, die Du nur einmalig ausführen willst
-und nicht speichern. Beispiele sind:
-
-* Aufruf von Programmenskripten.
-* Aufruf der Hilfe.
-* Austesten von Funktionen, um mehr über R zu lernen.
-* Testen von Programmschnipseln, bevor Du sie in Dateien einfügst.
-* Exploration von Daten. Nur was brauchbar ist, schreibst Du in Dateien.
-* Benutzung der Shell als wissenschaftlicher Taschenrechner.
-
-Es kann also sinnvoll sein, mehrere Shells parallel zu benutzen.
-
-#### Dateien
-
-Alles, was Du wiederholt ausführen oder aufheben willst, schreibst Du in
-Dateien.  Das fängt beim Austesten mehrzeiliger Programmschnipsel, die du so
-oft ausführst, bis sie funktionieren.
-
-#### Bibliotheken
-
-Bibliotheken sind Dateien, die Funktionen enthalten, die Du aus verschiedenen
-Programmen heraus immer wieder benutzen willst. Entweder Du schreibst sie
-selbst oder Du lädst Bibliotheken aus öffentlichen und privaten Repositories.
-
-#### IDE RStudio
-
-IDE heisst *integrated development environment*. *RStudio* integriert nicht nur
-Shell und Editor für Programmscripte, sondern zeigt zum Beispiel auch direk die
-erzeugten Diagramme an. Sie vereint also die verschiedenen Möglichkeiten zur
-Programmausführung, mit weiteren nützlichen Werkzeugen.
 
 
