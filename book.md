@@ -64,8 +64,8 @@ print("Hallo Welt!")
 ## [1] "Hallo Welt!"
 ```
 
-Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?
-R ist einfach zu lernen. Das ist gut so.
+Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?  R ist eben
+leicht zu lernen.
 
 Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die
 Oberflächen meherer Planeten anhand ihres Radius, ohne dass eine Schleife
@@ -307,6 +307,31 @@ print("Hallo Welt!") # Der Kommentar kann auch dahinter stehen.
 ## [1] "Hallo Welt!"
 ```
 
+### Instruktionen
+
+Instruktionen werden wie in C mittels Semicolon getrennt.
+
+
+```r
+x <- "Hallo Welt!"; print(x);
+```
+
+```
+## [1] "Hallo Welt!"
+```
+
+Am Zeilenende können diese ausgelassen werden.
+
+
+```r
+x <- "Hallo Welt!"
+print(x)
+```
+
+```
+## [1] "Hallo Welt!"
+```
+
 ### Variablen
 
 Variablennamen folgen grundsätzlich den Mustern verbreiteter Sprachen.
@@ -326,7 +351,7 @@ geschieht in R mittels des Dollarzeichens.
 
 ```r
 a <- list("alpha" = 1, "beta" = 2) # Variable a befüllt mit einer Liste.
-a.punkt <- "Punkt" # Eine ganz andere Variable, die nur aussieht wie a.
+a.dot <- "Punkt" # Eine unabhängige Variable, die nur aussieht wie Teil von a.
 print(a) # Die Liste a enthält nicht "Punkt" und wurde auch nicht überschrieben.
 ```
 
@@ -339,7 +364,7 @@ print(a) # Die Liste a enthält nicht "Punkt" und wurde auch nicht überschriebe
 ```
 
 ```r
-print(a.punkt) # "Punkt" wird unabhängig ausgegeben.
+print(a.dot) # "Punkt" wird unabhängig ausgegeben.
 ```
 
 ```
@@ -355,25 +380,23 @@ print(a$beta) # Mit dem $-Zeichen wird ein Element von a angesprochen.
 ```
 
 ```r
-print(a$punkt) # Dieses gibt es dagegen nicht.
+print(a$dot) # Dieses gibt es dagegen nicht.
 ```
 
 ```
 ## NULL
 ```
 
-Tip: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst, verwendest Du
-den Punkt als Worttrenner nicht. Er ist eher eine historische Erblast als ein
-Feature. Die besseren Alternativen sind Unterstrich oder CamelCase.
+**Tip**: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst,
+verwendest Du den Punkt als Worttrenner nicht. Er ist eher eine Erblast als ein
+Feature oder besonders R-stylisch. Die besseren Alternativen sind
+*unter_strich* oder *CamelCase*.
 
 ### Zuweisungen
 
 Kurz gesagt, die Zuweisung zu Variablen erfolgt in R mittels des
 Zuweisungsoperators `<-`  während die Zuweisung zu Funktionsparametern und zu
 Namen in Listen und Data-Frames mit dem Gleichheitszeichen `=` erfolgt.
-Ausserdem gibt es die Zuweisung zu Variablen oberhalb des eigenen
-Sichtbarkeitsbereiches mittels `<--`. Das wird im entsprechenden Kapitel näher
-erklärt.
 
 Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
 
@@ -383,17 +406,18 @@ Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
 # Create a dataframe with calculated planet data.
 #
 # @param names Characters of names.
-# @param radii Numbers of radii.
+# @param radii Numbers of radii in km.
 # @return data.frame
 ##
-setupPlanets <- function(names, radii) {
+setupPlanets <- function(names, radii, star = "Sonne") {
      data.frame(
-          Name = names,
-          Radius = radii,
-          Diameter = 2 * radii,
-          Perimeter = 2 * pi * radii,
-          Surface = 4 * pi * radii^2,
-          Volume =  4/3 * pi * radii^3
+        Name = names,
+        Star = star,
+        Radius = radii,
+        Diameter = 2 * radii,
+        Perimeter = 2 * pi * radii,
+        Surface = 4 * pi * radii^2,
+        Volume =  4/3 * pi * radii^3
     )
  }
 
@@ -406,24 +430,27 @@ print(planets)
 ```
 
 ```
-##     Name Radius Diameter Perimeter   Surface       Volume
-## 1 Merkur   2440     4880  15330.97  74815144 6.084965e+10
-## 2  Venus   6052    12104  38025.84 460264737 9.285074e+11
-## 3   Erde   6371    12742  40030.17 510064472 1.083207e+12
-## 4   Mars   3389     6778  21293.72 144328800 1.630434e+11
+##     Name  Star Radius Diameter Perimeter   Surface       Volume
+## 1 Merkur Sonne   2440     4880  15330.97  74815144 6.084965e+10
+## 2  Venus Sonne   6052    12104  38025.84 460264737 9.285074e+11
+## 3   Erde Sonne   6371    12742  40030.17 510064472 1.083207e+12
+## 4   Mars Sonne   3389     6778  21293.72 144328800 1.630434e+11
 ```
 
 Hier definiere ich eine Funktion und weise sie der Variablen `setupPlanets`
 mittels des `<-`-Operators zu.  Das speichern ganzer Funktionen in Variablen
 charakterisiert eine funktionale Programmiersprache. Eine solche Zuweisung
-erfolgt auch bei den Variablen `input` und `planets`, denen eine Liste bzw. ein
-Data-Frame zugewiesen wird.
+erfolgt auch bei den Variablen `input` und `planets`, denen eine Liste bzw.
+einen Data-Frame zugewiesen wird.
 
 Sowohl beim Data-Frame als auch bei der Liste werden die einzelnen benannten
-Elemente mittels `=` zugewiesen. Das Gleichheitszeichen wird auch verwendet, um
-beim Funktionsaufruf Parameter mit ihrem Namen, statt ihrer Reihenfolge
-anzusprechen. Hier habe ich die Reihenfolge vertauscht, um das zu
-demonstrieren.
+Elemente mittels `=` zugewiesen.
+
+Das Gleichheitszeichen verwende ich auch, um den Parameter `star` bei der
+Funktionsdefinition mit einem Default-Wert vorzubelegen, hier `"Sonne"`.
+Beim Funktionsaufruf dient mir das Gleichheitszeichen schließlich dazu, die
+Parameter mit ihrem Namen statt mit ihrer Reihenfolge an zu sprechen.  Hier
+habe ich die Reihenfolge vertauscht, um das zu demonstrieren.
 
 #### Diskussion der Alternativen
 
@@ -434,11 +461,12 @@ im Code vieler Leute begegnen. Um einen klaren, einheitlichen Programmierstil
 zu pflegen, solltest Du aber konsequent `<-` für die Zuweisung von Variablen
 benutzen. Das ist einfach R-stylisch.
 
-Die Zuweisung mittels `<--` ist möglich, aber für die Zuweisung an übergeordnete
-Sichtbarkeitsbereiche gedacht. Du musst wissen, was du tust. Dazu später.
+Die Zuweisung mittels `<--` ist möglich, aber für die Zuweisung an
+übergeordnete Sichtbarkeitsbereiche gedacht. Du musst wissen, was du hiermit
+tust. Dazu mehr im Kapitel über die Sichtbarkeitsbereiche.
 
-`->` macht genau dasselbe wie `<-`. Nicht dass Du denkst die Variable käme
-dann nach rechts. Es ist also nicht intuitiv verständlich.
+`->` macht genau dasselbe wie `<-`. Nicht dass Du denkst die Variable käme dann
+nach rechts. Es ist also nicht intuitiv verständlich.
 
 Analog ist `-->` dasselbe `<--` und nicht intuitiv verständlich.
 
@@ -446,10 +474,10 @@ Also:
 
 * `=` Ist nicht überall einsetzbar und nicht R-stylisch.
 * `->` Ist verwirrend.
-* `<--` Du solltest wissen was Du tust.
+* `<--` Du solltest wissen, was Du tust.
 * `-->` Ist verwirrent und Du solltest wissen, was Du tust.
 
-Darum: Variablenzuweisung mittels `<-` bevorzugen.
+**Tip**: Variablenzuweisung mittels `<-` bevorzugen.
 
 ### Namensräume
 
@@ -519,8 +547,72 @@ print("Welt")
 
 ### Blöcke und Einrückungen
 
-### Coding Guidelines
+Programmcode wird in Bereiche eingeteilt, die gezielt ausführbar sind. Ein
+solcher Bereich wird Block genannt und besteht aus mehreren Zeilen von
+Instruktionen. Beispiele solcher Blöcke sind Funktionen, Schleifen oder die
+unterschiedlichen Zweige von If-Else-Bedingungen. Daraus ergibt sich, dass die
+Blöcke verschachtelt auftreten, wenn z.B. eine Funktion eine Schleife enthält.
 
+
+```r
+# Ein Funktionsblock, der einen Schleifenblock enthält.
+show <- function() {
+    for(i in 1:3) {
+        print(i);
+    }
+}
+show()
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+```
+
+Wie werden solche Blöcke nun definiert?
+
+Drei Techniken sind bei Programmiersprachen verbreitet, erstens Schlüsselworte
+(Keywords), zweitens Einrückungstiefen (Indentation, Off-Side-Rule), drittens
+geschweifte Klammern. Keywords wurden bereits in den 1950er von ALGOL benutzt.
+Heute findest Du sie z.B. in Ruby und Bash. Off-Side-Rule wird u.a. verwendet
+von Python, YAML und CoffeScript und lässt sich bis ins Jahr 1966 zurück
+verfolgen. Die geschweiften Klammern wurden 1972 mit C eingeführt und haben
+heute eine weite Verbreitung so in C++, Java, C#, JavaScript, Perl oder Go.
+
+R verwendet geschweifte Klammern wie C. Gerade mit einer deutschen Tastatur
+sind diese Klammern lästig zu tippen und einrückem muss man den Code für die
+Lesbarkeit genau so wie bei der Off-Side-Rule. Es ist vor allem mehr Arbeit. Im
+Vergleich zur Off-Side-Rule sieht ein solcher Text viel technischer und damit
+schlechter lesbar aus.
+
+
+
+```r
+# Einrückungen dienen in R nur der Lesbarkeit. Das funktioniert genau so.
+show <- function() { for(i in 1:3) { print(i); } }; show();
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+```
+
+Warum verwendet R geschweifte Klammern und warum sind
+sie so weit verbreitet?
+
+Sicherlich hat C einen grossen normativen Einfluss ausgeübt, gerade in der Zeit
+als die Sprache entworfen wurde. Geschweifte Klammern sind im Vergleich zum
+Whitespace von Einrückungen leichter zu parsen. Fehler sind seltener. Gerade
+in grossen Projekten sind Fehler, die durch Einrückungsfehler entstehen,
+schwierig zu finden. Werden Sprachen gemischt wird es mit Einrückungen
+besonders schwierig.
+
+Fazit: Es ist schade, dass R nicht wie Python Off-Side-Rule verwendet. Zu lang
+sind die Skripte eigentlich nicht.
+
+### Coding Guidelines
 
 
 

@@ -48,8 +48,8 @@ findest Du sowieso am besten mit Hilfe einer Suchmaschine.
 print("Hallo Welt!")
 ```
 
-Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?
-R ist einfach zu lernen. Das ist gut so.
+Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?  R ist eben
+leicht zu lernen.
 
 Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die
 Oberflächen meherer Planeten anhand ihres Radius, ohne dass eine Schleife

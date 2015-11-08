@@ -253,8 +253,8 @@ findest Du sowieso am besten mit Hilfe einer Suchmaschine.</p>
 <pre><code>## [1] &quot;Hallo Welt!&quot;
 </code></pre>
 
-<p>Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?
-R ist einfach zu lernen. Das ist gut so.</p>
+<p>Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?  R ist eben
+leicht zu lernen.</p>
 
 <p>Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die
 Oberflächen meherer Planeten anhand ihres Radius, ohne dass eine Schleife
@@ -503,6 +503,25 @@ print(&quot;Hallo Welt!&quot;) # Der Kommentar kann auch dahinter stehen.
 <pre><code>## [1] &quot;Hallo Welt!&quot;
 </code></pre>
 
+<h3>Instruktionen</h3>
+
+<p>Instruktionen werden wie in C mittels Semicolon getrennt.</p>
+
+<pre><code class="r">x &lt;- &quot;Hallo Welt!&quot;; print(x);
+</code></pre>
+
+<pre><code>## [1] &quot;Hallo Welt!&quot;
+</code></pre>
+
+<p>Am Zeilenende können diese ausgelassen werden.</p>
+
+<pre><code class="r">x &lt;- &quot;Hallo Welt!&quot;
+print(x)
+</code></pre>
+
+<pre><code>## [1] &quot;Hallo Welt!&quot;
+</code></pre>
+
 <h3>Variablen</h3>
 
 <p>Variablennamen folgen grundsätzlich den Mustern verbreiteter Sprachen.</p>
@@ -522,7 +541,7 @@ anderen Sprachen werden damit Elemente eines Objektes angesprochen. Das
 geschieht in R mittels des Dollarzeichens.</p>
 
 <pre><code class="r">a &lt;- list(&quot;alpha&quot; = 1, &quot;beta&quot; = 2) # Variable a befüllt mit einer Liste.
-a.punkt &lt;- &quot;Punkt&quot; # Eine ganz andere Variable, die nur aussieht wie a.
+a.dot &lt;- &quot;Punkt&quot; # Eine unabhängige Variable, die nur aussieht wie Teil von a.
 print(a) # Die Liste a enthält nicht &quot;Punkt&quot; und wurde auch nicht überschrieben.
 </code></pre>
 
@@ -533,7 +552,7 @@ print(a) # Die Liste a enthält nicht &quot;Punkt&quot; und wurde auch nicht üb
 ## [1] 2
 </code></pre>
 
-<pre><code class="r">print(a.punkt) # &quot;Punkt&quot; wird unabhängig ausgegeben.
+<pre><code class="r">print(a.dot) # &quot;Punkt&quot; wird unabhängig ausgegeben.
 </code></pre>
 
 <pre><code>## [1] &quot;Punkt&quot;
@@ -545,24 +564,22 @@ print(a) # Die Liste a enthält nicht &quot;Punkt&quot; und wurde auch nicht üb
 <pre><code>## [1] 2
 </code></pre>
 
-<pre><code class="r">print(a$punkt) # Dieses gibt es dagegen nicht.
+<pre><code class="r">print(a$dot) # Dieses gibt es dagegen nicht.
 </code></pre>
 
 <pre><code>## NULL
 </code></pre>
 
-<p>Tip: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst, verwendest Du
-den Punkt als Worttrenner nicht. Er ist eher eine historische Erblast als ein
-Feature. Die besseren Alternativen sind Unterstrich oder CamelCase.</p>
+<p><strong>Tip</strong>: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst,
+verwendest Du den Punkt als Worttrenner nicht. Er ist eher eine Erblast als ein
+Feature oder besonders R-stylisch. Die besseren Alternativen sind
+<em>unter_strich</em> oder <em>CamelCase</em>.</p>
 
 <h3>Zuweisungen</h3>
 
 <p>Kurz gesagt, die Zuweisung zu Variablen erfolgt in R mittels des
 Zuweisungsoperators <code>&lt;-</code>  während die Zuweisung zu Funktionsparametern und zu
-Namen in Listen und Data-Frames mit dem Gleichheitszeichen <code>=</code> erfolgt.
-Ausserdem gibt es die Zuweisung zu Variablen oberhalb des eigenen
-Sichtbarkeitsbereiches mittels <code>&lt;--</code>. Das wird im entsprechenden Kapitel näher
-erklärt.</p>
+Namen in Listen und Data-Frames mit dem Gleichheitszeichen <code>=</code> erfolgt.</p>
 
 <p>Dieses Beispiel zeigt die Anwendung von <code>&lt;-</code> und <code>=</code>.</p>
 
@@ -570,17 +587,18 @@ erklärt.</p>
 # Create a dataframe with calculated planet data.
 #
 # @param names Characters of names.
-# @param radii Numbers of radii.
+# @param radii Numbers of radii in km.
 # @return data.frame
 ##
-setupPlanets &lt;- function(names, radii) {
+setupPlanets &lt;- function(names, radii, star = &quot;Sonne&quot;) {
      data.frame(
-          Name = names,
-          Radius = radii,
-          Diameter = 2 * radii,
-          Perimeter = 2 * pi * radii,
-          Surface = 4 * pi * radii^2,
-          Volume =  4/3 * pi * radii^3
+        Name = names,
+        Star = star,
+        Radius = radii,
+        Diameter = 2 * radii,
+        Perimeter = 2 * pi * radii,
+        Surface = 4 * pi * radii^2,
+        Volume =  4/3 * pi * radii^3
     )
  }
 
@@ -592,24 +610,27 @@ planets &lt;- setupPlanets(radii = input$radii, names = input$names)
 print(planets)
 </code></pre>
 
-<pre><code>##     Name Radius Diameter Perimeter   Surface       Volume
-## 1 Merkur   2440     4880  15330.97  74815144 6.084965e+10
-## 2  Venus   6052    12104  38025.84 460264737 9.285074e+11
-## 3   Erde   6371    12742  40030.17 510064472 1.083207e+12
-## 4   Mars   3389     6778  21293.72 144328800 1.630434e+11
+<pre><code>##     Name  Star Radius Diameter Perimeter   Surface       Volume
+## 1 Merkur Sonne   2440     4880  15330.97  74815144 6.084965e+10
+## 2  Venus Sonne   6052    12104  38025.84 460264737 9.285074e+11
+## 3   Erde Sonne   6371    12742  40030.17 510064472 1.083207e+12
+## 4   Mars Sonne   3389     6778  21293.72 144328800 1.630434e+11
 </code></pre>
 
 <p>Hier definiere ich eine Funktion und weise sie der Variablen <code>setupPlanets</code>
 mittels des <code>&lt;-</code>-Operators zu.  Das speichern ganzer Funktionen in Variablen
 charakterisiert eine funktionale Programmiersprache. Eine solche Zuweisung
-erfolgt auch bei den Variablen <code>input</code> und <code>planets</code>, denen eine Liste bzw. ein
-Data-Frame zugewiesen wird.</p>
+erfolgt auch bei den Variablen <code>input</code> und <code>planets</code>, denen eine Liste bzw.
+einen Data-Frame zugewiesen wird.</p>
 
 <p>Sowohl beim Data-Frame als auch bei der Liste werden die einzelnen benannten
-Elemente mittels <code>=</code> zugewiesen. Das Gleichheitszeichen wird auch verwendet, um
-beim Funktionsaufruf Parameter mit ihrem Namen, statt ihrer Reihenfolge
-anzusprechen. Hier habe ich die Reihenfolge vertauscht, um das zu
-demonstrieren.</p>
+Elemente mittels <code>=</code> zugewiesen.</p>
+
+<p>Das Gleichheitszeichen verwende ich auch, um den Parameter <code>star</code> bei der
+Funktionsdefinition mit einem Default-Wert vorzubelegen, hier <code>&quot;Sonne&quot;</code>.
+Beim Funktionsaufruf dient mir das Gleichheitszeichen schließlich dazu, die
+Parameter mit ihrem Namen statt mit ihrer Reihenfolge an zu sprechen.  Hier
+habe ich die Reihenfolge vertauscht, um das zu demonstrieren.</p>
 
 <h4>Diskussion der Alternativen</h4>
 
@@ -620,11 +641,12 @@ im Code vieler Leute begegnen. Um einen klaren, einheitlichen Programmierstil
 zu pflegen, solltest Du aber konsequent <code>&lt;-</code> für die Zuweisung von Variablen
 benutzen. Das ist einfach R-stylisch.</p>
 
-<p>Die Zuweisung mittels <code>&lt;--</code> ist möglich, aber für die Zuweisung an übergeordnete
-Sichtbarkeitsbereiche gedacht. Du musst wissen, was du tust. Dazu später.</p>
+<p>Die Zuweisung mittels <code>&lt;--</code> ist möglich, aber für die Zuweisung an
+übergeordnete Sichtbarkeitsbereiche gedacht. Du musst wissen, was du hiermit
+tust. Dazu mehr im Kapitel über die Sichtbarkeitsbereiche.</p>
 
-<p><code>-&gt;</code> macht genau dasselbe wie <code>&lt;-</code>. Nicht dass Du denkst die Variable käme
-dann nach rechts. Es ist also nicht intuitiv verständlich.</p>
+<p><code>-&gt;</code> macht genau dasselbe wie <code>&lt;-</code>. Nicht dass Du denkst die Variable käme dann
+nach rechts. Es ist also nicht intuitiv verständlich.</p>
 
 <p>Analog ist <code>--&gt;</code> dasselbe <code>&lt;--</code> und nicht intuitiv verständlich.</p>
 
@@ -633,11 +655,11 @@ dann nach rechts. Es ist also nicht intuitiv verständlich.</p>
 <ul>
 <li><code>=</code> Ist nicht überall einsetzbar und nicht R-stylisch.</li>
 <li><code>-&gt;</code> Ist verwirrend.</li>
-<li><code>&lt;--</code> Du solltest wissen was Du tust.</li>
+<li><code>&lt;--</code> Du solltest wissen, was Du tust.</li>
 <li><code>--&gt;</code> Ist verwirrent und Du solltest wissen, was Du tust.</li>
 </ul>
 
-<p>Darum: Variablenzuweisung mittels <code>&lt;-</code> bevorzugen.</p>
+<p><strong>Tip</strong>: Variablenzuweisung mittels <code>&lt;-</code> bevorzugen.</p>
 
 <h3>Namensräume</h3>
 
@@ -695,6 +717,64 @@ print(&quot;Welt&quot;)
 </code></pre>
 
 <h3>Blöcke und Einrückungen</h3>
+
+<p>Programmcode wird in Bereiche eingeteilt, die gezielt ausführbar sind. Ein
+solcher Bereich wird Block genannt und besteht aus mehreren Zeilen von
+Instruktionen. Beispiele solcher Blöcke sind Funktionen, Schleifen oder die
+unterschiedlichen Zweige von If-Else-Bedingungen. Daraus ergibt sich, dass die
+Blöcke verschachtelt auftreten, wenn z.B. eine Funktion eine Schleife enthält.</p>
+
+<pre><code class="r"># Ein Funktionsblock, der einen Schleifenblock enthält.
+show &lt;- function() {
+    for(i in 1:3) {
+        print(i);
+    }
+}
+show()
+</code></pre>
+
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+</code></pre>
+
+<p>Wie werden solche Blöcke nun definiert?</p>
+
+<p>Drei Techniken sind bei Programmiersprachen verbreitet, erstens Schlüsselworte
+(Keywords), zweitens Einrückungstiefen (Indentation, Off-Side-Rule), drittens
+geschweifte Klammern. Keywords wurden bereits in den 1950er von ALGOL benutzt.
+Heute findest Du sie z.B. in Ruby und Bash. Off-Side-Rule wird u.a. verwendet
+von Python, YAML und CoffeScript und lässt sich bis ins Jahr 1966 zurück
+verfolgen. Die geschweiften Klammern wurden 1972 mit C eingeführt und haben
+heute eine weite Verbreitung so in C++, Java, C#, JavaScript, Perl oder Go.</p>
+
+<p>R verwendet geschweifte Klammern wie C. Gerade mit einer deutschen Tastatur
+sind diese Klammern lästig zu tippen und einrückem muss man den Code für die
+Lesbarkeit genau so wie bei der Off-Side-Rule. Es ist vor allem mehr Arbeit. Im
+Vergleich zur Off-Side-Rule sieht ein solcher Text viel technischer und damit
+schlechter lesbar aus.</p>
+
+<pre><code class="r"># Einrückungen dienen in R nur der Lesbarkeit. Das funktioniert genau so.
+show &lt;- function() { for(i in 1:3) { print(i); } }; show();
+</code></pre>
+
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+</code></pre>
+
+<p>Warum verwendet R geschweifte Klammern und warum sind
+sie so weit verbreitet?</p>
+
+<p>Sicherlich hat C einen grossen normativen Einfluss ausgeübt, gerade in der Zeit
+als die Sprache entworfen wurde. Geschweifte Klammern sind im Vergleich zum
+Whitespace von Einrückungen leichter zu parsen. Fehler sind seltener. Gerade
+in grossen Projekten sind Fehler, die durch Einrückungsfehler entstehen,
+schwierig zu finden. Werden Sprachen gemischt wird es mit Einrückungen
+besonders schwierig.</p>
+
+<p>Fazit: Es ist schade, dass R nicht wie Python Off-Side-Rule verwendet. Zu lang
+sind die Skripte eigentlich nicht.</p>
 
 <h3>Coding Guidelines</h3>
 
