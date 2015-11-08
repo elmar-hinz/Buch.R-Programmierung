@@ -401,7 +401,7 @@ input <- list(
     names = c("Merkur", "Venus", "Erde", "Mars"),
     radii = c(2440, 6052, 6371, 3389)
 )
-planets <- setupPlanets(input$names, input$radii)
+planets <- setupPlanets(radii = input$radii, names = input$names)
 print(planets)
 ```
 
@@ -416,9 +416,14 @@ print(planets)
 Hier definiere ich eine Funktion und weise sie der Variablen `setupPlanets`
 mittels des `<-`-Operators zu.  Das speichern ganzer Funktionen in Variablen
 charakterisiert eine funktionale Programmiersprache. Eine solche Zuweisung
-erfolgt auch bei den Variablen `input` und `planets`, denen ein Liste bzw. ein
-Data-Frame zugewiesen wird.  Sowohl beim Data-Frame als auch bei der Liste
-werden die einzelnen benannten Elemente mittels `=` zugewiesen.
+erfolgt auch bei den Variablen `input` und `planets`, denen eine Liste bzw. ein
+Data-Frame zugewiesen wird.
+
+Sowohl beim Data-Frame als auch bei der Liste werden die einzelnen benannten
+Elemente mittels `=` zugewiesen. Das Gleichheitszeichen wird auch verwendet, um
+beim Funktionsaufruf Parameter mit ihrem Namen, statt ihrer Reihenfolge
+anzusprechen. Hier habe ich die Reihenfolge vertauscht, um das zu
+demonstrieren.
 
 #### Diskussion der Alternativen
 
@@ -426,8 +431,8 @@ Es ist oft, aber eben nicht immer, technisch möglich Variablen mittels `=`
 statt mittels `<-` zuzuweisen. Weil das ein Zeichen weniger zu tippen ist und
 den Zuweisungen in vielen anderen Programmiersprachen entspricht, wird Dir das
 im Code vieler Leute begegnen. Um einen klaren, einheitlichen Programmierstil
-zu pflegen, solltest Du konsequent `<-` für die Zuweisung von Variablen
-benutzen.
+zu pflegen, solltest Du aber konsequent `<-` für die Zuweisung von Variablen
+benutzen. Das ist einfach R-stylisch.
 
 Die Zuweisung mittels `<--` ist möglich, aber für die Zuweisung an übergeordnete
 Sichtbarkeitsbereiche gedacht. Du musst wissen, was du tust. Dazu später.
@@ -435,7 +440,7 @@ Sichtbarkeitsbereiche gedacht. Du musst wissen, was du tust. Dazu später.
 `->` macht genau dasselbe wie `<-`. Nicht dass Du denkst die Variable käme
 dann nach rechts. Es ist also nicht intuitiv verständlich.
 
-Analog ist `-->` dasselbe `<--` und nicht intuitive verständlich.
+Analog ist `-->` dasselbe `<--` und nicht intuitiv verständlich.
 
 Also:
 
