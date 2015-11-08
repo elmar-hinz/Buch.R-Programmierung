@@ -552,15 +552,102 @@ print(a) # Die Liste a enthält nicht &quot;Punkt&quot; und wurde auch nicht üb
 </code></pre>
 
 <p>Tip: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst, verwendest Du
-den Punkt nicht. Er ist eher eine historische Erblast als ein Feature. Die
-besseren Alternativen sind Unterstrich oder CamelCase.</p>
+den Punkt als Worttrenner nicht. Er ist eher eine historische Erblast als ein
+Feature. Die besseren Alternativen sind Unterstrich oder CamelCase.</p>
 
-<h2>Zuweisungen</h2>
+<h3>Zuweisungen</h3>
+
+<p>Kurz gesagt, die Zuweisung zu Variablen erfolgt in R mittels des
+Zuweisungsoperators <code>&lt;-</code>  während die Zuweisung zu Funktionsparametern und zu
+Namen in Listen und Data-Frames mit dem Gleichheitszeichen <code>=</code> erfolgt.
+Ausserdem gibt es die Zuweisung zu Variablen oberhalb des eigenen
+Sichtbarkeitsbereiches mittels <code>&lt;--</code>. Das wird im entsprechenden Kapitel näher
+erklärt.</p>
+
+<p>Dieses Beispiel zeigt die Anwendung von <code>&lt;-</code> und <code>=</code>.</p>
+
+<pre><code class="r">##################################################
+# Create a dataframe with calculated planet data.
+#
+# @param names Characters of names.
+# @param radii Numbers of radii.
+# @return data.frame
+##
+setupPlanets &lt;- function(names, radii) {
+     data.frame(
+          Name = names,
+          Radius = radii,
+          Diameter = 2 * radii,
+          Perimeter = 2 * pi * radii,
+          Surface = 4 * pi * radii^2,
+          Volume =  4/3 * pi * radii^3
+    )
+ }
+
+input &lt;- list(
+    names = c(&quot;Merkur&quot;, &quot;Venus&quot;, &quot;Erde&quot;, &quot;Mars&quot;),
+    radii = c(2440, 6052, 6371, 3389)
+)
+planets &lt;- setupPlanets(input$names, input$radii)
+print(planets)
+</code></pre>
+
+<pre><code>##     Name Radius Diameter Perimeter   Surface       Volume
+## 1 Merkur   2440     4880  15330.97  74815144 6.084965e+10
+## 2  Venus   6052    12104  38025.84 460264737 9.285074e+11
+## 3   Erde   6371    12742  40030.17 510064472 1.083207e+12
+## 4   Mars   3389     6778  21293.72 144328800 1.630434e+11
+</code></pre>
+
+<p>Hier definiere ich eine Funktion und weise sie der Variablen <code>setupPlanets</code>
+mittels des <code>&lt;-</code>-Operators zu.  Das speichern ganzer Funktionen in Variablen
+charakterisiert eine funktionale Programmiersprache. Eine solche Zuweisung
+erfolgt auch bei den Variablen <code>input</code> und <code>planets</code>, denen ein Liste bzw. ein
+Data-Frame zugewiesen wird.  Sowohl beim Data-Frame als auch bei der Liste
+werden die einzelnen benannten Elemente mittels <code>=</code> zugewiesen.</p>
+
+<h4>Diskussion der Alternativen</h4>
+
+<p>Es ist oft, aber eben nicht immer, technisch möglich Variablen mittels <code>=</code>
+statt mittels <code>&lt;-</code> zuzuweisen. Weil das ein Zeichen weniger zu tippen ist und
+den Zuweisungen in vielen anderen Programmiersprachen entspricht, wird Dir das
+im Code vieler Leute begegnen. Um einen klaren, einheitlichen Programmierstil
+zu pflegen, solltest Du konsequent <code>&lt;-</code> für die Zuweisung von Variablen
+benutzen.</p>
+
+<p>Die Zuweisung mittels <code>&lt;--</code> ist möglich, aber für die Zuweisung an übergeordnete
+Sichtbarkeitsbereiche gedacht. Du musst wissen, was du tust. Dazu später.</p>
+
+<p><code>-&gt;</code> macht genau dasselbe wie <code>&lt;-</code>. Nicht dass Du denkst die Variable käme
+dann nach rechts. Es ist also nicht intuitiv verständlich.</p>
+
+<p>Analog ist <code>--&gt;</code> dasselbe <code>&lt;--</code> und nicht intuitive verständlich.</p>
+
+<p>Also:</p>
+
+<ul>
+<li><code>=</code> Ist nicht überall einsetzbar und nicht R-stylisch.</li>
+<li><code>-&gt;</code> Ist verwirrend.</li>
+<li><code>&lt;--</code> Du solltest wissen was Du tust.</li>
+<li><code>--&gt;</code> Ist verwirrent und Du solltest wissen, was Du tust.</li>
+</ul>
+
+<p>Darum: Variablenzuweisung mittels <code>&lt;-</code> bevorzugen.</p>
+
+<h3>Namensräume</h3>
 
 <p>Variablen können bereits Funktionen oder Daten enthalten, auch die aus
-den Basis-Paketen und die aus den Bibliotheken, die Du lädst. Du musst also
+den Basis-Paketen und die aus den Bibliotheken, die Du lädst.</p>
+
+<p>Du musst also
 aufpassen, dass Du keine Namen von Funktionen oder Daten überschreibst,
 jedenfalls nicht solche, die Du später noch verwenden willst.</p>
+
+<p>Tust Du es doch, dann kannst du die Variablen der Pakte aber immer noch über
+ihren Full Qualified Name ansprechen. Das kann einerseits lohnenswert sein, um
+einen sprechenden Variablennamen wie &ldquo;data&rdquo; frei einsetzen zu können,
+andererseits  kann es auch eingefleischte R-Benutzer verwirren, wenn der
+vertraute Name &ldquo;zweckentfremdet&rdquo; wird.</p>
 
 <pre><code class="r"># Die Funktion print ist im Paket base
 base::print(&quot;Hallo&quot;)

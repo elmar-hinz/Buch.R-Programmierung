@@ -44,16 +44,94 @@ print(a$punkt) # Dieses gibt es dagegen nicht.
 ```
 
 Tip: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst, verwendest Du
-den Punkt nicht. Er ist eher eine historische Erblast als ein Feature. Die
-besseren Alternativen sind Unterstrich oder CamelCase.
+den Punkt als Worttrenner nicht. Er ist eher eine historische Erblast als ein
+Feature. Die besseren Alternativen sind Unterstrich oder CamelCase.
 
+### Zuweisungen
 
-## Zuweisungen
+Kurz gesagt, die Zuweisung zu Variablen erfolgt in R mittels des
+Zuweisungsoperators `<-`  während die Zuweisung zu Funktionsparametern und zu
+Namen in Listen und Data-Frames mit dem Gleichheitszeichen `=` erfolgt.
+Ausserdem gibt es die Zuweisung zu Variablen oberhalb des eigenen
+Sichtbarkeitsbereiches mittels `<--`. Das wird im entsprechenden Kapitel näher
+erklärt.
+
+Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
+
+```{r assignments}
+##################################################
+# Create a dataframe with calculated planet data.
+#
+# @param names Characters of names.
+# @param radii Numbers of radii.
+# @return data.frame
+##
+setupPlanets <- function(names, radii) {
+     data.frame(
+          Name = names,
+          Radius = radii,
+          Diameter = 2 * radii,
+          Perimeter = 2 * pi * radii,
+          Surface = 4 * pi * radii^2,
+          Volume =  4/3 * pi * radii^3
+    )
+ }
+
+input <- list(
+    names = c("Merkur", "Venus", "Erde", "Mars"),
+    radii = c(2440, 6052, 6371, 3389)
+)
+planets <- setupPlanets(input$names, input$radii)
+print(planets)
+```
+
+Hier definiere ich eine Funktion und weise sie der Variablen `setupPlanets`
+mittels des `<-`-Operators zu.  Das speichern ganzer Funktionen in Variablen
+charakterisiert eine funktionale Programmiersprache. Eine solche Zuweisung
+erfolgt auch bei den Variablen `input` und `planets`, denen ein Liste bzw. ein
+Data-Frame zugewiesen wird.  Sowohl beim Data-Frame als auch bei der Liste
+werden die einzelnen benannten Elemente mittels `=` zugewiesen.
+
+#### Diskussion der Alternativen
+
+Es ist oft, aber eben nicht immer, technisch möglich Variablen mittels `=`
+statt mittels `<-` zuzuweisen. Weil das ein Zeichen weniger zu tippen ist und
+den Zuweisungen in vielen anderen Programmiersprachen entspricht, wird Dir das
+im Code vieler Leute begegnen. Um einen klaren, einheitlichen Programmierstil
+zu pflegen, solltest Du konsequent `<-` für die Zuweisung von Variablen
+benutzen.
+
+Die Zuweisung mittels `<--` ist möglich, aber für die Zuweisung an übergeordnete
+Sichtbarkeitsbereiche gedacht. Du musst wissen, was du tust. Dazu später.
+
+`->` macht genau dasselbe wie `<-`. Nicht dass Du denkst die Variable käme
+dann nach rechts. Es ist also nicht intuitiv verständlich.
+
+Analog ist `-->` dasselbe `<--` und nicht intuitive verständlich.
+
+Also:
+
+* `=` Ist nicht überall einsetzbar und nicht R-stylisch.
+* `->` Ist verwirrend.
+* `<--` Du solltest wissen was Du tust.
+* `-->` Ist verwirrent und Du solltest wissen, was Du tust.
+
+Darum: Variablenzuweisung mittels `<-` bevorzugen.
+
+### Namensräume
 
 Variablen können bereits Funktionen oder Daten enthalten, auch die aus
-den Basis-Paketen und die aus den Bibliotheken, die Du lädst. Du musst also
+den Basis-Paketen und die aus den Bibliotheken, die Du lädst.
+
+Du musst also
 aufpassen, dass Du keine Namen von Funktionen oder Daten überschreibst,
 jedenfalls nicht solche, die Du später noch verwenden willst.
+
+Tust Du es doch, dann kannst du die Variablen der Pakte aber immer noch über
+ihren Full Qualified Name ansprechen. Das kann einerseits lohnenswert sein, um
+einen sprechenden Variablennamen wie "data" frei einsetzen zu können,
+andererseits  kann es auch eingefleischte R-Benutzer verwirren, wenn der
+vertraute Name "zweckentfremdet" wird.
 
 ```{r}
 # Die Funktion print ist im Paket base
