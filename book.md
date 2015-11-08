@@ -332,6 +332,74 @@ print(x)
 ## [1] "Hallo Welt!"
 ```
 
+### Blöcke und Einrückungen
+
+Programmcode wird in Bereiche eingeteilt, die gezielt ausführbar sind. Ein
+solcher Bereich wird Block genannt und besteht aus mehreren Zeilen von
+Instruktionen. Beispiele solcher Blöcke sind Funktionen, Schleifen oder die
+unterschiedlichen Zweige von If-Else-Bedingungen. Daraus ergibt sich, dass die
+Blöcke verschachtelt auftreten, wenn z.B. eine Funktion eine Schleife enthält.
+
+
+```r
+# Ein Funktionsblock, der einen Schleifenblock enthält.
+show <- function() {
+    for(i in 1:3) {
+        print(i);
+    }
+}
+show()
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+```
+
+Wie werden solche Blöcke nun definiert?
+
+Drei Techniken sind bei Programmiersprachen verbreitet, erstens Schlüsselworte
+(Keywords), zweitens Einrückungstiefen (Indentation, Off-Side-Rule), drittens
+geschweifte Klammern. Keywords wurden bereits in den 1950er von ALGOL benutzt.
+Heute findest Du sie z.B. in Ruby und Bash. Off-Side-Rule wird u.a. verwendet
+von Python, YAML und CoffeScript und lässt sich bis ins Jahr 1966 zurück
+verfolgen. Die geschweiften Klammern wurden 1972 mit C eingeführt und haben
+heute eine weite Verbreitung so in C++, Java, C#, JavaScript, Perl oder Go.
+
+R verwendet geschweifte Klammern wie C. Gerade mit einer deutschen Tastatur
+sind diese Klammern lästig zu tippen und einrückem muss man den Code für die
+Lesbarkeit genau so wie bei der Off-Side-Rule. Es ist vor allem mehr Arbeit. Im
+Vergleich zur Off-Side-Rule sieht ein solcher Text viel technischer und damit
+schlechter lesbar aus.
+
+
+
+```r
+# Einrückungen dienen in R nur der Lesbarkeit. Das funktioniert genau so.
+show <- function() { for(i in 1:3) { print(i); } }; show();
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+```
+
+Warum verwendet R geschweifte Klammern und warum sind
+sie so weit verbreitet?
+
+Sicherlich hat C einen grossen normativen Einfluss ausgeübt, gerade in der Zeit
+als die Sprache entworfen wurde. Geschweifte Klammern sind im Vergleich zum
+Whitespace von Einrückungen leichter zu parsen. Fehler sind seltener. Gerade
+in grossen Projekten sind Fehler, die durch Einrückungsfehler entstehen,
+schwierig zu finden. Werden Sprachen gemischt wird es mit Einrückungen
+besonders schwierig.
+
+Fazit: Unterm Strich ist es etwas bedauerlich, dass R nicht wie Python Off-Side-Rule verwendet. Zu lang sind die Skripte eigentlich nicht.
+
+#### Blöcke sind Instruktionen
+
 ### Variablen
 
 Variablennamen folgen grundsätzlich den Mustern verbreiteter Sprachen.
@@ -544,73 +612,6 @@ print("Welt")
 ```
 ## [1] "Welt"
 ```
-
-### Blöcke und Einrückungen
-
-Programmcode wird in Bereiche eingeteilt, die gezielt ausführbar sind. Ein
-solcher Bereich wird Block genannt und besteht aus mehreren Zeilen von
-Instruktionen. Beispiele solcher Blöcke sind Funktionen, Schleifen oder die
-unterschiedlichen Zweige von If-Else-Bedingungen. Daraus ergibt sich, dass die
-Blöcke verschachtelt auftreten, wenn z.B. eine Funktion eine Schleife enthält.
-
-
-```r
-# Ein Funktionsblock, der einen Schleifenblock enthält.
-show <- function() {
-    for(i in 1:3) {
-        print(i);
-    }
-}
-show()
-```
-
-```
-## [1] 1
-## [1] 2
-## [1] 3
-```
-
-Wie werden solche Blöcke nun definiert?
-
-Drei Techniken sind bei Programmiersprachen verbreitet, erstens Schlüsselworte
-(Keywords), zweitens Einrückungstiefen (Indentation, Off-Side-Rule), drittens
-geschweifte Klammern. Keywords wurden bereits in den 1950er von ALGOL benutzt.
-Heute findest Du sie z.B. in Ruby und Bash. Off-Side-Rule wird u.a. verwendet
-von Python, YAML und CoffeScript und lässt sich bis ins Jahr 1966 zurück
-verfolgen. Die geschweiften Klammern wurden 1972 mit C eingeführt und haben
-heute eine weite Verbreitung so in C++, Java, C#, JavaScript, Perl oder Go.
-
-R verwendet geschweifte Klammern wie C. Gerade mit einer deutschen Tastatur
-sind diese Klammern lästig zu tippen und einrückem muss man den Code für die
-Lesbarkeit genau so wie bei der Off-Side-Rule. Es ist vor allem mehr Arbeit. Im
-Vergleich zur Off-Side-Rule sieht ein solcher Text viel technischer und damit
-schlechter lesbar aus.
-
-
-
-```r
-# Einrückungen dienen in R nur der Lesbarkeit. Das funktioniert genau so.
-show <- function() { for(i in 1:3) { print(i); } }; show();
-```
-
-```
-## [1] 1
-## [1] 2
-## [1] 3
-```
-
-Warum verwendet R geschweifte Klammern und warum sind
-sie so weit verbreitet?
-
-Sicherlich hat C einen grossen normativen Einfluss ausgeübt, gerade in der Zeit
-als die Sprache entworfen wurde. Geschweifte Klammern sind im Vergleich zum
-Whitespace von Einrückungen leichter zu parsen. Fehler sind seltener. Gerade
-in grossen Projekten sind Fehler, die durch Einrückungsfehler entstehen,
-schwierig zu finden. Werden Sprachen gemischt wird es mit Einrückungen
-besonders schwierig.
-
-Fazit: Es ist schade, dass R nicht wie Python Off-Side-Rule verwendet. Zu lang
-sind die Skripte eigentlich nicht.
 
 ### Coding Guidelines
 
