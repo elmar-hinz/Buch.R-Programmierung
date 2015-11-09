@@ -488,19 +488,42 @@ Programmausführung, mit weiteren nützlichen Werkzeugen.</p>
 <h3>Kommentare</h3>
 
 <p>Kommentare werden in R wie in Bash, Python oder Perl mit einer Raute
-eingeleitet.</p>
+eingeleitet. Kommentare dienen der Dokumentation. Die Zeilen werden
+nicht ausgeführt.</p>
 
 <pre><code class="r"># Dies ist ein Kommentar.
 
-##################################################
-# Dies ist ein Kommentar
-# über mehrere Zeilen.
-##################################################
+################################################################################
+# Dies ist ein Kommentar über mehrere Zeilen. Die Rahmenbalken sind 80 Zeichen
+# lang. Sie werden auch mit einer Raute eingeleitet und sind daher einfach
+# ein Kommentar.
+################################################################################
 
-print(&quot;Hallo Welt!&quot;) # Der Kommentar kann auch dahinter stehen.
+# Ein mehrzeiliger Kommentar muss natürlich nicht immer solche Rahmenbalken
+# haben. Ein solcher Rahmen eigent sich gut für das Copyright im Seitenkopf
+# einer Datai oder als Kopf über einer Funktionsdefinition. Auch um wichtige
+# Hinweise zu betonen, ist ein Rahmen geeignet.
+
+print(&quot;Hallo Welt!&quot;) # Der Kommentar kann auch hinter einer Instruktion stehen.
 </code></pre>
 
 <pre><code>## [1] &quot;Hallo Welt!&quot;
+</code></pre>
+
+<p>Eine Raute innerhalb eines Strings ist kein Kommentar.</p>
+
+<pre><code class="r">print(&quot;Das Zeichen # ist hier Bestandteil des Strings.&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Das Zeichen # ist hier Bestandteil des Strings.&quot;
+</code></pre>
+
+<p>Schreibt die Raute dagegen vor eine Instruktion, so wird die Instruktion selbst
+zum Kommentar und damit nicht mehr ausgeführt. Das ist ein gängiges Mittel, um
+Bereiche im Programmcode vorrübergehend auszuschalten. Man nennt es
+Auskommentieren.</p>
+
+<pre><code class="r"># print(&quot;Dies wird nicht ausgegeben.&quot;)
 </code></pre>
 
 <h3>Instruktionen</h3>
@@ -560,7 +583,9 @@ Lesbarkeit genau so wie bei der Off-Side-Rule. Es ist vor allem mehr Arbeit. Im
 Vergleich zur Off-Side-Rule sieht ein solcher Text viel technischer und damit
 schlechter lesbar aus.</p>
 
-<pre><code class="r"># Einrückungen dienen in R nur der Lesbarkeit. Das funktioniert genau so.
+<pre><code class="r"># Nicht hübsch, aber lauffähig.
+# Die geschweiften Klammern begrenzen die Code-Blöcke.
+# Einrückungen dienen in R allein der besseren Lesbarkeit.
 show &lt;- function() { for(i in 1:3) { print(i); } }; show();
 </code></pre>
 
@@ -594,12 +619,12 @@ besonders schwierig.</p>
 <li>Reservierte Worte dürfen nicht verwendet werden.</li>
 </ul>
 
-<p>Reservierte Worte sind kein Ding. Du erkennst das automatisch an der
+<p>Reservierte Worte sind kein Thema. Du erkennst Konflikte automatisch an der
 Fehlermeldung.</p>
 
-<p>Das überraschende ist der Punkt als gültiger Bestandteil von Variablennamen. In
+<p>Das Überraschende ist der Punkt als gültiger Bestandteil von Variablennamen. In
 anderen Sprachen werden damit Elemente eines Objektes angesprochen. Das
-geschieht in R mittels des Dollarzeichens.</p>
+geschieht in R dagegen ziemlich eigentümlich mittels des Dollarzeichens.</p>
 
 <pre><code class="r">a &lt;- list(&quot;alpha&quot; = 1, &quot;beta&quot; = 2) # Variable a befüllt mit einer Liste.
 a.dot &lt;- &quot;Punkt&quot; # Eine unabhängige Variable, die nur aussieht wie Teil von a.
@@ -644,7 +669,7 @@ Namen in Listen und Data-Frames mit dem Gleichheitszeichen <code>=</code> erfolg
 
 <p>Dieses Beispiel zeigt die Anwendung von <code>&lt;-</code> und <code>=</code>.</p>
 
-<pre><code class="r">##################################################
+<pre><code class="r">################################################################################
 # Create a dataframe with calculated planet data.
 #
 # @param names Characters of names.

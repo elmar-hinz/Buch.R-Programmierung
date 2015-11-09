@@ -289,22 +289,50 @@ Programmausführung, mit weiteren nützlichen Werkzeugen.
 ### Kommentare
 
 Kommentare werden in R wie in Bash, Python oder Perl mit einer Raute
-eingeleitet.
+eingeleitet. Kommentare dienen der Dokumentation. Die Zeilen werden
+nicht ausgeführt.
 
 
 ```r
 # Dies ist ein Kommentar.
 
-##################################################
-# Dies ist ein Kommentar
-# über mehrere Zeilen.
-##################################################
+################################################################################
+# Dies ist ein Kommentar über mehrere Zeilen. Die Rahmenbalken sind 80 Zeichen
+# lang. Sie werden auch mit einer Raute eingeleitet und sind daher einfach
+# ein Kommentar.
+################################################################################
 
-print("Hallo Welt!") # Der Kommentar kann auch dahinter stehen.
+# Ein mehrzeiliger Kommentar muss natürlich nicht immer solche Rahmenbalken
+# haben. Ein solcher Rahmen eigent sich gut für das Copyright im Seitenkopf
+# einer Datai oder als Kopf über einer Funktionsdefinition. Auch um wichtige
+# Hinweise zu betonen, ist ein Rahmen geeignet.
+
+print("Hallo Welt!") # Der Kommentar kann auch hinter einer Instruktion stehen.
 ```
 
 ```
 ## [1] "Hallo Welt!"
+```
+
+Eine Raute innerhalb eines Strings ist kein Kommentar.
+
+
+```r
+print("Das Zeichen # ist hier Bestandteil des Strings.")
+```
+
+```
+## [1] "Das Zeichen # ist hier Bestandteil des Strings."
+```
+
+Schreibt die Raute dagegen vor eine Instruktion, so wird die Instruktion selbst
+zum Kommentar und damit nicht mehr ausgeführt. Das ist ein gängiges Mittel, um
+Bereiche im Programmcode vorrübergehend auszuschalten. Man nennt es
+Auskommentieren.
+
+
+```r
+# print("Dies wird nicht ausgegeben.")
 ```
 
 ### Instruktionen
@@ -376,7 +404,9 @@ schlechter lesbar aus.
 
 
 ```r
-# Einrückungen dienen in R nur der Lesbarkeit. Das funktioniert genau so.
+# Nicht hübsch, aber lauffähig.
+# Die geschweiften Klammern begrenzen die Code-Blöcke.
+# Einrückungen dienen in R allein der besseren Lesbarkeit.
 show <- function() { for(i in 1:3) { print(i); } }; show();
 ```
 
@@ -409,12 +439,12 @@ Variablennamen folgen grundsätzlich den Mustern verbreiteter Sprachen.
 * Nach einem anführenden Punkt darf keine Ziffer folgen (falsch: .2x).
 * Reservierte Worte dürfen nicht verwendet werden.
 
-Reservierte Worte sind kein Ding. Du erkennst das automatisch an der
+Reservierte Worte sind kein Thema. Du erkennst Konflikte automatisch an der
 Fehlermeldung.
 
-Das überraschende ist der Punkt als gültiger Bestandteil von Variablennamen. In
+Das Überraschende ist der Punkt als gültiger Bestandteil von Variablennamen. In
 anderen Sprachen werden damit Elemente eines Objektes angesprochen. Das
-geschieht in R mittels des Dollarzeichens.
+geschieht in R dagegen ziemlich eigentümlich mittels des Dollarzeichens.
 
 
 ```r
@@ -470,7 +500,7 @@ Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
 
 
 ```r
-##################################################
+################################################################################
 # Create a dataframe with calculated planet data.
 #
 # @param names Characters of names.
