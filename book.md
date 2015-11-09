@@ -792,6 +792,58 @@ anderen Sprachen verwendet werden. Dazu später.
 
 ### Vektoren
 
+Vektoren, wie klingt das für Dich? Spannend, abschreckend, kompliziert,
+wissenschftlich oder nach gymnasialer Oberstufe? Wie auch immer, es ist das
+Feature in R, welches Du ziemlich bald in anderen Programmiersprachen vermissen
+wirst, falls Du mit anderen Sprachen arbeitest.
+
+Warum? So wissenschaftlich der Begriff auch klingen mag, er entspricht ziemlich
+ganau dem, wie wir natürlicherweise über Dinge denken und wie wir über den
+Umgang mit Dingen denken, fast möchte ich sagen er ist quasi neuronal.
+
+Nehmen wir an Du willst eine Party feiern und hast eine Liste mit Leuten im
+Kopf, die Du einladen willst. Da sagst dann "**Jeder** bekommt eine Einladung. Für
+**jeden** muss ich etwa 3 Flaschen Bier besorgen oder besser vier, usw.". In Deiner
+Sprache und Deinen Gedanken kommen dabei keine Schleifen vor, wie Du das
+organisiert. Du stellst Dir vor, wie Du das für eine Person tust und sagst
+einfach **jeder**.
+
+Genauso vereinfachen Vektoren die Programmierung. Du beschreibst die Lösung wie
+für ein einzelnes Element, aber reichst gleich die ganze Liste hin, **jedes**
+Element auf der Liste. Der Vektor ist also eine Auflistung gleichartiger
+Elemente, die alle gleich verarbeitet werden, ohne dass Du zuerste eine Schleife
+programmierst, um das einzelne Element verarbeiten zu können, wie in anderen
+Sprachen.
+
+Du sparst damit in R eine Menge Schleifenprogrammierung ein, ich schätze im
+Vergleich bis 60%, je nachdem, was der Code tut. Der Code sieht damit viel
+weniger technisch aus, sondern viel mehr wie gesprochene Sprache. Reden wir gar
+nicht von der Zeit und der Suche nach Schleifenfehlern.
+
+Wie ist das möglich? Erinnere Dich an die Oberstufe. Der Vektor packt eine
+kleine Liste von Elementen zusammen, die alle gemeinsam verarbeitet werden
+und zwar jedes in der gleichen Weise.
+
+Der Vektor ist die kleinste Recheneinheit in R. Er hat null, eins oder merhrere
+Elemente, aber Du kannst sie nicht aus dem Vektor nehmen. Wenn Du ein Element
+aus dem Vektor nimmst, dann erhältst Du nämlich wieder einen Vektor und zwar
+einfach einen mit der Länge eins.
+
+Wenn Du einen Vektor mit sieben multiplizierst, dann wird jedes Element im
+Vektor mit sieben multiplziert und das Ergebnis ist ein neuer Vektor. Wenn Du
+jedes Element mit einem eigenen Wert multiplizieren willst, dann nimmst Du
+einen zweiten Vektor, der diese Werte enthält. Du multiplziert beide Vektoren
+und brauchst immer noch keine Schleife.
+
+So praktisch dieser Ansatz auch ist, er funktioniert in R nur, aber immerhin,
+sinnvoll für elementare, einheitliche Datentypen. Jedenfalls ist er nur dafür
+implementiert. In der Datenwissenschaft verarbeiten wir typischerweise
+Tabellen, in denen jede Spalte genau so eine einheitliche Liste elementater
+Typen darstellt. Deswegen ist dieser Ansatz in der Datenwissenschaft ungeheuer
+produktiv. Es wäre interessant zu überlegen, wie weit er sich auch auf
+komplexere Objekte ausdehnen liesse. Könnten wir dann weitgehend auf Schleifen
+verzichten?
+
 ### NA und NAN
 
 ### Wahr und falsch
