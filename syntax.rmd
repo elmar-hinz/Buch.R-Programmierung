@@ -230,3 +230,141 @@ print("Welt")
 
 ### Coding Guidelines
 
+Es gibt keine verbindlichen Coding Guidlines für R, was sicherlich auch mit
+dem freien Geist der Wissenschaft zusammenhängt. Gerade im Hinblick auf die
+wachsenden Ansprüche an die Reproduzierbarkeit von Studien, werden Standards
+aber auch hier wichtiger. Darum möchte ich ein paar Empfehlungen aussprechen,
+die sich aus anderen Bereichen herleiten lassen.
+
+Klarheit, Einheitlichkeit und Dokumentation sind Elemente, die Du in Deinem
+Programmcode anstreben solltest. Klarheit und Einheitlichkeit helfen Dir und
+anderen, sich schnell und einfach in Deinem Code zu orientieren. Dokumentation
+hilft, die Gedanken nachzuvollziehen, die zu Deinen Programmlösungen führen.
+Alles das hilft auch Bugs zu vermeiden, zu finden und zu fixen.
+
+Unter Dokumentation verstehe ich zuerst die Wahl sprechender Namen für Deine
+Variablen, zu allererst die der Funktionsnamen. Je mehr Dein Programmcode der
+gesprochenen Sprache nahe kommt, desto weniger musst Du in zusätlichen
+Kommentaren erklären. Kryptischer Programmcode ist kein Zeichen einer
+überlegenen Intelligenz, wie in den Kinofilmen gezeigt, sondern von
+suboptimalen Bezeichnern. Desto einfacher andere Deinen Code nachvollziehen
+können, desto besser ist Deine Arbeit und desto weniger Fehler wird er
+enthalten.
+
+Es ist eine gute Idee, einheitlich englische Bezeichner zu verwenden. Erstens
+hast Du dann niemals Probleme mit Umlauten, zweitens sind englische Bezeichner
+fast immer kürzer als deutsche und drittens arbeitest Du heute zuhnemend in
+internationalen Teams. Wenn Du aber deutsche Bezeichner benutzen willst, dann
+solltest Du auch darin möglichst konsequent sein.
+
+Auch wenn Dozenten Variablen wie x, y, z benutzen, sollte so etwas nicht in
+Deinem Code vorkommen, sondern ganze Worte. Wichtig ist, dass Du die
+Autovervollständigung Deines Editors kennen lernst, damit Du nicht jedes
+Zeichen einzeln tippen musst. Das spart Zeit und Tippfehler.
+
+Sprechende Bezeichner bestehen oft aus zwei oder noch mehr Worteilen. Darum ist
+es wichtig, wie Du Diese zusammenfügst. Für eine gute Lesbarkeit haben sich
+CamelCase oder die Benutzung des Unterstriches bewährt. Bei drei Wortteilen
+spart CamelCase im Vergleich zwei Unterstriche an Zeilenlänge. Da Deine Zeilen
+80 Zeichen im Regelfall nicht überschreiten sollten, halte ich CamelCase für
+vorteilhafter.
+
+```{r eval=FALSE}
+################################################################################
+# Diese Kommentarbalken sind 80 Zeichen lang.
+################################################################################
+
+speakingWordExample = "kürzer" # CamelCase, sehr gut.
+speaking_word_example = "länger" # Unterstrich, auch gut.
+speakingwordexample = "schwer lesbar" # mangelhaft
+nswe = "Aküfi" # So sprichst Du hoffentlich nicht den ganzen Tag.
+s = "wie in Mathe" # Jetzt versteht Dich nur noch der Prozessor.
+```
+
+80 Zeichen sind ein allgemeiner Richtwert, wie lang Programmzeilen sein
+sollten. Damit kannst Du auf einem normalen Monitor gut zwei Dateien
+nebeneinader öffnen inklusive Zeilennummern. Wenn Du professionell arbeitest,
+ist ein solcher Split-View eher die Regel als die Ausnahme, besonders dann,
+wenn Du Code und Tests side-by-side erstellst. Diese Breite ist auch im
+Hinblick auf eine einfache Fokussierbarkeit des Textes wichtig. Bei längeren
+Zeilen wird es anstrengend, beim Lesen in der richtigen Zeile zu bleiben.
+
+Den Programmcode solltest Du entsprechend seiner Blocktiefe einrücken. Ob du
+das mittels Leerzeichen oder Tabs tust, ist Geschmacksache. Beides hat vor und
+Nachteile. Wichtig ist, dass Dein Team und Du hier eine einheitliche Richtlinie
+festlegen, weil beides durcheinander schlecht funktioniert.
+
+Der verbreitetste Standard bei den Einrückungen sind 8 Zeichen. Bei vier Ebenen
+sind dann aber schon 32 von 80 Zeichen damit verbraucht. Wenn Du zuammengestzte
+Worte als Bezeichner verwendest, bist schnell am Ende der Zeile. Was tun?
+
+1. Gute Bezeichner sind wichtiger als tiefe Einrückungen. Ich halte darum vier
+   Zeichen bei den Einrückungen für sinnvoller.
+2. Verschachtelungen von 4 Tiefen sind in der Regel ein Zeichen von zu langen
+   und komplexen Funktionen. Meist kannst Du dann ganze Code-Blöcke in eigene
+   Funktionen auslagern und erhälst damit ein besseres Ergebnis. Funktionen
+   sollten selten länger als zwanzig Zeilen sein.
+3. Wenn der Platz nicht ausreicht, dann brich die Zeile um und rücke die zweite
+   Zeile noch einmal eine Ebene ein. Du kannst in R aber nicht an beliebigen
+   Stellen umbrechen, weil das Zeilenende als Semicolon fehlinterpretiert
+   werden kann. So lange Du innerhalb einer geöffneten Klammer umbrichst, z.B.
+   innerhalb der Funktionsparameter, erkennt R, dass hier kein Instruktionsende
+   sein kann. Probiere einfach etwas herum, bis Du das routiniert meisterst.
+
+Auch wenn Du konsequent ganze Worte als Variablennamen verwendest, solltest Du
+immer noch Kommentare schreiben. Kommentare innerhalb von Funktionen sollten
+dann aber so gut wie überflüssig werden. Oberhalb von Funktionen sollte ein
+einheitlich formatierter Kommentar stehen, der in der Regel 4 Angaben macht:
+
+1. Titel der Funktion
+2. Beschreibung, was die Funktion tut (kann bei Banalitäten fehlen).
+3. Beschreibung jedes einzelnen Parameters.
+4. Rückgabewert der Funktion.
+
+```{r eval=FALSE}
+################################################################################
+# Do nothing
+#
+# This function does nothing. It just exists,
+# that you have something to call.
+#
+# @param Integer Defaults to 43.
+# @param ...     Eats up any additional parameters that you feed into.
+# @return NULL
+##
+doNothing <- function(dummy = 1, ...) {
+    NULL
+}
+```
+
+Dein Code sieht aufgeräumt aus, wenn du wie in diesem Beispiel einen
+einheitlichen Rahmen um den Funktionskommentar zeichnest. Ich wähle auch hier
+eine Länge von 80 Zeichen, um dem Leser eine Fokussionshilfe zu geben.
+
+In R sind Funktionen, die in Variablen gespeicherst sind, zwar auch Objekte, In
+dem Moment, in dem die sie aufrufst, werden sie aber akitiv. Sie sind die
+Verben deines Programmcodes. Darum solltest Du sie auch immer mit Verben
+bennen. Der Standard ist, dazu den Imperativ zu verwenden, so wie im
+vorstehenden Beispiel `doNothing()`. Andere Beispiele wären `getName()`,
+`setName()`, `createTable()`, `translateToSomeThing()`, `format()`,
+`showResult()`.
+
+Eine Ausnahme sind Funktionen, die `TRUE` oder `FALSE` zurück geben. Sie
+werden am besten wie Fragen formuliert, so dass sie in `if`-Verzweigungen oder
+`while`-Schleifen sprachlich Sinn ergeben.
+
+```{r eval=FALSE}
+if(isChild(person)) {
+    print("Kein Zugang")
+}
+
+while(hasMoreElements(iterator)) {
+    print(getNextElement(iterator))
+}
+```
+
+Das Beispiel `doNothing()` zeigt auch, dass der erste Buchstabe immer klein
+sein sollte, auch bei CamelCase. Das gilt sowohl für Werte als auch für
+Funktionen. Eine sinnvolle Ausnahme sind Funktionen, die wie Klassen in
+anderen Sprachen verwendet werden. Dazu später.
+
