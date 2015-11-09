@@ -332,7 +332,7 @@ einheitlich formatierter Kommentar stehen, der in der Regel 4 Angaben macht:
 # @param ...     Eats up any additional parameters that you feed into.
 # @return NULL
 ##
-doNothing <- function(dummy = 1, ...) {
+doNothing <- function(dummy = 43, ...) {
     NULL
 }
 ```

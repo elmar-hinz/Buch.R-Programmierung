@@ -223,7 +223,7 @@ als "Practical Extraction and Report Language". Perl hat diese Nische
 unerwartet verlassen und wurde die erste Sprache der Internet Programmierung.
 In der Folge wurde es auf beiden Gebieten abgelöst, u.a wegen seiner Grenzen
 bei der Objektorientieren Programmierung und der zu langsamen Erneuerung der
-Sprache, aber vielleicht auch wegen dem Verlust seiner Spezialisierung. Wir
+Sprache, aber vielleicht auch wegen des Verlustes seiner Spezialisierung. Wir
 finden Parallelen in R, sowohl bei den Chancen als auch bei den Risiken. Die
 Unterstützung durch Industrie und Wissenschaft ist aber viel umfassender als in
 der Geschichte von Perl.
@@ -719,7 +719,7 @@ einheitlich formatierter Kommentar stehen, der in der Regel 4 Angaben macht:
 # @param ...     Eats up any additional parameters that you feed into.
 # @return NULL
 ##
-doNothing <- function(dummy = 1, ...) {
+doNothing <- function(dummy = 43, ...) {
     NULL
 }
 ```
