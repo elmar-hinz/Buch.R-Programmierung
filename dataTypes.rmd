@@ -217,6 +217,8 @@ vertreten ist, wird als Kombinationstyp gewählt.
 **Aufgabe**: Was erwartest Du als Ergebnis von `c(TRUE, 3i)`, `c(as.raw(15), TRUE)`
 und `c(as.raw(0), "Hallo")`? Teste es.
 
+**Dokumentation**: `?c`
+
 ##### Sequenzen
 
 ##### Teilmengen von Vektoren

@@ -487,8 +487,12 @@ print(a$dot) # Dieses gibt es dagegen nicht.
 
 **Tip**: Wenn Du Verwirrungen mit anderen Sprachen minimieren willst,
 verwendest Du den Punkt als Worttrenner nicht. Er ist eher eine Erblast als ein
-Feature oder besonders R-stylisch. Die besseren Alternativen sind
-*unter_strich* oder *CamelCase*.
+Feature. Die besseren Alternativen sind *unter_strich* oder *CamelCase*.
+
+Der Punkt als Namensbestandteil, wird Dir aber gerade in den fundamentalen und
+daher besonders alten Funktionen und Parametern begegnen, das heist häufig.
+Häufiges Sehen verleitet dazu, es zu kopieren. Ich betrachte es dagegen als
+Chance meine Funktionen von den internen zu unterscheiden.
 
 ### Zuweisungen
 
@@ -1159,6 +1163,8 @@ vertreten ist, wird als Kombinationstyp gewählt.
 
 **Aufgabe**: Was erwartest Du als Ergebnis von `c(TRUE, 3i)`, `c(as.raw(15), TRUE)`
 und `c(as.raw(0), "Hallo")`? Teste es.
+
+**Dokumentation**: `?c`
 
 ##### Sequenzen
 
