@@ -348,7 +348,7 @@ x <- "Hallo Welt!"; print(x);
 ## [1] "Hallo Welt!"
 ```
 
-Am Zeilenende können diese ausgelassen werden.
+Am Zeilenende können diese ausgelassen werden. Das ist die Regel.
 
 
 ```r
@@ -792,26 +792,28 @@ anderen Sprachen verwendet werden. Dazu später.
 
 ### Vektoren
 
+#### Wozu Vektoren?
+
 Vektoren, wie klingt das für Dich? Spannend, abschreckend, kompliziert,
 wissenschftlich oder nach gymnasialer Oberstufe? Wie auch immer, es ist das
 Feature in R, welches Du ziemlich bald in anderen Programmiersprachen vermissen
 wirst, falls Du mit anderen Sprachen arbeitest.
 
-Warum? So wissenschaftlich der Begriff auch klingen mag, er entspricht ziemlich
-ganau dem, wie wir natürlicherweise über Dinge denken und wie wir über den
-Umgang mit Dingen denken, fast möchte ich sagen er ist quasi neuronal.
+Warum? So wissenschaftlich der Begriff auch klingen mag, der Vektor entspricht
+ziemlich ganau dem, wie wir natürlicherweise über Dinge denken und wie wir über
+den Umgang mit Dingen denken. Fast möchte ich sagen, er sei quasi neuronal.
 
-Nehmen wir an Du willst eine Party feiern und hast eine Liste mit Leuten im
-Kopf, die Du einladen willst. Da sagst dann "**Jeder** bekommt eine Einladung. Für
-**jeden** muss ich etwa 3 Flaschen Bier besorgen oder besser vier, usw.". In Deiner
-Sprache und Deinen Gedanken kommen dabei keine Schleifen vor, wie Du das
-organisiert. Du stellst Dir vor, wie Du das für eine Person tust und sagst
+Nehmen wir an, Du willst eine Party feiern, und hast eine Liste mit Leuten im
+Kopf, die Du einladen willst. Da sagst dann, "**Jeder** bekommt eine Einladung.
+Für **jeden** muss ich etwa 3 Flaschen Bier besorgen oder besser vier, usw.".
+In Deiner Sprache und Deinen Gedanken kommen dabei keine Schleifen vor, wie Du
+das organisiert. Du stellst Dir vor, wie Du das für eine Person tust und sagst
 einfach **jeder**.
 
 Genauso vereinfachen Vektoren die Programmierung. Du beschreibst die Lösung wie
 für ein einzelnes Element, aber reichst gleich die ganze Liste hin, **jedes**
 Element auf der Liste. Der Vektor ist also eine Auflistung gleichartiger
-Elemente, die alle gleich verarbeitet werden, ohne dass Du zuerste eine Schleife
+Elemente, die alle gleich verarbeitet werden, ohne dass Du zuerst eine Schleife
 programmierst, um das einzelne Element verarbeiten zu können, wie in anderen
 Sprachen.
 
@@ -824,10 +826,40 @@ Wie ist das möglich? Erinnere Dich an die Oberstufe. Der Vektor packt eine
 kleine Liste von Elementen zusammen, die alle gemeinsam verarbeitet werden
 und zwar jedes in der gleichen Weise.
 
-Der Vektor ist die kleinste Recheneinheit in R. Er hat null, eins oder merhrere
+Der Vektor ist die kleinste Recheneinheit in R. Er hat eins oder merhrere
 Elemente, aber Du kannst sie nicht aus dem Vektor nehmen. Wenn Du ein Element
 aus dem Vektor nimmst, dann erhältst Du nämlich wieder einen Vektor und zwar
-einfach einen mit der Länge eins.
+einen mit der Länge eins.
+
+
+```r
+lengthThreeVector <- c(1, 3, 5)
+print(lengthThreeVector)
+```
+
+```
+## [1] 1 3 5
+```
+
+```r
+# Das Einzelelement aus Position 2 genommen ist auch wieder ein Vektor.
+positionTwoVector <- lengthThreeVector[2]
+is.vector(positionTwoVector) # Notiz: Der Punkt im Namen ist eher historisch als vorbildlich.
+```
+
+```
+## [1] TRUE
+```
+
+```r
+# Sogar dieses Ergebnis TRUE ist ein Vektor der Länge eins.
+
+print(positionTwoVector)
+```
+
+```
+## [1] 3
+```
 
 Wenn Du einen Vektor mit sieben multiplizierst, dann wird jedes Element im
 Vektor mit sieben multiplziert und das Ergebnis ist ein neuer Vektor. Wenn Du
@@ -835,14 +867,304 @@ jedes Element mit einem eigenen Wert multiplizieren willst, dann nimmst Du
 einen zweiten Vektor, der diese Werte enthält. Du multiplziert beide Vektoren
 und brauchst immer noch keine Schleife.
 
+
+```r
+c(2, 3) * 7
+```
+
+```
+## [1] 14 21
+```
+
+```r
+c(2, 3) * c(3, 4)
+```
+
+```
+## [1]  6 12
+```
+
 So praktisch dieser Ansatz auch ist, er funktioniert in R nur, aber immerhin,
 sinnvoll für elementare, einheitliche Datentypen. Jedenfalls ist er nur dafür
 implementiert. In der Datenwissenschaft verarbeiten wir typischerweise
-Tabellen, in denen jede Spalte genau so eine einheitliche Liste elementater
+Tabellen, in denen jede Spalte genau so eine einheitliche Liste elementarer
 Typen darstellt. Deswegen ist dieser Ansatz in der Datenwissenschaft ungeheuer
 produktiv. Es wäre interessant zu überlegen, wie weit er sich auch auf
 komplexere Objekte ausdehnen liesse. Könnten wir dann weitgehend auf Schleifen
 verzichten?
+
+Ein verwandtes Verfahren Schleifen für komplexere Objekte zu vermeiden,
+beinhaltet die Familie der Map-Funktionen, wenn auch nicht ganz so einfach
+in der Anwendung wie Vektoren. Dazu ein eigenes Kapitel.
+
+Hast Du schon einmal mit SQL gearbeitet? Dann werden Dir Parallelen auffallen.
+Auch in SQL formulierst Du eine Instruktion so, als hättest Du es mit einem
+einzelnen Datensatz zu tun. Dann wird die Instruktion auf alle Datensätze
+angewendet. Dabei entspricht jede Spalte der Datenbank einem Vector.
+
+> One observation I would make is that with vectorisation and
+> subsetting, a lot of operations in R are more like SQL operations on
+> databases than linear programming. If people can wrap their heads around
+> that concept it often helps them he a good feel for why things are done
+> in the way that they are.
+>
+> [David Hood on Coursera](https://class.coursera.org/repdata-034/forum/thread?thread_id=26)
+
+#### Atomare Vektortypen
+
+Atomare Vektoren erfüllen die Funktionen von skalaren Typen in anderen
+Sprachen, aber mit den Features eines Vektors angereichert. R kennt diese
+atomaren Vektortypen:
+
+* logical
+* integer
+* double (Synonym "numeric")
+* complex
+* charakter
+* raw
+
+Literale Schreibweisen skalarer Typen erzeugen einen Vektor der Länge eins.
+
+
+```r
+length(FALSE)
+```
+
+```
+## [1] 1
+```
+
+```r
+is.vector(FALSE) # logical
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is.vector(7L) # integer
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is.vector(7.1) # double
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is.vector(7) # double !!!
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is.vector(3i) # complex
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is.vector("Hallo") # character
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is.vector(as.raw(15)) # raw, keine literale Schreibweise
+```
+
+```
+## [1] TRUE
+```
+
+Bei den literalen Schreibweisen musst Du also besonders beachten, dass auch die
+einfache Schreibweise eines Integers `7` einen Vektor vom Typ *double* erzeugt.
+Um einen Integer-Vektor zu erzwingen, stellst Du ein grosses **L** dahinter
+`7L`.
+
+**Aufgabe**: Schreibe für jeden der atomaren Vektortypen einen eigenen Wert und
+teste ihn auf seinen Typ mit der Funktion `typeof()`, ob Du es richtig gemacht
+hast.
+
+Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Du würdest
+Dir vermutlich das Wording *integer* und *float* wünschen. Das ist aber leider
+nicht die Terminologie von R. Prüfen wir, wie beide offiziell heissen:
+
+
+```r
+typeof(7L)
+```
+
+```
+## [1] "integer"
+```
+
+```r
+typeof(7)
+```
+
+```
+## [1] "double"
+```
+
+```r
+class(7L)
+```
+
+```
+## [1] "integer"
+```
+
+```r
+class(7)
+```
+
+```
+## [1] "numeric"
+```
+Das ist nicht gereade konsistent und sicherlich ein Hinweis auf die
+Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller
+und damit vermutlich jünger?
+
+**Aufgabe**: Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
+`is.double()` und `is.numeric()`. Stimmt das Ergebnis mit deinen Erwartungen
+überein?
+
+Der Vektortyp *raw* enthält binäre Daten und wird nicht literal eingegeben. Du
+wirst ihn wohl eher selten verwenden. Angezeigt wird er als hexadezimaler Wert.
+
+
+```r
+as.raw(15)
+```
+
+```
+## [1] 0f
+```
+
+Die verwandte hexadezimale literale Eingabe erzeugt dagegen keinen Vektor vom
+Typ *raw*, sondern einen Vektor vom Typ *double*.
+
+
+```r
+typeof(0x0f)
+```
+
+```
+## [1] "double"
+```
+
+##### Die Funktion Combine `c()`
+
+Soweit haben wir uns jetzt  mit atomaren Vektoren der Länge eins beschäftigt
+und bis hierher sehen sie einfach aus wie skalare Typen. Nützlich wird die
+Natur des Vektors erst, wenn er länger als eins wird, wie in dieser Addition
+die jedes Element um eins erhöht.
+
+
+```r
+c(1, 2, 3) + 1
+```
+
+```
+## [1] 2 3 4
+```
+
+Wir wissen bereits, dass hier jeder Parameter ein atomarer Vektor der Länge
+eins ist und auch die Kombination ist wieder ein Vektor.
+
+
+```r
+is.vector(c(1, 2, 3))
+```
+
+```
+## [1] TRUE
+```
+
+Offensichtlich fügt die Funktion `c()` die Parameter zu einem längeren Vektor
+zusammen.  Prüfen wir das.
+
+
+```r
+length(c(3, 2, 1))
+```
+
+```
+## [1] 3
+```
+
+Wenn `c()` Vektoren der Länge eins zusammenfügt, kann es dann auch längere
+Vektoren zusammen fügen? Natürlich! Es lässt sich beliebig verschachteln.
+
+
+```r
+c(c(1, 2), c(1, 2, c(3)), 4)
+```
+
+```
+## [1] 1 2 1 2 3 4
+```
+
+```r
+identical(c(1, 2, 1, 2, 3, 4), c(c(1, 2), c(1, 2, c(3)), 4))
+```
+
+```
+## [1] TRUE
+```
+
+Dabei wird die Gesamtreihenfolge nicht verändert. Wir sehen hier auch, dass
+derselbe skalare Wert mehrfach in einem Vektor enthalten sein kann.
+
+Was aber passiert, wenn wir unterschiedliche Typen zusammenfügen wollen?
+
+
+```r
+c("eins", 2)
+```
+
+```
+## [1] "eins" "2"
+```
+
+Hättest Du eine Fehlermeldung erwartet? Die Funktion formt die übergebenen
+Parameter sozusagen auf den kleinsten gemeinsamen Nenner um. Dieser ist hier
+*character*.
+
+Jeder Wert lässt ich im Zweifel in *character* umformen. Der Typ *character*
+ist also die unterste Stufe dieser Hierarchie. Ganz oben steht *raw*. Der
+niedrigste Datentyp in der folgenden Liste, der in den Paramtern von `c()`
+vertreten ist, wird als Kombinationstyp gewählt.
+
+* raw
+* logical
+* integer
+* double (Synonym "numeric")
+* complex
+* charakter
+
+**Aufgabe**: Was erwartest Du als Ergebnis von `c(TRUE, 3i)`, `c(as.raw(15), TRUE)`
+und `c(as.raw(0), "Hallo")`? Teste es.
+
+##### Sequenzen
+
+##### Teilmengen von Vektoren
+
+#### Listen
 
 ### NA und NAN
 

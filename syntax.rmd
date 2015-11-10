@@ -47,7 +47,7 @@ Instruktionen werden wie in C mittels Semicolon getrennt.
 x <- "Hallo Welt!"; print(x);
 ```
 
-Am Zeilenende können diese ausgelassen werden.
+Am Zeilenende können diese ausgelassen werden. Das ist die Regel.
 
 ```{r}
 x <- "Hallo Welt!"
