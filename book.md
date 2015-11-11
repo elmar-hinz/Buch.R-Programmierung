@@ -1528,6 +1528,10 @@ Tabellenspalten in SQL hinweisen.
 SELECT numbers FROM table WHERE numbers %% 2 > 0
 ```
 
+**Aufgabe**: Mische die Zahlen von 1 bis 100 `numbers <- sample(100)`. Benutze
+einen logischen Vektor, um alle Zahlen heraus zu ziehen, die grösser als 50
+sind, wobei die Zufallsreihenfolge erhalten bleiben soll.
+
 #### Listen
 
 ### NA und NAN
