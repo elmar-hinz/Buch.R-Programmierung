@@ -1442,6 +1442,92 @@ dabei, dass sich beim Löschen der Index verkürzt.
 
 **Dokumentation**: `?"["`
 
+##### Vektorelemente mit logischen Vektoren selektieren
+
+Du hast Vektorelemente im vorigen Abschnitt über ihren Index selektiert, als
+Positivauswahl oder als Negativauswahl. Eine Alternative dazu ist die Auswahl
+mittels logischer Vektoren. Vergleiche die beiden folgenden Methoden.
+
+
+```r
+planets <- c("Merkur", "Venus", "Erde", "Mars")
+planets[c(2, 4)]
+```
+
+```
+## [1] "Venus" "Mars"
+```
+
+```r
+planets[c(FALSE, TRUE, FALSE, TRUE)]
+```
+
+```
+## [1] "Venus" "Mars"
+```
+
+In beiden Fällen ist die Auswahl dieselbe. Während Du im ersten Fall nur die
+positiven Elemente über ihren Index aufzählst, musst Du im zweiten Fall für
+jedes einzelne Element angeben, ob es berücksichtigt werden soll oder nicht.
+
+Warum solltest Du das tun? Es so zu schreiben macht wenig Sinn. Eine logische
+Abfrage gegen einen Vekotor gibt aber einen logischen Vektor zurück, mit dem Du
+dann so etwas tun kannst.
+
+Hier benutzen wir den Modulo-Operator, um ungrade Zahlen zu finden und
+speichern den logischen Vektor in die Variable `odd`.  Den logischen Vektor
+`odd` verwenden wir dann als Selektor der Zahlen.
+
+
+```r
+numbers <- 10:20
+odd <- numbers %% 2 > 0
+odd
+```
+
+```
+##  [1] FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE
+```
+
+```r
+numbers[odd]
+```
+
+```
+## [1] 11 13 15 17 19
+```
+
+Das geht natürlich auch ohne die Zwischenspeicherung in die Variable `odd`.
+
+
+```r
+numbers[numbers %% 2 > 0]
+```
+
+```
+## [1] 11 13 15 17 19
+```
+
+Vielleicht nimmst Du daran Anstoss, dass Du hier `numbers` zwei mal schreiben
+musst. Damit hast Du im Sinne einer menschenorientierten Lesbarkeit vollkommen
+recht. Wendet man R so an wie hier, dann wird es ziemlich kryptisch.
+
+Bei diesem Gebrauch können die eckigen Klammern nicht wissen, dass der logische
+Vektor aus derselben Menge berechnet wurde, wie der Nummernvektor selbst. Daher
+musst Du `numbers` zwei mal schreiben.
+
+Es ähnelt einer mathematischen Formel, in der diesebe Variable mehrfach
+vorkommt, und aus der Mathematik stammmen die eckigen Klammern ja auch. Wie in
+anderen Programmiersprachen auch, gehören sie aber so sehr zu den Grundlagen,
+dass sie bald zur zweiten Natur werden.
+
+Hier will ich auch noch einmal auf die Verwandschaft zwischen Vektoren und
+Tabellenspalten in SQL hinweisen.
+
+```
+SELECT numbers FROM table WHERE numbers %% 2 > 0
+```
+
 #### Listen
 
 ### NA und NAN

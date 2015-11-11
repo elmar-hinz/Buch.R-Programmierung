@@ -1501,6 +1501,78 @@ dabei, dass sich beim Löschen der Index verkürzt.</p>
 
 <p><strong>Dokumentation</strong>: <code>?&quot;[&quot;</code></p>
 
+<h5>Vektorelemente mit logischen Vektoren selektieren</h5>
+
+<p>Du hast Vektorelemente im vorigen Abschnitt über ihren Index selektiert, als
+Positivauswahl oder als Negativauswahl. Eine Alternative dazu ist die Auswahl
+mittels logischer Vektoren. Vergleiche die beiden folgenden Methoden.</p>
+
+<pre><code class="r">planets &lt;- c(&quot;Merkur&quot;, &quot;Venus&quot;, &quot;Erde&quot;, &quot;Mars&quot;)
+planets[c(2, 4)]
+</code></pre>
+
+<pre><code>## [1] &quot;Venus&quot; &quot;Mars&quot;
+</code></pre>
+
+<pre><code class="r">planets[c(FALSE, TRUE, FALSE, TRUE)]
+</code></pre>
+
+<pre><code>## [1] &quot;Venus&quot; &quot;Mars&quot;
+</code></pre>
+
+<p>In beiden Fällen ist die Auswahl dieselbe. Während Du im ersten Fall nur die
+positiven Elemente über ihren Index aufzählst, musst Du im zweiten Fall für
+jedes einzelne Element angeben, ob es berücksichtigt werden soll oder nicht.</p>
+
+<p>Warum solltest Du das tun? Es so zu schreiben macht wenig Sinn. Eine logische
+Abfrage gegen einen Vekotor gibt aber einen logischen Vektor zurück, mit dem Du
+dann so etwas tun kannst.</p>
+
+<p>Hier benutzen wir den Modulo-Operator, um ungrade Zahlen zu finden und
+speichern den logischen Vektor in die Variable <code>odd</code>.  Den logischen Vektor
+<code>odd</code> verwenden wir dann als Selektor der Zahlen.</p>
+
+<pre><code class="r">numbers &lt;- 10:20
+odd &lt;- numbers %% 2 &gt; 0
+odd
+</code></pre>
+
+<pre><code>##  [1] FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE
+</code></pre>
+
+<pre><code class="r">numbers[odd]
+</code></pre>
+
+<pre><code>## [1] 11 13 15 17 19
+</code></pre>
+
+<p>Das geht natürlich auch ohne die Zwischenspeicherung in die Variable <code>odd</code>.</p>
+
+<pre><code class="r">numbers[numbers %% 2 &gt; 0]
+</code></pre>
+
+<pre><code>## [1] 11 13 15 17 19
+</code></pre>
+
+<p>Vielleicht nimmst Du daran Anstoss, dass Du hier <code>numbers</code> zwei mal schreiben
+musst. Damit hast Du im Sinne einer menschenorientierten Lesbarkeit vollkommen
+recht. Wendet man R so an wie hier, dann wird es ziemlich kryptisch.</p>
+
+<p>Bei diesem Gebrauch können die eckigen Klammern nicht wissen, dass der logische
+Vektor aus derselben Menge berechnet wurde, wie der Nummernvektor selbst. Daher
+musst Du <code>numbers</code> zwei mal schreiben.</p>
+
+<p>Es ähnelt einer mathematischen Formel, in der diesebe Variable mehrfach
+vorkommt, und aus der Mathematik stammmen die eckigen Klammern ja auch. Wie in
+anderen Programmiersprachen auch, gehören sie aber so sehr zu den Grundlagen,
+dass sie bald zur zweiten Natur werden.</p>
+
+<p>Hier will ich auch noch einmal auf die Verwandschaft zwischen Vektoren und
+Tabellenspalten in SQL hinweisen.</p>
+
+<pre><code>SELECT numbers FROM table WHERE numbers %% 2 &gt; 0
+</code></pre>
+
 <h4>Listen</h4>
 
 <h3>NA und NAN</h3>
