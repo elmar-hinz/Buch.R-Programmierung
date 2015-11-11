@@ -1440,6 +1440,8 @@ besonders gut, weil man dabei einfach die zu löschenden Elemente aufzählt.
 **Aufgabe**: Spiele den CRUD-Zypklus für einen Zahlenvektor durch. Beachte
 dabei, dass sich beim Löschen der Index verkürzt.
 
+**Dokumentation**: `?"["`
+
 #### Listen
 
 ### NA und NAN
