@@ -1021,7 +1021,7 @@ aus dem Vektor nimmst, dann erhältst Du nämlich wieder einen Vektor und zwar
 einen mit der Länge eins.</p>
 
 <pre><code class="r">lengthThreeVector &lt;- c(1, 3, 5)
-print(lengthThreeVector)
+lengthThreeVector
 </code></pre>
 
 <pre><code>## [1] 1 3 5
@@ -1037,7 +1037,7 @@ is.vector(positionTwoVector) # Notiz: Der Punkt im Namen ist eher historisch als
 
 <pre><code class="r"># Sogar dieses Ergebnis TRUE ist ein Vektor der Länge eins.
 
-print(positionTwoVector)
+positionTwoVector
 </code></pre>
 
 <pre><code>## [1] 3
@@ -1367,7 +1367,137 @@ beginnen und kann auch abwärts zählen.</p>
 <li><code>pi:10</code></li>
 </ul>
 
-<h5>Teilmengen von Vektoren</h5>
+<h5>Vektorelemente lesen, bearbeiten und löschen</h5>
+
+<p>Du hast jetzt gelernt, wie Du atomare Vektoren erzeugst. Wenn Du Daten
+verabeitest sind Vektoren Teil des Inputs. Um sie zu verabeiten, ist es jetzt
+wichtig zu lernen, wie Du sie veränderst und Teilmengen daraus heraus ziehtst.</p>
+
+<p>Fangen wir damit an, ein einzelnes Element zu lesen. Wir sprechen es mit seinem
+Index an.</p>
+
+<pre><code class="r">input &lt;- c(&quot;eins&quot;, &quot;zwei&quot;, &quot;drei&quot;, &quot;vier&quot;)
+input[3]
+</code></pre>
+
+<pre><code>## [1] &quot;drei&quot;
+</code></pre>
+
+<p>Was passiert, wenn Du mit einem negativen Index arbeitst? Wird dann von hinten
+gezählt? Probiere es!</p>
+
+<pre><code class="r">input[-3]
+</code></pre>
+
+<pre><code>## [1] &quot;eins&quot; &quot;zwei&quot; &quot;vier&quot;
+</code></pre>
+
+<p>Was ist denn das? Du erhältst einen Negativabdruck des Vorstehenden. Statt des
+indizierten Elementes aus dem Vektor, erhältst Du den Vektor ohne das negativ
+indizierte Element.</p>
+
+<p>Jetzt verändern wir ein einzelnes Element im Vektor.</p>
+
+<pre><code class="r">input[3] &lt;- &quot;DREI&quot;
+input
+</code></pre>
+
+<pre><code>## [1] &quot;eins&quot; &quot;zwei&quot; &quot;DREI&quot; &quot;vier&quot;
+</code></pre>
+
+<p>Genau wie bei <em>Colon Operator</em> schreibst Du hier wieder <em>doubles</em>, weil sich
+das kürzer schreibt, obwohl der Index eine klassische Integer-Sequenz ist.
+Beweisen wir also, dass ein echter Integer-Vektor auch als Selektor
+funktioniert.</p>
+
+<pre><code class="r">input[3L] &lt;- &quot;drei&quot;
+input
+</code></pre>
+
+<pre><code>## [1] &quot;eins&quot; &quot;zwei&quot; &quot;drei&quot; &quot;vier&quot;
+</code></pre>
+
+<p><strong>Aufgabe</strong>: Nimm die Zahl <code>pi</code> als Selektor. Welches Ergebnis erwartest Du?</p>
+
+<p>Bis hierher haben wir einen Vektor der Länge eins als Selektor genommen. Wenn
+Du die Idee der Vektoren verstanden hast, fragst Du dich sicher schon, was
+passiert, wenn Du einen längeren Vektor verwendest, z.B. <code>c(1, 4)</code>. Probiere
+es aus!</p>
+
+<pre><code class="r">input[c(1,4)]
+</code></pre>
+
+<pre><code>## [1] &quot;eins&quot; &quot;vier&quot;
+</code></pre>
+
+<p>Das ist doch mal logisch! Du kannst jetzt verallgemeinern und sagen, dass Du in
+den eckigen Klammern von <em>input</em> einen Vektor übergibst, der die Elemente
+indiziert, die Du als Teilmenge von <em>input</em> erhalten willst.</p>
+
+<p>Wie das für die Negativauswahl funktioniert, kannst Du jetzt auch ableiten.</p>
+
+<pre><code class="r">input[-c(1,4)]
+</code></pre>
+
+<pre><code>## [1] &quot;zwei&quot; &quot;drei&quot;
+</code></pre>
+
+<p>Ganz im Geiste von Vektoren kannst Du jetzt auch mehrere Elemente in einer
+einzigen Instruktion ersetzen. Cool!</p>
+
+<pre><code class="r">input[c(2,3,4)] &lt;- c(&quot;ZWEI&quot;, &quot;DREI&quot;, &quot;VIER&quot;)
+input
+</code></pre>
+
+<pre><code>## [1] &quot;eins&quot; &quot;ZWEI&quot; &quot;DREI&quot; &quot;VIER&quot;
+</code></pre>
+
+<p>Erinnere Dich, dass Du den Vektor <code>c(2L, 3L, 4L)</code> auch mit dem <em>Colon Operator</em>
+erzeugen kannst, als <code>2:4</code>! In den eckinge Klammern entfaltet das seine volle
+Magie.</p>
+
+<pre><code class="r">input[2:4] &lt;- c(&quot;zwei&quot;, &quot;drei&quot;, &quot;vier&quot;)
+input
+</code></pre>
+
+<pre><code>## [1] &quot;eins&quot; &quot;zwei&quot; &quot;drei&quot; &quot;vier&quot;
+</code></pre>
+
+<p>Zeigen wir, dass wir in den Eckigen Klammern nicht nur die Elemente
+selektieren, sondern auch ihre Reihenfolge festlegen können. Jetzt zählen
+wir rückwärts.</p>
+
+<pre><code class="r">input[4:2]
+</code></pre>
+
+<pre><code>## [1] &quot;vier&quot; &quot;drei&quot; &quot;zwei&quot;
+</code></pre>
+
+<p><strong>Zusammenfassung</strong>: Datenverabeiteung ist vollständig, wenn der CRUD-Zyklus
+vollständig ist, nämlich <em>create</em>, <em>read</em>, <em>update</em> und <em>delete</em>.</p>
+
+<pre><code class="r"># create:
+words &lt;- c(&quot;eins&quot;, &quot;zwei&quot;, &quot;drei&quot;, &quot;vier&quot;)
+
+# update:
+words[1:2] &lt;- c(&quot;EINS&quot;, &quot;ZWEI&quot;)
+
+# delete:
+words &lt;- words[-(2:3)]
+
+# read:
+words[2:1]
+</code></pre>
+
+<pre><code>## [1] &quot;vier&quot; &quot;EINS&quot;
+</code></pre>
+
+<p>Das Löschen wird also durchgeführt, indem man die reduzierte Teilmenge in die
+alte Variable schreibt. Gerade hierführ eignet sich die Negativauswahl
+besonders gut, weil man dabei einfach die zu löschenden Elemente aufzählt.</p>
+
+<p><strong>Aufgabe</strong>: Spiele den CRUD-Zypklus für einen Zahlenvektor durch. Beachte
+dabei, dass sich beim Löschen der Index verkürzt.</p>
 
 <h4>Listen</h4>
 

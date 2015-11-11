@@ -870,7 +870,7 @@ einen mit der Länge eins.
 
 ```r
 lengthThreeVector <- c(1, 3, 5)
-print(lengthThreeVector)
+lengthThreeVector
 ```
 
 ```
@@ -890,7 +890,7 @@ is.vector(positionTwoVector) # Notiz: Der Punkt im Namen ist eher historisch als
 ```r
 # Sogar dieses Ergebnis TRUE ist ein Vektor der Länge eins.
 
-print(positionTwoVector)
+positionTwoVector
 ```
 
 ```
@@ -1278,8 +1278,167 @@ beginnen und kann auch abwärts zählen.
 * `10:-10`
 * `pi:10`
 
+##### Vektorelemente lesen, bearbeiten und löschen
 
-##### Teilmengen von Vektoren
+Du hast jetzt gelernt, wie Du atomare Vektoren erzeugst. Wenn Du Daten
+verabeitest sind Vektoren Teil des Inputs. Um sie zu verabeiten, ist es jetzt
+wichtig zu lernen, wie Du sie veränderst und Teilmengen daraus heraus ziehtst.
+
+Fangen wir damit an, ein einzelnes Element zu lesen. Wir sprechen es mit seinem
+Index an.
+
+
+```r
+input <- c("eins", "zwei", "drei", "vier")
+input[3]
+```
+
+```
+## [1] "drei"
+```
+
+Was passiert, wenn Du mit einem negativen Index arbeitst? Wird dann von hinten
+gezählt? Probiere es!
+
+
+```r
+input[-3]
+```
+
+```
+## [1] "eins" "zwei" "vier"
+```
+
+Was ist denn das? Du erhältst einen Negativabdruck des Vorstehenden. Statt des
+indizierten Elementes aus dem Vektor, erhältst Du den Vektor ohne das negativ
+indizierte Element.
+
+Jetzt verändern wir ein einzelnes Element im Vektor.
+
+
+```r
+input[3] <- "DREI"
+input
+```
+
+```
+## [1] "eins" "zwei" "DREI" "vier"
+```
+
+Genau wie bei *Colon Operator* schreibst Du hier wieder *doubles*, weil sich
+das kürzer schreibt, obwohl der Index eine klassische Integer-Sequenz ist.
+Beweisen wir also, dass ein echter Integer-Vektor auch als Selektor
+funktioniert.
+
+
+```r
+input[3L] <- "drei"
+input
+```
+
+```
+## [1] "eins" "zwei" "drei" "vier"
+```
+
+**Aufgabe**: Nimm die Zahl `pi` als Selektor. Welches Ergebnis erwartest Du?
+
+Bis hierher haben wir einen Vektor der Länge eins als Selektor genommen. Wenn
+Du die Idee der Vektoren verstanden hast, fragst Du dich sicher schon, was
+passiert, wenn Du einen längeren Vektor verwendest, z.B. `c(1, 4)`. Probiere
+es aus!
+
+
+```r
+input[c(1,4)]
+```
+
+```
+## [1] "eins" "vier"
+```
+
+Das ist doch mal logisch! Du kannst jetzt verallgemeinern und sagen, dass Du in
+den eckigen Klammern von *input* einen Vektor übergibst, der die Elemente
+indiziert, die Du als Teilmenge von *input* erhalten willst.
+
+Wie das für die Negativauswahl funktioniert, kannst Du jetzt auch ableiten.
+
+
+```r
+input[-c(1,4)]
+```
+
+```
+## [1] "zwei" "drei"
+```
+
+Ganz im Geiste von Vektoren kannst Du jetzt auch mehrere Elemente in einer
+einzigen Instruktion ersetzen. Cool!
+
+
+```r
+input[c(2,3,4)] <- c("ZWEI", "DREI", "VIER")
+input
+```
+
+```
+## [1] "eins" "ZWEI" "DREI" "VIER"
+```
+
+Erinnere Dich, dass Du den Vektor `c(2L, 3L, 4L)` auch mit dem *Colon Operator*
+erzeugen kannst, als `2:4`! In den eckinge Klammern entfaltet das seine volle
+Magie.
+
+
+```r
+input[2:4] <- c("zwei", "drei", "vier")
+input
+```
+
+```
+## [1] "eins" "zwei" "drei" "vier"
+```
+
+Zeigen wir, dass wir in den Eckigen Klammern nicht nur die Elemente
+selektieren, sondern auch ihre Reihenfolge festlegen können. Jetzt zählen
+wir rückwärts.
+
+
+```r
+input[4:2]
+```
+
+```
+## [1] "vier" "drei" "zwei"
+```
+
+**Zusammenfassung**: Datenverabeiteung ist vollständig, wenn der CRUD-Zyklus
+vollständig ist, nämlich *create*, *read*, *update* und *delete*.
+
+
+```r
+# create:
+words <- c("eins", "zwei", "drei", "vier")
+
+# update:
+words[1:2] <- c("EINS", "ZWEI")
+
+# delete:
+words <- words[-(2:3)]
+
+# read:
+words[2:1]
+```
+
+```
+## [1] "vier" "EINS"
+```
+
+Das Löschen wird also durchgeführt, indem man die reduzierte Teilmenge in die
+alte Variable schreibt. Gerade hierführ eignet sich die Negativauswahl
+besonders gut, weil man dabei einfach die zu löschenden Elemente aufzählt.
+
+**Aufgabe**: Spiele den CRUD-Zypklus für einen Zahlenvektor durch. Beachte
+dabei, dass sich beim Löschen der Index verkürzt.
 
 #### Listen
 
