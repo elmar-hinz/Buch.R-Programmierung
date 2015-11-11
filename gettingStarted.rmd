@@ -1,5 +1,37 @@
 ## Los geht's
+
 ### Hardware Anforderungen
+
+Ich setze in diesem Buch voraus, dass Du über einen zeitgemässen Rechner
+verfügst, PC oder Mac. Damit meine ich dass er nicht unbedingt älter als 5
+Jahre ist. Grenzfälle lassen sich im Rahmen einer Einführung leider schlecht
+behandeln.
+
+Die Programme **R** und **RStudio** selbst nehmen nur wenige hundert Megabyte
+ein. Allenfalls bis 2 GB Arbeitsspeicher werden sie spürbar, wenn Du
+gleichzeitig noch viele andere Programme geöffnet hast.
+
+Der entscheidende Faktor ist die Menge der Daten, welche Du in den
+Arbeitsspeicher lädst. Für die Übungen in diesem Buch wirst Du da nicht an
+Grenzen stossen. Sobald Du aber mit realen Daten arbeitest, sind der Datenmenge
+nach oben keine Grenzen gesetzt, Deinem Arbeitsspeicher dagegen schon.
+
+Ohne besondere Massnahmen lädt R die Gesamtmenge der Daten in den
+Arbeitsspeicher bevor es damit arbeiten kann. Man sagt daher als Faustregel,
+dass der Arbeitsspeicher mindestens doppelt so gross seine sollte, wie die
+zu verarbeitende Datenmenge.
+
+Dabei liegt die Betonung auf mindestens, denn dann musst Du immer noch
+intelligent programmieren. Stell Dir vor, die Daten füllen Deinen halben
+Arbeitsspeicher aus. Könntest Du dann eine Kopie der Daten in eine zweite
+Variable speichern? In der zweiten Hälfte Deines Arbeitsspeichers liegen ja
+auch Betriebssystem und Programme. Der Rechner würde wahrscheinlich heftig
+anfangen zu swappen.
+
+Swappen heisst, der Rechner schreibt unbenutzte Arbeitsspeicherbereiche auf die
+Festplatte und lädt sie, sobald sie wieder gebraucht werden. Das bremst bis zur
+Unbenutzbarkeit.
+
 ### Installation
 #### R
 #### R Studio

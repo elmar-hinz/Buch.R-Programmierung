@@ -432,6 +432,36 @@ der Geschichte von Perl.</p>
 
 <h3>Hardware Anforderungen</h3>
 
+<p>Ich setze in diesem Buch voraus, dass Du über einen zeitgemässen Rechner
+verfügst, PC oder Mac. Damit meine ich dass er nicht unbedingt älter als 5
+Jahre ist. Grenzfälle lassen sich im Rahmen einer Einführung leider schlecht
+behandeln.</p>
+
+<p>Die Programme <strong>R</strong> und <strong>RStudio</strong> selbst nehmen nur wenige hundert Megabyte
+ein. Allenfalls bis 2 GB Arbeitsspeicher werden sie spürbar, wenn Du
+gleichzeitig noch viele andere Programme geöffnet hast.</p>
+
+<p>Der entscheidende Faktor ist die Menge der Daten, welche Du in den
+Arbeitsspeicher lädst. Für die Übungen in diesem Buch wirst Du da nicht an
+Grenzen stossen. Sobald Du aber mit realen Daten arbeitest, sind der Datenmenge
+nach oben keine Grenzen gesetzt, Deinem Arbeitsspeicher dagegen schon.</p>
+
+<p>Ohne besondere Massnahmen lädt R die Gesamtmenge der Daten in den
+Arbeitsspeicher bevor es damit arbeiten kann. Man sagt daher als Faustregel,
+dass der Arbeitsspeicher mindestens doppelt so gross seine sollte, wie die
+zu verarbeitende Datenmenge.</p>
+
+<p>Dabei liegt die Betonung auf mindestens, denn dann musst Du immer noch
+intelligent programmieren. Stell Dir vor, die Daten füllen Deinen halben
+Arbeitsspeicher aus. Könntest Du dann eine Kopie der Daten in eine zweite
+Variable speichern? In der zweiten Hälfte Deines Arbeitsspeichers liegen ja
+auch Betriebssystem und Programme. Der Rechner würde wahrscheinlich heftig
+anfangen zu swappen.</p>
+
+<p>Swappen heisst, der Rechner schreibt unbenutzte Arbeitsspeicherbereiche auf die
+Festplatte und lädt sie, sobald sie wieder gebraucht werden. Das bremst bis zur
+Unbenutzbarkeit.</p>
+
 <h3>Installation</h3>
 
 <h4>R</h4>
@@ -660,7 +690,7 @@ print(a) # Die Liste a enthält nicht &quot;Punkt&quot; und wurde auch nicht üb
 verwendest Du den Punkt als Worttrenner nicht. Er ist eher eine Erblast als ein
 Feature. Die besseren Alternativen sind <em>unter_strich</em> oder <em>CamelCase</em>.</p>
 
-<p>Der Punkt als Namensbestandteil, wird Dir aber gerade in den fundamentalen und
+<p>Der Punkt als Namensbestandteil wird Dir aber gerade in den fundamentalen und
 daher besonders alten Funktionen und Parametern begegnen, das heist häufig.
 Häufiges Sehen verleitet dazu, es zu kopieren. Ich betrachte es dagegen als
 Chance meine Funktionen von den internen zu unterscheiden.</p>
@@ -1133,9 +1163,9 @@ Um einen Integer-Vektor zu erzwingen, stellst Du ein grosses <strong>L</strong> 
 teste ihn auf seinen Typ mit der Funktion <code>typeof()</code>, ob Du es richtig gemacht
 hast.</p>
 
-<p>Das <strong>L</strong> steht hier vermutlich für <em>long</em> im Vergleich zu <em>double</em>. Du würdest
-Dir vermutlich das Wording <em>integer</em> und <em>float</em> wünschen. Das ist aber leider
-nicht die Terminologie von R. Prüfen wir, wie beide offiziell heissen:</p>
+<p>Das <strong>L</strong> steht hier vermutlich für <em>long</em> im Vergleich zu <em>double</em>. Würdest Du
+Dir die Wortpaare <em>integer</em> und <em>float</em> wünschen? Das ist aber leider nicht die
+Terminologie von R. Prüfen wir, wie beide offiziell heissen:</p>
 
 <pre><code class="r">typeof(7L)
 </code></pre>
@@ -1161,12 +1191,12 @@ nicht die Terminologie von R. Prüfen wir, wie beide offiziell heissen:</p>
 <pre><code>## [1] &quot;numeric&quot;
 </code></pre>
 
-<p>Das ist nicht gereade konsistent und sicherlich ein Hinweis auf die
-Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller
-und damit vermutlich jünger?</p>
+<p>Das ist nicht gerade konsistent, nicht wahr, und sicherlich ein Hinweis auf die
+Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller und
+damit vermutlich jünger?</p>
 
 <p><strong>Aufgabe</strong>: Teste <code>7</code> und <code>7L</code> jeweils mit den Funktionen <code>is.integer()</code>,
-<code>is.double()</code> und <code>is.numeric()</code>. Stimmt das Ergebnis mit deinen Erwartungen
+<code>is.double()</code> und <code>is.numeric()</code>. Stimmt das Ergebnis mit Deinen Erwartungen
 überein?</p>
 
 <p>Der Vektortyp <em>raw</em> enthält binäre Daten und wird nicht literal eingegeben. Du
@@ -1191,7 +1221,7 @@ Typ <em>raw</em>, sondern einen Vektor vom Typ <em>double</em>.</p>
 
 <p>Soweit haben wir uns jetzt  mit atomaren Vektoren der Länge eins beschäftigt
 und bis hierher sehen sie einfach aus wie skalare Typen. Nützlich wird die
-Natur des Vektors erst, wenn er länger als eins wird, wie in dieser Addition
+Natur des Vektors erst, wenn er länger als eins wird, wie in dieser Addition,
 die jedes Element um eins erhöht.</p>
 
 <pre><code class="r">c(1, 2, 3) + 1
@@ -1210,7 +1240,7 @@ eins ist und auch die Kombination ist wieder ein Vektor.</p>
 </code></pre>
 
 <p>Offensichtlich fügt die Funktion <code>c()</code> die Parameter zu einem längeren Vektor
-zusammen.  Prüfen wir das.</p>
+zusammen. Prüfen wir das doch einmal.</p>
 
 <pre><code class="r">length(c(3, 2, 1))
 </code></pre>
@@ -1246,11 +1276,12 @@ derselbe skalare Wert mehrfach in einem Vektor enthalten sein kann.</p>
 
 <p>Hättest Du eine Fehlermeldung erwartet? Die Funktion formt die übergebenen
 Parameter sozusagen auf den kleinsten gemeinsamen Nenner um. Dieser ist hier
-<em>character</em>.</p>
+<em>character</em>. Diese automatische Typumwandlung nennt sich mit dem englischen
+Fachbegriff <strong>Type Conversion</strong>.</p>
 
 <p>Jeder Wert lässt ich im Zweifel in <em>character</em> umformen. Der Typ <em>character</em>
 ist also die unterste Stufe dieser Hierarchie. Ganz oben steht <em>raw</em>. Der
-niedrigste Datentyp in der folgenden Liste, der in den Paramtern von <code>c()</code>
+niedrigste Datentyp in der folgenden Liste, der in den Parametern von <code>c()</code>
 vertreten ist, wird als Kombinationstyp gewählt.</p>
 
 <ul>

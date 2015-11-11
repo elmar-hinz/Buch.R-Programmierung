@@ -235,7 +235,39 @@ der Geschichte von Perl.
 
 
 ## Los geht's
+
 ### Hardware Anforderungen
+
+Ich setze in diesem Buch voraus, dass Du über einen zeitgemässen Rechner
+verfügst, PC oder Mac. Damit meine ich dass er nicht unbedingt älter als 5
+Jahre ist. Grenzfälle lassen sich im Rahmen einer Einführung leider schlecht
+behandeln.
+
+Die Programme **R** und **RStudio** selbst nehmen nur wenige hundert Megabyte
+ein. Allenfalls bis 2 GB Arbeitsspeicher werden sie spürbar, wenn Du
+gleichzeitig noch viele andere Programme geöffnet hast.
+
+Der entscheidende Faktor ist die Menge der Daten, welche Du in den
+Arbeitsspeicher lädst. Für die Übungen in diesem Buch wirst Du da nicht an
+Grenzen stossen. Sobald Du aber mit realen Daten arbeitest, sind der Datenmenge
+nach oben keine Grenzen gesetzt, Deinem Arbeitsspeicher dagegen schon.
+
+Ohne besondere Massnahmen lädt R die Gesamtmenge der Daten in den
+Arbeitsspeicher bevor es damit arbeiten kann. Man sagt daher als Faustregel,
+dass der Arbeitsspeicher mindestens doppelt so gross seine sollte, wie die
+zu verarbeitende Datenmenge.
+
+Dabei liegt die Betonung auf mindestens, denn dann musst Du immer noch
+intelligent programmieren. Stell Dir vor, die Daten füllen Deinen halben
+Arbeitsspeicher aus. Könntest Du dann eine Kopie der Daten in eine zweite
+Variable speichern? In der zweiten Hälfte Deines Arbeitsspeichers liegen ja
+auch Betriebssystem und Programme. Der Rechner würde wahrscheinlich heftig
+anfangen zu swappen.
+
+Swappen heisst, der Rechner schreibt unbenutzte Arbeitsspeicherbereiche auf die
+Festplatte und lädt sie, sobald sie wieder gebraucht werden. Das bremst bis zur
+Unbenutzbarkeit.
+
 ### Installation
 #### R
 #### R Studio
@@ -489,7 +521,7 @@ print(a$dot) # Dieses gibt es dagegen nicht.
 verwendest Du den Punkt als Worttrenner nicht. Er ist eher eine Erblast als ein
 Feature. Die besseren Alternativen sind *unter_strich* oder *CamelCase*.
 
-Der Punkt als Namensbestandteil, wird Dir aber gerade in den fundamentalen und
+Der Punkt als Namensbestandteil wird Dir aber gerade in den fundamentalen und
 daher besonders alten Funktionen und Parametern begegnen, das heist häufig.
 Häufiges Sehen verleitet dazu, es zu kopieren. Ich betrachte es dagegen als
 Chance meine Funktionen von den internen zu unterscheiden.
@@ -1003,9 +1035,9 @@ Um einen Integer-Vektor zu erzwingen, stellst Du ein grosses **L** dahinter
 teste ihn auf seinen Typ mit der Funktion `typeof()`, ob Du es richtig gemacht
 hast.
 
-Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Du würdest
-Dir vermutlich das Wording *integer* und *float* wünschen. Das ist aber leider
-nicht die Terminologie von R. Prüfen wir, wie beide offiziell heissen:
+Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Würdest Du
+Dir die Wortpaare *integer* und *float* wünschen? Das ist aber leider nicht die
+Terminologie von R. Prüfen wir, wie beide offiziell heissen:
 
 
 ```r
@@ -1039,12 +1071,12 @@ class(7)
 ```
 ## [1] "numeric"
 ```
-Das ist nicht gereade konsistent und sicherlich ein Hinweis auf die
-Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller
-und damit vermutlich jünger?
+Das ist nicht gerade konsistent, nicht wahr, und sicherlich ein Hinweis auf die
+Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller und
+damit vermutlich jünger?
 
 **Aufgabe**: Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
-`is.double()` und `is.numeric()`. Stimmt das Ergebnis mit deinen Erwartungen
+`is.double()` und `is.numeric()`. Stimmt das Ergebnis mit Deinen Erwartungen
 überein?
 
 Der Vektortyp *raw* enthält binäre Daten und wird nicht literal eingegeben. Du
@@ -1075,7 +1107,7 @@ typeof(0x0f)
 
 Soweit haben wir uns jetzt  mit atomaren Vektoren der Länge eins beschäftigt
 und bis hierher sehen sie einfach aus wie skalare Typen. Nützlich wird die
-Natur des Vektors erst, wenn er länger als eins wird, wie in dieser Addition
+Natur des Vektors erst, wenn er länger als eins wird, wie in dieser Addition,
 die jedes Element um eins erhöht.
 
 
@@ -1100,7 +1132,7 @@ is.vector(c(1, 2, 3))
 ```
 
 Offensichtlich fügt die Funktion `c()` die Parameter zu einem längeren Vektor
-zusammen.  Prüfen wir das.
+zusammen. Prüfen wir das doch einmal.
 
 
 ```r
@@ -1147,11 +1179,12 @@ c("eins", 2)
 
 Hättest Du eine Fehlermeldung erwartet? Die Funktion formt die übergebenen
 Parameter sozusagen auf den kleinsten gemeinsamen Nenner um. Dieser ist hier
-*character*.
+*character*. Diese automatische Typumwandlung nennt sich mit dem englischen
+Fachbegriff **Type Conversion**.
 
 Jeder Wert lässt ich im Zweifel in *character* umformen. Der Typ *character*
 ist also die unterste Stufe dieser Hierarchie. Ganz oben steht *raw*. Der
-niedrigste Datentyp in der folgenden Liste, der in den Paramtern von `c()`
+niedrigste Datentyp in der folgenden Liste, der in den Parametern von `c()`
 vertreten ist, wird als Kombinationstyp gewählt.
 
 * raw
