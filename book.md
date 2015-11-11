@@ -1268,7 +1268,7 @@ typeof(1.1:5)
 
 Hier sehen wir auch, dass die zweite Zahl eine Obergrenze ist, aber nicht immer
 im Ergebnis selbst enthalten ist. Die Sequenz muss auch nicht immer mit `1`
-beginnen.
+beginnen und kann auch abwärts zählen.
 
 **Aufgabe**: Probiere folgende Varianten aus:
 
