@@ -1199,7 +1199,85 @@ und `c(as.raw(0), "Hallo")`? Teste es.
 
 **Dokumentation**: `?c`
 
-##### Sequenzen
+##### Der Doppelpunkt Operator (Colon Operator)
+
+Der **Colon Operator** ist eine Kurzschreibweise für die Funktion `seq(from,
+to)`. Er ist ein sehr gängiges Verfahren, um eine Sequenz von Integer-Zahlen zu
+erzeugen. In dieser Funktion wird er hier kurz angschnitten. Er wird
+regelmässig in `for`-Schleifen eingesetzt.
+
+
+```r
+for(counter in 1:3) print(counter)
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+```
+
+Betrachte jetzt den Vektor selbst.
+
+
+```r
+1:10
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+Du schreibst ihn in der Regel nicht mit Integern `1L:10L`, sondern mit Doubles.
+Das ist kürzer zu schreiben. Was denkst Du welcher Typ von Vektor erzeugt wird?
+
+
+```r
+typeof(1:10)
+```
+
+```
+## [1] "integer"
+```
+
+Ist das nicht überraschend? Rufe diese beiden Hilfeseiten auf und finde heraus,
+warum das so ist:
+
+* `?":"`
+* `?seq`
+
+Kurz gesagt, wenn sich die erste Zahl auf einen Integer reduzieren lässt, dann
+ist der Rückgabewert ein Integer, andernfalls nicht.
+
+
+```r
+1.1:5
+```
+
+```
+## [1] 1.1 2.1 3.1 4.1
+```
+
+```r
+typeof(1.1:5)
+```
+
+```
+## [1] "double"
+```
+
+Hier sehen wir auch, dass die zweite Zahl eine Obergrenze ist, aber nicht immer
+im Ergebnis selbst enthalten ist. Die Sequenz muss auch nicht immer mit `1`
+beginnen.
+
+**Aufgabe**: Probiere folgende Varianten aus:
+
+* `2:4`
+* `1L:10L`
+* `10:1`
+* `10:-10`
+* `pi:10`
+
 
 ##### Teilmengen von Vektoren
 

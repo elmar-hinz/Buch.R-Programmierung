@@ -1298,7 +1298,74 @@ und <code>c(as.raw(0), &quot;Hallo&quot;)</code>? Teste es.</p>
 
 <p><strong>Dokumentation</strong>: <code>?c</code></p>
 
-<h5>Sequenzen</h5>
+<h5>Der Doppelpunkt Operator (Colon Operator)</h5>
+
+<p>Der <strong>Colon Operator</strong> ist eine Kurzschreibweise für die Funktion <code>seq(from,
+to)</code>. Er ist ein sehr gängiges Verfahren, um eine Sequenz von Integer-Zahlen zu
+erzeugen. In dieser Funktion wird er hier kurz angschnitten. Er wird
+regelmässig in <code>for</code>-Schleifen eingesetzt.</p>
+
+<pre><code class="r">for(counter in 1:3) print(counter)
+</code></pre>
+
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+</code></pre>
+
+<p>Betrachte jetzt den Vektor selbst.</p>
+
+<pre><code class="r">1:10
+</code></pre>
+
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10
+</code></pre>
+
+<p>Du schreibst ihn in der Regel nicht mit Integern <code>1L:10L</code>, sondern mit Doubles.
+Das ist kürzer zu schreiben. Was denkst Du welcher Typ von Vektor erzeugt wird?</p>
+
+<pre><code class="r">typeof(1:10)
+</code></pre>
+
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+
+<p>Ist das nicht überraschend? Rufe diese beiden Hilfeseiten auf und finde heraus,
+warum das so ist:</p>
+
+<ul>
+<li><code>?&quot;:&quot;</code></li>
+<li><code>?seq</code></li>
+</ul>
+
+<p>Kurz gesagt, wenn sich die erste Zahl auf einen Integer reduzieren lässt, dann
+ist der Rückgabewert ein Integer, andernfalls nicht.</p>
+
+<pre><code class="r">1.1:5
+</code></pre>
+
+<pre><code>## [1] 1.1 2.1 3.1 4.1
+</code></pre>
+
+<pre><code class="r">typeof(1.1:5)
+</code></pre>
+
+<pre><code>## [1] &quot;double&quot;
+</code></pre>
+
+<p>Hier sehen wir auch, dass die zweite Zahl eine Obergrenze ist, aber nicht immer
+im Ergebnis selbst enthalten ist. Die Sequenz muss auch nicht immer mit <code>1</code>
+beginnen.</p>
+
+<p><strong>Aufgabe</strong>: Probiere folgende Varianten aus:</p>
+
+<ul>
+<li><code>2:4</code></li>
+<li><code>1L:10L</code></li>
+<li><code>10:1</code></li>
+<li><code>10:-10</code></li>
+<li><code>pi:10</code></li>
+</ul>
 
 <h5>Teilmengen von Vektoren</h5>
 
