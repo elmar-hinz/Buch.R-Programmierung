@@ -94,8 +94,9 @@ plot(radii, surfaces)
 
 ![plot of chunk planetsPlot](figure/planetsPlot-1.png) 
 
-Wie viel Zeilen Code wäre in anderen Sprachen nötig, um Listen von Daten zu
-berechnen und in einem Diagramm zu visualieren?
+**Aufgabe:** Wie viel Zeilen Code wäre in anderen Programmiersprache, die Du
+kennst, nötig, um Listen von Daten zu berechnen und in einem Diagramm zu
+visualieren?
 
 ### Die Funktion print()
 
@@ -154,9 +155,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 19 49 25 48 32 27  3 37 14 41 35 31 12 42 10  2  1 50 28 43 39 21 11
-## [24] 29 17 47 15 18  6 46 38 30 44 13 33 22 34 16 36  7 24 26 40 23  5  4
-## [47]  9 20 45  8
+##  [1]  5 12  4 34 37 18 21 17 28 42 41 11 36 40  3 39 48 26 10 24 23 33 15
+## [24]  8  7 44 32 47  2 25 50 20 46 49  1 31 19 43 35 45 29  9 38 22  6 30
+## [47] 16 14 13 27
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -192,7 +193,8 @@ for(counter in 1:2) {
 ## [1] "Hallo"
 ```
 
-**Aufgabe:** Gib die obigen Beispiele ohne `print()` aus.
+**Aufgabe:** Gib die obigen Beispiele ohne `print()` aus, sobald Du R
+installierst hast.
 
 * `"Hallo"`
 * `hallo <- "Hallo!"; hallo`

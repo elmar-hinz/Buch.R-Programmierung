@@ -69,8 +69,9 @@ wie die Fläche im Quadrat ansteigt.
 plot(radii, surfaces)
 ```
 
-Wie viel Zeilen Code wäre in anderen Sprachen nötig, um Listen von Daten zu
-berechnen und in einem Diagramm zu visualieren?
+**Aufgabe:** Wie viel Zeilen Code wäre in anderen Programmiersprache, die Du
+kennst, nötig, um Listen von Daten zu berechnen und in einem Diagramm zu
+visualieren?
 
 ### Die Funktion print()
 
@@ -130,7 +131,8 @@ for(counter in 1:2) {
 }
 ```
 
-**Aufgabe:** Gib die obigen Beispiele ohne `print()` aus.
+**Aufgabe:** Gib die obigen Beispiele ohne `print()` aus, sobald Du R
+installierst hast.
 
 * `"Hallo"`
 * `hallo <- "Hallo!"; hallo`
