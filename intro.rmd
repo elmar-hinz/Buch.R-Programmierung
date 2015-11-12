@@ -135,7 +135,7 @@ for(counter in 1:2) {
 * "Hallo"
 * `hallo <- "Hallo!"; hallo`
 * `1:50`
-* `sample(1:50)
+* `sample(1:50)`
 
 ### Was ist R?
 
