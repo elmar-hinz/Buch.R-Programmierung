@@ -74,8 +74,8 @@ berechnen und in einem Diagramm zu visualieren?
 
 ### Die Funktion print()
 
-Die Ausgabe von Variablen ist in einem Lehrbuch so wichtig, dass ich sie
-gleich hier anspreche.
+Die Ausgabe von Variablen ist in einem Lehrbuch so wichtig, dass ich die
+Funktion `print()` gleich hier anspreche.
 
 ```{r}
 print("Hallo!") # Direkte Ausgabe des Strings
@@ -112,7 +112,8 @@ print(sample(1:50))
 
 Meist wird die Funktion `print()` aber im Verborgenen ausgeführt. Werte werden
 automatisch ausgedruckt, wenn Du sie nicht in eine Variable schreibst oder
-anders weiter verwendst.
+anders weiter verwendst. Von diesem Feature mache ich in fast allen Beispielen
+dieses Buches gebrauch.
 
 ```{r}
 hallo <- "hallo" # wird nicht ausgedruckt

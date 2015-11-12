@@ -99,8 +99,8 @@ berechnen und in einem Diagramm zu visualieren?
 
 ### Die Funktion print()
 
-Die Ausgabe von Variablen ist in einem Lehrbuch so wichtig, dass ich sie
-gleich hier anspreche.
+Die Ausgabe von Variablen ist in einem Lehrbuch so wichtig, dass ich die
+Funktion `print()` gleich hier anspreche.
 
 
 ```r
@@ -154,16 +154,17 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 34 13 31 50 33  7 45 24 19  5 42  8 18 22 46 16 27 40  9 32 10 15 12
-## [24] 23  6 30 48 11 20 44  1 35  4 49 37  3 28 41 36 14 39 47  2 29 26 43
-## [47] 17 38 21 25
+##  [1] 49 28  2 41 39 27 48 13 38 44 46  4 29 18 16 50 25 11  1 23 31 36 33
+## [24]  3 12 40 30 14 21 43 17 32 24 47  5 42 19  6 34  7 20  8 15 22  9 35
+## [47] 45 37 26 10
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
 
 Meist wird die Funktion `print()` aber im Verborgenen ausgeführt. Werte werden
 automatisch ausgedruckt, wenn Du sie nicht in eine Variable schreibst oder
-anders weiter verwendst.
+anders weiter verwendst. Von diesem Feature mache ich in fast allen Beispielen
+dieses Buches gebrauch.
 
 
 ```r
