@@ -132,7 +132,7 @@ for(counter in 1:2) {
 
 **Aufgabe:** Gib die obigen Beispiele ohne `print()` aus.
 
-* "Hallo"
+* `"Hallo"`
 * `hallo <- "Hallo!"; hallo`
 * `1:50`
 * `sample(1:50)`
