@@ -72,6 +72,70 @@ plot(radii, surfaces)
 Wie viel Zeilen Code wäre in anderen Sprachen nötig, um Listen von Daten zu
 berechnen und in einem Diagramm zu visualieren?
 
+### Die Funktion print()
+
+Die Ausgabe von Variablen ist in einem Lehrbuch so wichtig, dass ich sie
+gleich hier anspreche.
+
+```{r}
+print("Hallo!") # Direkte Ausgabe des Strings
+hallo <- "Hallo!"
+print(hallo) # Ausgabe der Variablen hallo
+```
+
+Was bedeuten die Zeichen vor der Ausgabe?
+
+Die beiden Rauten `##` vor der Ausgabe sind Kommentarzeichen. Sie bewirken,
+dass die Zeile nicht ausgeführt wird, wenn Du die Ausgabe mit "Copy and Paste"
+übernimmst. Bei einer gedruckten Ausgabe des Buches, geht das nicht. Sie dienen
+auch dazu, die Ausgabe als Ausgabe zu kennzeichnen.
+
+Jetzt zähle ich von 1 bis 50
+
+```{r}
+print(1:50)
+```
+
+Du siehtst, dass die Zahl in eckigen Klammern dem Index der ersten Zahl in
+jeder Reihe entspricht.
+
+**Aufgabe:** Fängt die Aufzählung mit null oder eins an?
+
+Bei Zahlen von 1 bis 50 bringt Dir das keinen besonderen Nutzen. Schütteln wir
+die Zahlen also einmal ordentlich durch.
+
+```{r}
+print(sample(1:50))
+```
+
+**Aufgabe:** Welche Zahl hat den Index 30?
+
+Meist wird die Funktion `print()` aber im Verborgenen ausgeführt. Werte werden
+automatisch ausgedruckt, wenn Du sie nicht in eine Variable schreibst oder
+anders weiter verwendst.
+
+```{r}
+hallo <- "hallo" # wird nicht ausgedruckt
+"HALLO" # wird ausgedruckt
+```
+
+Ausnahme: Werte werden nicht automatisch ausgedruckt, wenn sie in Schleifen
+stehen.
+
+```{r}
+for(counter in 1:2) {
+    print("Hallo")
+    "Welt"
+}
+```
+
+**Aufgabe:** Gib die obigen Beispiele ohne `print()` aus.
+
+* "Hallo"
+* `hallo <- "Hallo!"; hallo`
+* `1:50`
+* `sample(1:50)
+
 ### Was ist R?
 
 > R is a free software environment for statistical computing and graphics.

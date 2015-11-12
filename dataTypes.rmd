@@ -2,8 +2,6 @@
 
 ### Vektoren
 
-#### Wozu Vektoren?
-
 Vektoren, wie klingt das für Dich? Spannend, abschreckend, kompliziert,
 wissenschftlich oder nach gymnasialer Oberstufe? Wie auch immer, es ist das
 Feature in R, welches Du ziemlich bald in anderen Programmiersprachen vermissen
@@ -89,7 +87,7 @@ angewendet. Dabei entspricht jede Spalte der Datenbank einem Vector.
 >
 > [David Hood on Coursera](https://class.coursera.org/repdata-034/forum/thread?thread_id=26)
 
-#### Atomare Vektortypen
+### Atomare Vektortypen
 
 Atomare Vektoren erfüllen die Funktionen von skalaren Typen in anderen
 Sprachen, aber mit den Features eines Vektors angereichert. R kennt diese
@@ -124,24 +122,6 @@ Um einen Integer-Vektor zu erzwingen, stellst Du ein grosses **L** dahinter
 teste ihn auf seinen Typ mit der Funktion `typeof()`, ob Du es richtig gemacht
 hast.
 
-Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Würdest Du
-Dir die Wortpaare *integer* und *float* wünschen? Das ist aber leider nicht die
-Terminologie von R. Prüfen wir, wie beide offiziell heissen:
-
-```{r}
-typeof(7L)
-typeof(7)
-class(7L)
-class(7)
-```
-Das ist nicht gerade konsistent, nicht wahr, und sicherlich ein Hinweis auf die
-Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller und
-damit vermutlich jünger?
-
-**Aufgabe**: Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
-`is.double()` und `is.numeric()`. Stimmt das Ergebnis mit Deinen Erwartungen
-überein?
-
 Der Vektortyp *raw* enthält binäre Daten und wird nicht literal eingegeben. Du
 wirst ihn wohl eher selten verwenden. Angezeigt wird er als hexadezimaler Wert.
 
@@ -156,7 +136,7 @@ Typ *raw*, sondern einen Vektor vom Typ *double*.
 typeof(0x0f)
 ```
 
-##### Die Funktion Combine `c()`
+### Die Funktion Combine `c()`
 
 Soweit haben wir uns jetzt  mit atomaren Vektoren der Länge eins beschäftigt
 und bis hierher sehen sie einfach aus wie skalare Typen. Nützlich wird die
@@ -220,7 +200,7 @@ und `c(as.raw(0), "Hallo")`? Teste es.
 
 **Dokumentation**: `?c`
 
-##### Der Doppelpunkt Operator (Colon Operator)
+### Der Doppelpunkt Operator (Colon Operator)
 
 Der **Colon Operator** ist eine Kurzschreibweise für die Funktion `seq(from,
 to)`. Er ist ein sehr gängiges Verfahren, um eine Sequenz von Integer-Zahlen zu
@@ -259,8 +239,14 @@ typeof(1.1:5)
 ```
 
 Hier sehen wir auch, dass die zweite Zahl eine Obergrenze ist, aber nicht immer
-im Ergebnis selbst enthalten ist. Die Sequenz muss auch nicht immer mit `1`
-beginnen und kann auch abwärts zählen.
+im Ergebnis selbst enthalten ist.
+
+Die Sequenz muss auch nicht immer mit `1` beginnen und kann auch abwärts zählen.
+Du kannst mit negativen Zahlen arbeiten.
+
+```{r}
+3:-3
+```
 
 **Aufgabe**: Probiere folgende Varianten aus:
 
@@ -270,7 +256,7 @@ beginnen und kann auch abwärts zählen.
 * `10:-10`
 * `pi:10`
 
-##### Vektorelemente lesen, bearbeiten und löschen
+### Vektorelemente lesen, bearbeiten und löschen
 
 Du hast jetzt gelernt, wie Du atomare Vektoren erzeugst. Wenn Du Daten
 verabeitest sind Vektoren Teil des Inputs. Um sie zu verabeiten, ist es jetzt
@@ -358,6 +344,26 @@ wir rückwärts.
 input[4:2]
 ```
 
+Um Elemente vor oder hinter dem Vektor einzufügen eignet sich die Funktion
+`c()`. Die Vereinigungsmenge wird in die originale Variable zurück geschrieben.
+Diese Operationen sind in anderen Sprachen als `unshift` und `push` bekannt.
+
+```{r}
+
+input <- c("null", input) #unshift
+input <- c(input, "fünf")
+input
+```
+
+Du löscht Elemente, indem Du die verbleibende Teilmenge in die originale
+Variable zurückschreibst. Gerade hierführ eignet sich die Negativauswahl
+besonders gut, weil Du dabei einfach die zu löschenden Elemente indizierst.
+
+```{r}
+input <- input[-(2:3)]
+input
+```
+
 **Zusammenfassung**: Datenverabeiteung ist vollständig, wenn der CRUD-Zyklus
 vollständig ist, nämlich *create*, *read*, *update* und *delete*.
 
@@ -376,16 +382,12 @@ words <- words[-(2:3)]
 words[2:1]
 ```
 
-Das Löschen wird also durchgeführt, indem man die reduzierte Teilmenge in die
-alte Variable schreibt. Gerade hierführ eignet sich die Negativauswahl
-besonders gut, weil man dabei einfach die zu löschenden Elemente aufzählt.
-
 **Aufgabe**: Spiele den CRUD-Zypklus für einen Zahlenvektor durch. Beachte
 dabei, dass sich beim Löschen der Index verkürzt.
 
 **Dokumentation**: `?"["`
 
-##### Vektorelemente mit logischen Vektoren selektieren
+### Vektorelemente mit logischen Vektoren selektieren
 
 Du hast Vektorelemente im vorigen Abschnitt über ihren Index selektiert, als
 Positivauswahl oder als Negativauswahl. Eine Alternative dazu ist die Auswahl
@@ -444,10 +446,10 @@ SELECT numbers FROM table WHERE numbers %% 2 > 0
 ```
 
 **Aufgabe**: Mische die Zahlen von 1 bis 100 `numbers <- sample(100)`. Benutze
-einen logischen Vektor, um alle Zahlen heraus zu ziehen, die grösser als 50
+einen logischen Vektor, um alle Zahlen zu selektieren, die grösser als 50
 sind, wobei die Zufallsreihenfolge erhalten bleiben soll.
 
-#### Listen
+### Listen
 
 ### NA und NAN
 
@@ -456,5 +458,23 @@ sind, wobei die Zufallsreihenfolge erhalten bleiben soll.
 ### Text
 
 ### Zahlen
+
+Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Würdest Du
+Dir die Wortpaare *integer* und *float* wünschen? Das ist aber leider nicht die
+Terminologie von R. Prüfen wir, wie beide offiziell heissen:
+
+```{r}
+typeof(7L)
+typeof(7)
+class(7L)
+class(7)
+```
+Das ist nicht gerade konsistent, nicht wahr, und sicherlich ein Hinweis auf die
+Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller und
+damit vermutlich jünger?
+
+**Aufgabe**: Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
+`is.double()` und `is.numeric()`. Stimmt das Ergebnis mit Deinen Erwartungen
+überein?
 
 ### Funktionen

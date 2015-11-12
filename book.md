@@ -97,6 +97,107 @@ plot(radii, surfaces)
 Wie viel Zeilen Code wäre in anderen Sprachen nötig, um Listen von Daten zu
 berechnen und in einem Diagramm zu visualieren?
 
+### Die Funktion print()
+
+Die Ausgabe von Variablen ist in einem Lehrbuch so wichtig, dass ich sie
+gleich hier anspreche.
+
+
+```r
+print("Hallo!") # Direkte Ausgabe des Strings
+```
+
+```
+## [1] "Hallo!"
+```
+
+```r
+hallo <- "Hallo!"
+print(hallo) # Ausgabe der Variablen hallo
+```
+
+```
+## [1] "Hallo!"
+```
+
+Was bedeuten die Zeichen vor der Ausgabe?
+
+Die beiden Rauten `##` vor der Ausgabe sind Kommentarzeichen. Sie bewirken,
+dass die Zeile nicht ausgeführt wird, wenn Du die Ausgabe mit "Copy and Paste"
+übernimmst. Bei einer gedruckten Ausgabe des Buches, geht das nicht. Sie dienen
+auch dazu, die Ausgabe als Ausgabe zu kennzeichnen.
+
+Jetzt zähle ich von 1 bis 50
+
+
+```r
+print(1:50)
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+## [24] 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+## [47] 47 48 49 50
+```
+
+Du siehtst, dass die Zahl in eckigen Klammern dem Index der ersten Zahl in
+jeder Reihe entspricht.
+
+**Aufgabe:** Fängt die Aufzählung mit null oder eins an?
+
+Bei Zahlen von 1 bis 50 bringt Dir das keinen besonderen Nutzen. Schütteln wir
+die Zahlen also einmal ordentlich durch.
+
+
+```r
+print(sample(1:50))
+```
+
+```
+##  [1] 34 13 31 50 33  7 45 24 19  5 42  8 18 22 46 16 27 40  9 32 10 15 12
+## [24] 23  6 30 48 11 20 44  1 35  4 49 37  3 28 41 36 14 39 47  2 29 26 43
+## [47] 17 38 21 25
+```
+
+**Aufgabe:** Welche Zahl hat den Index 30?
+
+Meist wird die Funktion `print()` aber im Verborgenen ausgeführt. Werte werden
+automatisch ausgedruckt, wenn Du sie nicht in eine Variable schreibst oder
+anders weiter verwendst.
+
+
+```r
+hallo <- "hallo" # wird nicht ausgedruckt
+"HALLO" # wird ausgedruckt
+```
+
+```
+## [1] "HALLO"
+```
+
+Ausnahme: Werte werden nicht automatisch ausgedruckt, wenn sie in Schleifen
+stehen.
+
+
+```r
+for(counter in 1:2) {
+    print("Hallo")
+    "Welt"
+}
+```
+
+```
+## [1] "Hallo"
+## [1] "Hallo"
+```
+
+**Aufgabe:** Gib die obigen Beispiele ohne `print()` aus.
+
+* "Hallo"
+* `hallo <- "Hallo!"; hallo`
+* `1:50`
+* `sample(1:50)
+
 ### Was ist R?
 
 > R is a free software environment for statistical computing and graphics.
@@ -828,8 +929,6 @@ anderen Sprachen verwendet werden. Dazu später.
 
 ### Vektoren
 
-#### Wozu Vektoren?
-
 Vektoren, wie klingt das für Dich? Spannend, abschreckend, kompliziert,
 wissenschftlich oder nach gymnasialer Oberstufe? Wie auch immer, es ist das
 Feature in R, welches Du ziemlich bald in anderen Programmiersprachen vermissen
@@ -946,7 +1045,7 @@ angewendet. Dabei entspricht jede Spalte der Datenbank einem Vector.
 >
 > [David Hood on Coursera](https://class.coursera.org/repdata-034/forum/thread?thread_id=26)
 
-#### Atomare Vektortypen
+### Atomare Vektortypen
 
 Atomare Vektoren erfüllen die Funktionen von skalaren Typen in anderen
 Sprachen, aber mit den Features eines Vektors angereichert. R kennt diese
@@ -1035,50 +1134,6 @@ Um einen Integer-Vektor zu erzwingen, stellst Du ein grosses **L** dahinter
 teste ihn auf seinen Typ mit der Funktion `typeof()`, ob Du es richtig gemacht
 hast.
 
-Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Würdest Du
-Dir die Wortpaare *integer* und *float* wünschen? Das ist aber leider nicht die
-Terminologie von R. Prüfen wir, wie beide offiziell heissen:
-
-
-```r
-typeof(7L)
-```
-
-```
-## [1] "integer"
-```
-
-```r
-typeof(7)
-```
-
-```
-## [1] "double"
-```
-
-```r
-class(7L)
-```
-
-```
-## [1] "integer"
-```
-
-```r
-class(7)
-```
-
-```
-## [1] "numeric"
-```
-Das ist nicht gerade konsistent, nicht wahr, und sicherlich ein Hinweis auf die
-Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller und
-damit vermutlich jünger?
-
-**Aufgabe**: Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
-`is.double()` und `is.numeric()`. Stimmt das Ergebnis mit Deinen Erwartungen
-überein?
-
 Der Vektortyp *raw* enthält binäre Daten und wird nicht literal eingegeben. Du
 wirst ihn wohl eher selten verwenden. Angezeigt wird er als hexadezimaler Wert.
 
@@ -1103,7 +1158,7 @@ typeof(0x0f)
 ## [1] "double"
 ```
 
-##### Die Funktion Combine `c()`
+### Die Funktion Combine `c()`
 
 Soweit haben wir uns jetzt  mit atomaren Vektoren der Länge eins beschäftigt
 und bis hierher sehen sie einfach aus wie skalare Typen. Nützlich wird die
@@ -1199,7 +1254,7 @@ und `c(as.raw(0), "Hallo")`? Teste es.
 
 **Dokumentation**: `?c`
 
-##### Der Doppelpunkt Operator (Colon Operator)
+### Der Doppelpunkt Operator (Colon Operator)
 
 Der **Colon Operator** ist eine Kurzschreibweise für die Funktion `seq(from,
 to)`. Er ist ein sehr gängiges Verfahren, um eine Sequenz von Integer-Zahlen zu
@@ -1267,8 +1322,19 @@ typeof(1.1:5)
 ```
 
 Hier sehen wir auch, dass die zweite Zahl eine Obergrenze ist, aber nicht immer
-im Ergebnis selbst enthalten ist. Die Sequenz muss auch nicht immer mit `1`
-beginnen und kann auch abwärts zählen.
+im Ergebnis selbst enthalten ist.
+
+Die Sequenz muss auch nicht immer mit `1` beginnen und kann auch abwärts zählen.
+Du kannst mit negativen Zahlen arbeiten.
+
+
+```r
+3:-3
+```
+
+```
+## [1]  3  2  1  0 -1 -2 -3
+```
 
 **Aufgabe**: Probiere folgende Varianten aus:
 
@@ -1278,7 +1344,7 @@ beginnen und kann auch abwärts zählen.
 * `10:-10`
 * `pi:10`
 
-##### Vektorelemente lesen, bearbeiten und löschen
+### Vektorelemente lesen, bearbeiten und löschen
 
 Du hast jetzt gelernt, wie Du atomare Vektoren erzeugst. Wenn Du Daten
 verabeitest sind Vektoren Teil des Inputs. Um sie zu verabeiten, ist es jetzt
@@ -1411,6 +1477,35 @@ input[4:2]
 ## [1] "vier" "drei" "zwei"
 ```
 
+Um Elemente vor oder hinter dem Vektor einzufügen eignet sich die Funktion
+`c()`. Die Vereinigungsmenge wird in die originale Variable zurück geschrieben.
+Diese Operationen sind in anderen Sprachen als `unshift` und `push` bekannt.
+
+
+```r
+input <- c("null", input) #unshift
+input <- c(input, "fünf")
+input
+```
+
+```
+## [1] "null" "eins" "zwei" "drei" "vier" "fünf"
+```
+
+Du löscht Elemente, indem Du die verbleibende Teilmenge in die originale
+Variable zurückschreibst. Gerade hierführ eignet sich die Negativauswahl
+besonders gut, weil Du dabei einfach die zu löschenden Elemente indizierst.
+
+
+```r
+input <- input[-(2:3)]
+input
+```
+
+```
+## [1] "null" "drei" "vier" "fünf"
+```
+
 **Zusammenfassung**: Datenverabeiteung ist vollständig, wenn der CRUD-Zyklus
 vollständig ist, nämlich *create*, *read*, *update* und *delete*.
 
@@ -1433,16 +1528,12 @@ words[2:1]
 ## [1] "vier" "EINS"
 ```
 
-Das Löschen wird also durchgeführt, indem man die reduzierte Teilmenge in die
-alte Variable schreibt. Gerade hierführ eignet sich die Negativauswahl
-besonders gut, weil man dabei einfach die zu löschenden Elemente aufzählt.
-
 **Aufgabe**: Spiele den CRUD-Zypklus für einen Zahlenvektor durch. Beachte
 dabei, dass sich beim Löschen der Index verkürzt.
 
 **Dokumentation**: `?"["`
 
-##### Vektorelemente mit logischen Vektoren selektieren
+### Vektorelemente mit logischen Vektoren selektieren
 
 Du hast Vektorelemente im vorigen Abschnitt über ihren Index selektiert, als
 Positivauswahl oder als Negativauswahl. Eine Alternative dazu ist die Auswahl
@@ -1529,10 +1620,10 @@ SELECT numbers FROM table WHERE numbers %% 2 > 0
 ```
 
 **Aufgabe**: Mische die Zahlen von 1 bis 100 `numbers <- sample(100)`. Benutze
-einen logischen Vektor, um alle Zahlen heraus zu ziehen, die grösser als 50
+einen logischen Vektor, um alle Zahlen zu selektieren, die grösser als 50
 sind, wobei die Zufallsreihenfolge erhalten bleiben soll.
 
-#### Listen
+### Listen
 
 ### NA und NAN
 
@@ -1541,6 +1632,50 @@ sind, wobei die Zufallsreihenfolge erhalten bleiben soll.
 ### Text
 
 ### Zahlen
+
+Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Würdest Du
+Dir die Wortpaare *integer* und *float* wünschen? Das ist aber leider nicht die
+Terminologie von R. Prüfen wir, wie beide offiziell heissen:
+
+
+```r
+typeof(7L)
+```
+
+```
+## [1] "integer"
+```
+
+```r
+typeof(7)
+```
+
+```
+## [1] "double"
+```
+
+```r
+class(7L)
+```
+
+```
+## [1] "integer"
+```
+
+```r
+class(7)
+```
+
+```
+## [1] "numeric"
+```
+Das ist nicht gerade konsistent, nicht wahr, und sicherlich ein Hinweis auf die
+Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller und
+damit vermutlich jünger?
+
+**Aufgabe**: Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
+`is.double()` und `is.numeric()`. Stimmt das Ergebnis mit Deinen Erwartungen
+überein?
 
 ### Funktionen
 
