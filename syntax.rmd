@@ -158,6 +158,9 @@ Kurz gesagt, die Zuweisung zu Variablen erfolgt in R mittels des
 Zuweisungsoperators `<-`  während die Zuweisung zu Funktionsparametern und zu
 Namen in Listen und Data-Frames mit dem Gleichheitszeichen `=` erfolgt.
 
+**Tip:** Die Zeichenfolge **"<- "** kannst Du in RStudio unter Mac OS mittels
+**[Alt][-]** abkürzen. Mit anderen Betriebssystem mag das variieren.
+
 Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
 
 ```{r assignments}
@@ -229,9 +232,6 @@ Also:
 * `-->` Ist verwirrend und Du solltest wissen, was Du tust.
 
 **Tip:** Zuweisung mittels `<-` bevorzugen.
-
-**Tip:** Die Zeichenfolge **"<- "** kannst Du in RStudio unter Mac OS mittels
-**[Alt][-]** abkürzen. Mit anderen Betriebssystem mag da variieren.
 
 ### Namensräume
 
