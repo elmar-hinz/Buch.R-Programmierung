@@ -165,9 +165,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 47 45 10 23 46 29 26 44 11 12  7 14 21 18 20  5 17 40 38  3 50 30 22
-## [24] 16 19 35  1 42 41 24 39 13 48 33 28  4 31 34 27 43  8  6 15 49  2 25
-## [47] 32 37 36  9
+##  [1]  8 33 50  2 31 25 40 13 22  9  1 12 45 48 23 15 37 34 42  5 46  4  3
+## [24] 47 11 19 14 30  6 27 39  7 16 36 43 10 41 18 21 24 17 35 29 38 20 44
+## [47] 32 26 28 49
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -732,7 +732,10 @@ Also:
 * `<--` Du solltest wissen, was Du tust.
 * `-->` Ist verwirrend und Du solltest wissen, was Du tust.
 
-**Tip**: Zuweisung mittels `<-` bevorzugen.
+**Tip:** Zuweisung mittels `<-` bevorzugen.
+
+**Tip:** Die Zeichenfolge **"<- "** kannst Du in RStudio unter Mac OS mittels
+**[Alt][-]** abkürzen. Mit anderen Betriebssystem mag da variieren.
 
 ### Namensräume
 
