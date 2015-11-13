@@ -9,7 +9,7 @@ output:
 ---
 
 
-## Eine aktive Entdeckungsreise in die Welt von R
+## Komm mit auf die Entdeckungsreise in die Welt von R!
 
 Du willst also R lernen? Cool! Dafür kann es manche Gründe geben, aber sehr
 wahrscheinlich willst Du R in Zukunft benutzen, um Daten zu analysieren und zu
@@ -25,24 +25,24 @@ diese Welt Meile für Meile zu erschließen.
 
 Wir werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden
 gemeinsam staunen und hinterfragen.  Wir werden seltener die trockene
-Dokumentation heran ziehen, als R immer wieder aktiv aus sein Verhalten zu
+Dokumentation heran ziehen, als R immer wieder aktiv auf sein Verhalten zu
 testen, basierend auf meiner Erfahrung, was in der Programmierung wichtig ist.
 Im Zweifel ist das getestete Verhalten einer Sprache ihre Referenz.
 Dokumentation kann falsch, veraltet oder unverständlich sein.
 **Learning-by-Doing** und **Testing** sind darum zwei Prinzipien, die ich beim
 Lernen einer Programmiersprache für sehr wichtig halte.
 
-Wir werden auch sehen, wie man Testing automatisiert. Ich empfehle Dir das
+Wir werden auch sehen, wie man Testing automatisiert. Ich empfehle Dir, das
 möglichst rasch zu lernen. Du kannst es später einsetzen, um die Qualität
 Deiner Programme abzusichern. Es eignet sich aber auch sehr gut als aktive Form
-des Lernens. Du erhälst damit ein ausführbares Reisetagebuch, das Dir das
-Verhalten von R exakt und aktive dokumentiert, das Du immer wieder abspielen
+des Lernens. Du erhälst damit ein **ausführbares Reisetagebuch**, das Dir das
+Verhalten von R exakt und dynamisch dokumentiert, das Du immer wieder abspielen
 kannst wie eine Diashow, wie einen Film, ein Reisetagebuch, das Du fortan
 kontinuierlich fort schreiben kannst, wann immer Du auf eigene Faust auf
 Abenteuer los ziehst.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
-Gedanken über seine Leser machen, über Dich, darüber, was Du an Wissen und
+Gedanken über seine Leser machen, über Dich, darüber, was **Du** an Wissen und
 Erfahrung mitbringst. Es macht natürlich einen großen Unterschied, ob Du
 bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
 Programmierung einsteigst. Beide Szenarios schätze ich als häufig ein. Ist das
@@ -181,9 +181,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 28  8 47 11 20  9 43 18 22  7 49 41 37 36 44 13 26  5  3 46 21 12 15
-## [24] 14 24 25 42  6 33  2 45  1 17 50 35 30 48  4 34 31 40 16 39 19 27 29
-## [47] 38 10 32 23
+##  [1] 31 28  5 10 14 50 33  3 11  6 24 35 41 17 27 40  4  7 42 15 18 19 45
+## [24] 25  9 36 12 47 32 30 46  8 38 43 26 48 21 37 39 49 22 23 44  1 34 29
+## [47] 20 13  2 16
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?

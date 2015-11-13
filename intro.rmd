@@ -1,4 +1,4 @@
-## Eine aktive Entdeckungsreise in die Welt von R
+## Komm mit auf die Entdeckungsreise in die Welt von R!
 
 Du willst also R lernen? Cool! Dafür kann es manche Gründe geben, aber sehr
 wahrscheinlich willst Du R in Zukunft benutzen, um Daten zu analysieren und zu
@@ -14,24 +14,24 @@ diese Welt Meile für Meile zu erschließen.
 
 Wir werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden
 gemeinsam staunen und hinterfragen.  Wir werden seltener die trockene
-Dokumentation heran ziehen, als R immer wieder aktiv aus sein Verhalten zu
+Dokumentation heran ziehen, als R immer wieder aktiv auf sein Verhalten zu
 testen, basierend auf meiner Erfahrung, was in der Programmierung wichtig ist.
 Im Zweifel ist das getestete Verhalten einer Sprache ihre Referenz.
 Dokumentation kann falsch, veraltet oder unverständlich sein.
 **Learning-by-Doing** und **Testing** sind darum zwei Prinzipien, die ich beim
 Lernen einer Programmiersprache für sehr wichtig halte.
 
-Wir werden auch sehen, wie man Testing automatisiert. Ich empfehle Dir das
+Wir werden auch sehen, wie man Testing automatisiert. Ich empfehle Dir, das
 möglichst rasch zu lernen. Du kannst es später einsetzen, um die Qualität
 Deiner Programme abzusichern. Es eignet sich aber auch sehr gut als aktive Form
-des Lernens. Du erhälst damit ein ausführbares Reisetagebuch, das Dir das
-Verhalten von R exakt und aktive dokumentiert, das Du immer wieder abspielen
+des Lernens. Du erhälst damit ein **ausführbares Reisetagebuch**, das Dir das
+Verhalten von R exakt und dynamisch dokumentiert, das Du immer wieder abspielen
 kannst wie eine Diashow, wie einen Film, ein Reisetagebuch, das Du fortan
 kontinuierlich fort schreiben kannst, wann immer Du auf eigene Faust auf
 Abenteuer los ziehst.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
-Gedanken über seine Leser machen, über Dich, darüber, was Du an Wissen und
+Gedanken über seine Leser machen, über Dich, darüber, was **Du** an Wissen und
 Erfahrung mitbringst. Es macht natürlich einen großen Unterschied, ob Du
 bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
 Programmierung einsteigst. Beide Szenarios schätze ich als häufig ein. Ist das
