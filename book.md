@@ -19,11 +19,20 @@ R informiert.
 Ich schreibe dieses Buch nicht aus der Perspektive eines Experten in R, sondern
 aus der Perspektive eines erfahren Programmierers, der mit großer Neugierde
 selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Wir
-werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden seltener
-die trockene Dokumentation heran ziehen, als R immer wieder aktiv aus sein
-Verhalten testen, basierend auf meiner Erfahrung, was in der Programmierung
-wichtig ist. Learning-By-Doing und Testing sind zwei Prinzipien, die ich beim
-Lernen einer Programmiersprache für sehr wichtig halte.
+werden Parallelen zu anderen Programmiersprachen ziehen.
+
+Wir werden seltener die trockene Dokumentation heran ziehen, als R immer wieder
+aktiv aus sein Verhalten testen, basierend auf meiner Erfahrung, was in der
+Programmierung wichtig ist. Im Zweifel ist das getestete Verhalten die
+Referenz. Dokumentation kann falsch oder veraltet sein. Learning-By-Doing und
+Testing sind darum zwei Prinzipien, die ich beim Lernen einer
+Programmiersprache für sehr wichtig halte.
+
+Wir werden auch behandeln, wie man Testing automatisiert. Ich empfehle das
+möglichst rasch zu lernen. Du kannst es später einsetzen, um die Qualität
+Deiner Programme abzusichern, aber auch sehr gut als aktive Form des Lernens.
+Du erhälst damit ein ausführbares Lernprotokoll, das die Sprache dokumentiert
+und das Du kontinuierlich erweitern kannst.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
 Gedanken über seine Leser machen, über Dich, darüber, was ich an Wissen und
@@ -49,7 +58,7 @@ auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee verstanden zu
 haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort verstehst, zu
 überspringen und das vor zu ziehen, was Dir zugänglicher erscheint.
 
-Wenn diese selbständig, aktive Herangehensweise nicht Deinem Naturell
+Wenn diese selbständig aktive Herangehensweise nicht Deinem Naturell
 entspricht, empfehle ich, die Grundlagen des Programmierens auf andere Weise zu
 lernen, insbesondere in einem Kursus unter Anleitung. Solche Kurse als Einstieg
 in die Programmierung findest Du häufiger für andere Sprachen, wie Python, Java
@@ -165,9 +174,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 40 19  5 46 50 26 44 48 29 20 25 24 18 12 32 45 10 15 35  6 49 11 27
-## [24]  7 30  8 17 38 14 42  9 37 41 31 22 47 16  3  1 43 21 13  2 34 39 36
-## [47]  4 28 23 33
+##  [1] 19  8 25 38 47 12 46  2  6 32 15 50 43 36  3  5 30 13 33 28 44 39 11
+## [24] 42 24 48 20 22 27  7 49  9 18  4 16 26 34 40 17 21 45 23  1 31 37 35
+## [47] 10 41 14 29
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
