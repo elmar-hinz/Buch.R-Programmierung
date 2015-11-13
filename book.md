@@ -181,9 +181,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 13 48 27 42 43  4 40 34  2 28 31 12 32 26 21 35  5 49 10 24 39 37 45
-## [24] 17 50 25  3  9 29 14 19 16 38 46 23 22  8  6 47 11 33 18  7 15 36 41
-## [47] 44  1 20 30
+##  [1]  1 35 37 11 38 12 23 48  5 10 15 40  2 24 25 27 49 32 50  3 33 20 28
+## [24] 19 39 47 30 46 45 26 21 18  6 16 43  8 13 34 44 14  4  9 42 22 29 31
+## [47] 41 36 17  7
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -1836,7 +1836,7 @@ Jetzt wollen wir den Baum etwas editieren. Die verschachtelten Listen nenne ich
 Äste, die Nicht-Listen-Elemente, d.h. die Integer-Vektoren, nenne ich Zweige.
 Den einzelnen Integer-Werte entsprechen damit einem Blatt.
 
-##### Blätter verändern
+##### Ein Blatt verändern
 
 Ziel: Setze das Blatt 18 auf 180.
 
@@ -1868,14 +1868,13 @@ nested[[2]]
 ## [1]  16  17 180
 ```
 
-Bei den atomaren Vektoren, hatten wir bereits gesehen, wie Teile einer
-Variablen mit Hilfe der eckigen Klammern verändert werden. Die ganze Variable
-zu ersetzen, kann man als Maximalform davon betrachten. Hier ersetzen wir einen
-Teil, den wir über einen Pfad in der Variable `nested` adressieren.
+Fazit: Bei den atomaren Vektoren, hatten wir bereits gesehen, wie Teile einer
+Variablen mit Hilfe der eckigen Klammern verändert werden. Hier adressieren
+wir ein Blatt mit Hilfe eines Pfades innerhalb der Varianten `nested`.
 
 ##### Mehrere Blätter verändern
 
-Ziel: Setze das Blatt 16 und 17 auf 160 und 170.
+Ziel: Setze die Blätter 16 und 17 auf 160 und 170.
 
 
 ```r
@@ -1888,21 +1887,25 @@ nested[[2]]
 ## [1] 160 170 180
 ```
 
+Fazit: Der einzige Unterschied zum ersten Punkt ist, dass wir hier mehrere
+Blätter auf einen Streich ersetzen. Mit Vektoren ein Kinderspiel.
+
 ##### Blätter löschen
 
-Ziel: Lösche das Blatt 160.
+Ziel: Lösche die Blätter 160 und 170.
 
 Überlege:
 
 * Wie unterscheidet sich das Löschen vom Bearbeiten?
-* Was musst Du in diesem Falle adressieren?
+* Was genau musst Du in diesem Falle adressieren?
 
 Rekapitulation: Zum Löschen eines Elementes in einem atomaren Vektor muss die
 Variable mit der Teilmenge neu beschrieben werden.
 
 Genauer formuliert, es geht nicht immer um die ganze Variable, sondern um den
 Speicherbereich des Vektors. Die ganze Variable `nested` muss nämlich nicht neu
-geschrieben werden, sondern nur der Zweig, in dem das Blatt gelöscht wird.
+geschrieben werden, sondern nur der Zweig, in dem ein oder mehrere Blätter
+gelöscht werden.
 
 
 ```r
@@ -1916,7 +1919,7 @@ nested[[2]][[1]]
 
 ```r
 # Beschreiben mit der Teilmenge
-nested[[2]][[1]] <- nested[[2]][[1]][-1]
+nested[[2]][[1]] <- nested[[2]][[1]][-(1:2)]
 
 # Teilbaum anzeigen
 nested[[2]]
@@ -1924,21 +1927,16 @@ nested[[2]]
 
 ```
 ## [[1]]
-## [1] 170 180
+## [1] 180
 ```
 
 Ist es nicht verwirrend, dass drei Ebenen äquivalent zu zwei Ebenen sein
-sollen?
-
-Die Verschachtelung ist eine Natur der Listen, aber nicht die Natur des
-Vektors. Der Vektor kennt Mengen und Teilmengen. Hier operieren wir auf der
-Ebene des Vektors, der einfachen eckigen Klammer, nicht der doppelten. Die
-doppelte schachtelt (bei Listen) das Element darunter.
+sollen? Reduzieren wir das noch einmal.
 
 
 ```r
 numbers <- 11:15
-# Mit oder ohne eckige Klammer, hier wird die Gesamtmenge es Vektors
+# Mit oder ohne eckige Klammer, hier wird die Gesamtmenge des Vektors
 # aufgerufen.
 identical(numbers, numbers[1:5])
 ```
@@ -1947,11 +1945,23 @@ identical(numbers, numbers[1:5])
 ## [1] TRUE
 ```
 
+Die Verschachtelung ist eine Natur der Listen, aber nicht die Natur des
+Vektors. Hier operieren wir aber auf der Ebene des Vektors. Am Ende seteht eine
+einfach Eckige Klammer. Der Vektor kennt nur Mengen und Teilmengen. Die
+doppelte eckige Klammer schachtelt dagegen das Element darunter und
+charakterisiert die Natur der Liste.
+
+Fazit: Anders als beim Ändern einzelner Blätter, wobei nur die einzelnen
+Blätter selbst ausgetauscht werden, wird beim Löschen von Blättern der ganze
+Zweig ersetzt, also die übergeordnete Ebene. **Diese Erkenntnis ist zentral
+wichtig.** Auf der technischen Ebene können wir uns das damit erklären, dass beim
+Löschen die gesamte Indexierung des Vektors neu durchgezählt werden muss.
+
 ##### Einen Zweig verändern
 
-Technisch betrachtet, gehört der Punkt "Blätter löschen" schon zum
-Kapitel "Zweige verändern", weil der gesamte Vektor ersetzt wird.
-Die Technik wendest Du jetzt an um um den Vektor als ganze zu verändern.
+Technisch betrachtet, gehört der Punkt "Blätter löschen" also schon zum Kapitel
+"Einen Zweig verändern", weil der gesamte Vektor ersetzt wird. Diese Technik
+wendest Du jetzt an, um um den Vektor als ganze zu verändern.
 
 Ziel: Stelle den letzten Vektor wieder her als `16:18`.
 
@@ -1968,6 +1978,8 @@ nested[[2]]
 ## [[1]]
 ## [1] 16 17 18
 ```
+
+Fazit: Hier haben wir die Technik des Löschens verallgemeinert.
 
 ##### Einen Zweig im Typ verändern
 
@@ -1986,6 +1998,9 @@ nested[[2]]
 ## [[1]]
 ## [1] "sechzehn" "siebzehn" "achtzehn"
 ```
+
+Fazit: Dieselbe Technik.
+
 
 ##### Einen Zweig auf NULL setzen
 
@@ -2019,9 +2034,9 @@ gesetzt wurde, wurde auch sein Listenindex `nested[[2]][1]` entfernt.
 
 Indem man die Prozedur für andere Positionen wiederholt könnte man auch mehrere
 Zweige entfernen. Im Geiste der Vektor-Operationen ist eine solche Wiederholung
-aber nicht. Wir wollen mehrere Zweige löschen, indem wir einen Vektor mit den
-zu löschenden Indizes übergeben. Dies hier ist also eher eine Sackgasse oder
-ein Workaround.
+aber nicht. Wir wollen mehrere Zweige **ohne Wiederholung** löschen, indem wir
+einen Vektor mit den zu löschenden Indizes übergeben. Dies hier ist also eher
+eine **Sackgasse** oder ein Workaround.
 
 Stelle den Vektor mit der folgenden Zeile darum wieder her.
 
@@ -2036,8 +2051,8 @@ nested[[2]]
 ## [1] 16 17 18
 ```
 
-Ziel: Vergleiche was passiert, wenn Du dasselbe mit nur einer eckigen Klammer
-machst. Also indem du den Listenvektor statt des zugehörigen atomaren Vektors
+Ziel: Vergleiche, was passiert, wenn Du dasselbe mit nur einer eckigen Klammer
+machst. Also indem Du den Listenvektor statt des zugehörigen atomaren Vektors
 ansprichst.
 
 
@@ -2050,7 +2065,10 @@ nested[[2]]
 ## list()
 ```
 
-Das Ergebnis bleibt sich gleich.
+Das Ergebnis bleibt sich gleich. Es ist genauso eine **Sackgasse**.
+
+Fazit: Teile des Baumes mit NULL zu überschreiben, kann quick-and-dirty
+durchaus nützlich sein, ein stringentes Verfahren ist das aber nicht.
 
 ##### Mehrere Zweige zugleich löschen
 
@@ -2058,58 +2076,18 @@ Wie uns bei den Blättern das Löschen eine Ebene höher führte, so wird es das
 sicherlich auch bei den Zweigen tun, von den Zweigen auf die Ebene des Astes,
 vom atomaren Vektor auf die Ebene der Liste.
 
-
-
+Ziel: Lösche die Zweige 4:6 und 7:9.
 
 Überlege:
 
-* Was genau ist dieser Ast?
-* Wie wird der Ast gelöscht?
-* Wie wird `nested` anschließend aussehen?
-
-Hast Du deine Hypothesen aufgestellt? Los geht's!
-
-Was enthält der Ast?
+* Wie unterscheidet sich das Löschen vom Bearbeiten?
+* Was genau musst Du in diesem Falle adressieren?
+* Wie ziehst Du die Analogie zum Löschen von Blättern?
 
 
 ```r
-typeof(nested[[1]][[1]][2])
-```
-
-```
-## [1] "list"
-```
-
-```r
-nested[[1]][[1]][2]
-```
-
-```
-## [[1]]
-## [1] 4 5 6
-```
-
-Der Ast enthält eine Liste, denn das letzte Klammerpaar ist einfach.
-Andernfalls würde es den Integer-Vektor adressieren.
-
-Wie wird der Ast gelöscht?
-
-Wir haben bereits gesehen, dass Vektoren gelöscht werden, indem man die
-verbleibende Teilmenge in die original Variable zurück schreibt. Das
-gilt grundsätzlich auch für Listen-Vektoren.
-
-Bei verschachtelten Listen müssen wir das allerdings auf der Ebene eines Astes
-praktizieren, und zwar auf der Ebene oberhalb des zu löschenden Asts. Um im
-Bild zu bleiben, sägen wir von diesem übergeordneten Ast den zu entfernenden
-Ast ab.
-
-Der übergeordnete Ast adressiert den Vektor seiner Unteräste. Das ist die
-Menge mit der wir arbeiten. Genau dahin schreiben wir den Satz der
-verbleibenden Unteräste.
-
-
-```r
-# Der übergeordnete Ast adressiert den Vektor seiner Unteräste
+# Pfad der "Ebene höher", der Ast, der die zu löschenden Zweige enthält.
+# Dieser muss also mit seiner Teilmenge ersetzt werden.
 nested[[1]][[1]]
 ```
 
@@ -2125,49 +2103,75 @@ nested[[1]][[1]]
 ```
 
 ```r
-# Die Teilmenge entsteht durch Entfernung des Zielastes
-nested[[1]][[1]][-2]
+# Beschreiben mit der Teilmenge
+nested[[1]][[1]] <- nested[[1]][[1]][-(2:3)]
+
+# Danach
+nested[[1]][[1]]
 ```
 
 ```
 ## [[1]]
 ## [1] 1 2 3
-## 
-## [[2]]
-## [1] 7 8 9
 ```
 
+Fazit: Wir konnten die Lösung, die wir auf Ebene der Blätter erarbeitet haben,
+unverändert auf die Ebene der Zweige übertragen und haben uns so auf die
+komplexere Ebene vorgetastet. Umgekehrt wäre das nicht so leicht gewesen.
+
+Im letzten Schritt heben wir dieses Prozedere auf die Ebene der Äste.
+
+##### Mehrere Äste zugleich löschen
+
+Ziel: Lösche die Äste "nested.1.2" und "nested.1.3"!
+
+Die Anführungszeichen setze ich, weil das keine R-Syntax ist. Den Transfer
+sollst Du leisten.
+
+
 ```r
-# Zurückschreiben der Teilmenge
-nested[[1]][[1]] <- nested[[1]][[1]][-2]
-# Ergebnis
-nested
+# Der übergeordnete Ast
+nested[[1]]
 ```
 
 ```
 ## [[1]]
 ## [[1]][[1]]
-## [[1]][[1]][[1]]
 ## [1] 1 2 3
-## 
-## [[1]][[1]][[2]]
-## [1] 7 8 9
-## 
-## 
-## [[1]][[2]]
-## [[1]][[2]][[1]]
-## [1] 10 11 12
-## 
-## 
-## [[1]][[3]]
-## [[1]][[3]][[1]]
-## [1] 13 14 15
-## 
 ## 
 ## 
 ## [[2]]
-## list()
+## [[2]][[1]]
+## [1] 10 11 12
+## 
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] 13 14 15
 ```
+
+```r
+# Beschreiben mit der Teilmenge seiner Äste
+nested[[1]] <- nested[[1]][-(2:3)]
+
+# Danach
+nested[[1]]
+```
+
+```
+## [[1]]
+## [[1]][[1]]
+## [1] 1 2 3
+```
+
+Fazit: Dieser letzte Schritt war jetzt straightforward. Wir hatten auch
+schon gesehen, dass das Löschen meherer Elemente nur ein Spezialfall des
+Veränderns der übergeordneten Ebene ist.
+
+Gesamt-Fazit: In einem verschachtelten Baum von Vektoren entspricht das Löschen
+von Elementen dem Verändern des Vektors auf der übergeordneten Ebene. Dies
+lässt sich damit erklären, dass beim Löschen der Index des übergeordneten
+Vektors neu durchgezählt werden muss.
 
 #### Die Funktion Combine c() mit Listen
 
@@ -2218,31 +2222,15 @@ combined
 ## [1] 2
 ```
 
-#### CRUD - Create, Read, Update, Delete mit Listen
+Die Verschachtelung der Listen-Vektoren bleibt erhalten. Die atomaren Vektoren
+werden in eine Liste umgewandelt und deren Elemente dann in die kombinierte
+Liste eingereiht. Dadurch werden sie bildlich aufgeribbelt.
 
-Kommen wir zum CRUD-Zyklus einer Liste:
-
-
-```r
-# Create
-names <- c("Merkur", "Venus", "Welt", "Mars")
-radii <- c(2440, 6052, 6371, 3389)
-planets <- list(names, radii)
-
-# Update
-
-# Read
-planets
-```
-
-```
-## [[1]]
-## [1] "Merkur" "Venus"  "Welt"   "Mars"  
-## 
-## [[2]]
-## [1] 2440 6052 6371 3389
-```
-
+Dieses Aufribbeln in einen gemeinsame Liste entspricht zwar genau dem Verhalten
+der Funktion `c()` mit atomaren Vektoren, kann im Zusammenhang mit einer Liste
+trotzdem befremden. Eine Liste wäre nämlich auch in der Lage, die atomaren Vektoren
+als Unterelemente aufzunehmen, was den intuitiven Erwartungen eventuell näher
+käme. Also lieber zwei mal testen.
 
 ### NA und NaN
 
