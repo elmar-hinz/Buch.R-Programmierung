@@ -20,7 +20,7 @@ Ich schreibe dieses Buch nicht aus der Perspektive eines Experten in R, sondern
 aus der Perspektive eines erfahren Programmierers, der mit großer **Neugierde**
 selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Ich
 lade Dich ein, mich auf meiner **Entdeckungsreise in die Welt von R** zu
-begleiten und mit mir gemeinsam das **große mentale Abenteuer** zu bestehen,
+begleiten und mit mir gemeinsam **das große mentale Abenteuer** zu bestehen,
 diese Welt Meile für Meile zu erschließen.
 
 Wir werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden
@@ -181,9 +181,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1]  4  9 29 45  3 20 12 39 23  8 48 17  6 22 41  5 10  2 44 32 43 31 15
-## [24] 35 46 30 40 26 49 38 37 11 14 25 19 18 33 47 50 36 16 34 28 27 42 13
-## [47]  1 21  7 24
+##  [1] 28  8 47 11 20  9 43 18 22  7 49 41 37 36 44 13 26  5  3 46 21 12 15
+## [24] 14 24 25 42  6 33  2 45  1 17 50 35 30 48  4 34 31 40 16 39 19 27 29
+## [47] 38 10 32 23
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
