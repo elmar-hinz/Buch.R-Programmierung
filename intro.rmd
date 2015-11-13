@@ -9,7 +9,7 @@ Ich schreibe dieses Buch nicht aus der Perspektive eines Experten in R, sondern
 aus der Perspektive eines erfahren Programmierers, der mit großer **Neugierde**
 selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Ich
 lade Dich ein, mich auf meiner **Entdeckungsreise in die Welt von R** zu
-begleiten und mit mir gemeinsam das große mentale **Abenteuer** zu bestehen,
+begleiten und mit mir gemeinsam das **große mentale Abenteuer** zu bestehen,
 diese Welt Meile für Meile zu erschließen.
 
 Wir werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden
