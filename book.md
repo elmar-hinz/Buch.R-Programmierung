@@ -165,9 +165,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1]  1  8 37 50 19 29  6 27  4 12 10 31 21 44 23 24 13 34 49 36 11 22 33
-## [24]  9 25 47 43 30  2 18  3 35  7 39  5 28 20 46 38 17 42 14 45 40 26 16
-## [47] 15 41 32 48
+##  [1] 40 19  5 46 50 26 44 48 29 20 25 24 18 12 32 45 10 15 35  6 49 11 27
+## [24]  7 30  8 17 38 14 42  9 37 41 31 22 47 16  3  1 43 21 13  2 34 39 36
+## [47]  4 28 23 33
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -654,7 +654,7 @@ Zuweisungsoperators `<-`  während die Zuweisung zu Funktionsparametern und zu
 Namen in Listen und Data-Frames mit dem Gleichheitszeichen `=` erfolgt.
 
 **Tip:** Die Zeichenfolge **"<- "** kannst Du in RStudio unter Mac OS mittels
-**[Alt][-]** abkürzen. Mit anderen Betriebssystem mag das variieren.
+**[Alt][-]** abkürzen. Mit anderen Betriebssystemen mag das variieren.
 
 Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
 

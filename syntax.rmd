@@ -159,7 +159,7 @@ Zuweisungsoperators `<-`  während die Zuweisung zu Funktionsparametern und zu
 Namen in Listen und Data-Frames mit dem Gleichheitszeichen `=` erfolgt.
 
 **Tip:** Die Zeichenfolge **"<- "** kannst Du in RStudio unter Mac OS mittels
-**[Alt][-]** abkürzen. Mit anderen Betriebssystem mag das variieren.
+**[Alt][-]** abkürzen. Mit anderen Betriebssystemen mag das variieren.
 
 Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
 
