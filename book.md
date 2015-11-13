@@ -181,9 +181,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 30 11 26  7 15 47 40  5 39 20 32  1 44 21 29  2 45 36 41 18 27 33 14
-## [24] 24 49 12 10 16  3 31 43 19 38  8 48 34 37 50 46 35  9 42 17  6 22 23
-## [47] 25 13  4 28
+##  [1] 39 13  8 10 28 36 33 44 41 17 27  2 29 35 34  1 37  7 20 14 42 23 40
+## [24] 32 30 19 31 43 12  4  5 11 49 38 26  3 21 47 24 15 48 45 18 25  9 46
+## [47] 50  6 16 22
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -2228,10 +2228,10 @@ Liste eingereiht. Dadurch werden sie bildlich aufgeribbelt. Die Art der
 Umwandlung im ersten Schritt entspricht der Anwendung der Funktion
 `as.list()`.
 
-Eine Liste wäre nämlich auch in der Lage, die atomaren Vektoren
-als Unterelemente aufzunehmen, was den intuitiven Erwartungen eventuell näher
-käme. Das entspräche der Anwendung von `list()`. So verhält sich
-die Funktion `c()` mit Listen aber nicht.
+Eine Liste wäre nämlich auch in der Lage, die atomaren Vektoren als Ganzes als
+Unterelemente aufzunehmen, was den intuitiven Erwartungen eventuell näher käme.
+Das entspräche der Anwendung von `list()`. So verhält sich die Funktion `c()`
+mit Listen aber nicht.
 
 #### Vergleich der Funktionen `as.list()` und `list()`
 

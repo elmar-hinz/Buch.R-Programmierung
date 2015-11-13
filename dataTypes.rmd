@@ -796,10 +796,10 @@ Liste eingereiht. Dadurch werden sie bildlich aufgeribbelt. Die Art der
 Umwandlung im ersten Schritt entspricht der Anwendung der Funktion
 `as.list()`.
 
-Eine Liste wäre nämlich auch in der Lage, die atomaren Vektoren
-als Unterelemente aufzunehmen, was den intuitiven Erwartungen eventuell näher
-käme. Das entspräche der Anwendung von `list()`. So verhält sich
-die Funktion `c()` mit Listen aber nicht.
+Eine Liste wäre nämlich auch in der Lage, die atomaren Vektoren als Ganzes als
+Unterelemente aufzunehmen, was den intuitiven Erwartungen eventuell näher käme.
+Das entspräche der Anwendung von `list()`. So verhält sich die Funktion `c()`
+mit Listen aber nicht.
 
 #### Vergleich der Funktionen `as.list()` und `list()`
 
