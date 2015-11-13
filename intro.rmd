@@ -20,8 +20,8 @@ Programmiersprache für sehr wichtig halte.
 Wir werden auch behandeln, wie man Testing automatisiert. Ich empfehle das
 möglichst rasch zu lernen. Du kannst es später einsetzen, um die Qualität
 Deiner Programme abzusichern, aber auch sehr gut als aktive Form des Lernens.
-Du erhälst damit ein ausführbares Lernprotokoll, das die Sprache dokumentiert
-und das Du kontinuierlich erweitern kannst.
+Du erhälst damit ein ausführbares Lernprotokoll, das Dir das Verhalten von
+exakt dokumentiert und das Du kontinuierlich erweitern kannst.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
 Gedanken über seine Leser machen, über Dich, darüber, was ich an Wissen und
