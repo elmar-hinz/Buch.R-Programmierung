@@ -165,9 +165,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1]  8 33 50  2 31 25 40 13 22  9  1 12 45 48 23 15 37 34 42  5 46  4  3
-## [24] 47 11 19 14 30  6 27 39  7 16 36 43 10 41 18 21 24 17 35 29 38 20 44
-## [47] 32 26 28 49
+##  [1]  1  8 37 50 19 29  6 27  4 12 10 31 21 44 23 24 13 34 49 36 11 22 33
+## [24]  9 25 47 43 30  2 18  3 35  7 39  5 28 20 46 38 17 42 14 45 40 26 16
+## [47] 15 41 32 48
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -653,6 +653,9 @@ Kurz gesagt, die Zuweisung zu Variablen erfolgt in R mittels des
 Zuweisungsoperators `<-`  während die Zuweisung zu Funktionsparametern und zu
 Namen in Listen und Data-Frames mit dem Gleichheitszeichen `=` erfolgt.
 
+**Tip:** Die Zeichenfolge **"<- "** kannst Du in RStudio unter Mac OS mittels
+**[Alt][-]** abkürzen. Mit anderen Betriebssystem mag das variieren.
+
 Dieses Beispiel zeigt die Anwendung von `<-` und `=`.
 
 
@@ -733,9 +736,6 @@ Also:
 * `-->` Ist verwirrend und Du solltest wissen, was Du tust.
 
 **Tip:** Zuweisung mittels `<-` bevorzugen.
-
-**Tip:** Die Zeichenfolge **"<- "** kannst Du in RStudio unter Mac OS mittels
-**[Alt][-]** abkürzen. Mit anderen Betriebssystem mag da variieren.
 
 ### Namensräume
 
