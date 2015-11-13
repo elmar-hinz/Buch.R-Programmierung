@@ -2,7 +2,7 @@
 title: "Einführung in die Programmierung mit R"
 author: "Elmar Alexander Hinz"
 date: "2015"
-output: 
+output:
   html_document:
     keep_md: yes
     toc: yes
@@ -18,7 +18,7 @@ R informiert.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
 Gedanken über seine Leser machen, über Dich, darüber, was ich an Wissen und
-Erfahrung voraussetzen kann. Es macht natürlich einen grossen Unterschied, ob
+Erfahrung voraussetzen kann. Es macht natürlich einen großen Unterschied, ob
 Du bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
 Programmierung einsteigst. Beide Szenarios schätze ich als häufig ein. Ist das
 also Dein Buch?
@@ -33,12 +33,13 @@ Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine sehr aktive
 Herangehensweise von Deiner Seite voraus, denn das Programmieren lernst Du nur
 indem Du es tust.
 
-Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, z.B. mittels
-Wikipedia. Zweitens brauchst Du eine spielerische, aktive Herangehensweisea.
-Du musst viel ausprobieren, auch wenn Dich das Buch nicht direkt dazu
-auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee verstanden zu
-haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort verstehst, zu
-überspringen und das vor zu ziehen, was Dir zugänglicher erscheint.
+Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, zum Beispiel
+mittels Wikipedia. Zweitens brauchst Du eine spielerische, aktive
+Herangehensweise.  Du musst viel ausprobieren, auch wenn Dich das Buch nicht
+direkt dazu auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee
+verstanden zu haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort
+verstehst, zu überspringen und das vor zu ziehen, was Dir zugänglicher
+erscheint.
 
 Wenn diese aktive Herangehensweise nicht Deinem Naturell entspricht, empfehle
 ich, die Grundlagen des Programmierens auf andere Weise zu lernen, insbesondere
@@ -67,8 +68,8 @@ print("Hallo Welt!")
 Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?  R ist eben
 leicht zu lernen.
 
-Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die
-Oberflächen meherer Planeten anhand ihres Radius, ohne dass eine Schleife
+Charakteristisches für R zeigt dieses kleine Programm. Wir berechnen die
+Oberflächen mehrerer Planeten anhand ihres Radius, ohne dass eine Schleife
 nötig wird.
 
 
@@ -96,7 +97,7 @@ plot(radii, surfaces)
 
 **Aufgabe:** Wie viel Zeilen Code wäre in anderen Programmiersprache, die Du
 kennst, nötig, um Listen von Daten zu berechnen und in einem Diagramm zu
-visualieren?
+visualisieren?
 
 ### Die Funktion print()
 
@@ -141,7 +142,7 @@ print(1:50)
 ## [47] 47 48 49 50
 ```
 
-Du siehtst, dass die Zahl in eckigen Klammern dem Index der ersten Zahl in
+Du siehst, dass die Zahl in eckigen Klammern dem Index der ersten Zahl in
 jeder Reihe entspricht.
 
 **Aufgabe:** Fängt die Aufzählung mit null oder eins an?
@@ -155,17 +156,17 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 47 23 31 28 29 24 22  3 20 40 49  9 45  6 38 13 33 41 12 44  5 25 34
-## [24] 14 30 32 17 37 16 18 36  7 42 43  2 39 19  4 11 26 35 50  8  1 46 27
-## [47] 48 15 10 21
+##  [1]  2 26 10 47 11  7 36 24  9 25 40 48 37 29 46 27 41 19 33 31  3 17 43
+## [24] 32 49 23 38 34 20 18 13 30 42 44  5 45 12 22 39  6 16  1  4 15 14 21
+## [47] 28  8 35 50
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
 
 Meist wird die Funktion `print()` aber im Verborgenen ausgeführt. Werte werden
 automatisch ausgedruckt, wenn Du sie nicht in eine Variable schreibst oder
-anders weiter verwendst. Von diesem Feature mache ich in fast allen Beispielen
-dieses Buches gebrauch.
+anders weiter verwendest. Von diesem Feature mache ich in fast allen Beispielen
+dieses Buches Gebrauch.
 
 
 ```r
@@ -213,21 +214,21 @@ installierst hast.
     * funktional
     * eingeschränkt objektorientiert
 * R ist eine freie Software Sammlung
-    * für statisiche Berechnungen und ihre Visualisierung
+    * für statistische Berechnungen und ihre Visualisierung
     * mit Interpreter, Shell, IDE und Bibliotheken
-    * die unter Unix, MacOs und Windows benutzt werden kann
+    * die unter Unix, Mac OS und Windows benutzt werden kann
 * R ist in vielen Bereichen der Wissenschaft der de facto Standard zur
   Erstellung und Veröffentlichung von statistischen Forschungsergebnissen.
-* R ist ein Werkzeug, das als Schnittstelle von grossen IT-Firmen in ihre
+* R ist ein Werkzeug, das als Schnittstelle von großen IT-Firmen in ihre
   Produkte implementiert wird.
 
 ### Was macht R besonders?
 
-Zwei der besondere Stärken von R hast Du gerade kennen gerlernt. Erstens die
+Zwei der besondere Stärken von R hast Du gerade kennen gelernt. Erstens die
 unkomplizierte Weise, ganze Listen von Daten so einfach zu verarbeiten, als sei
 das ein einzelner Wert, zweitens die komfortablen Möglichkeiten, Daten als
 Diagramme zu visualisieren. R ist zudem auf allen verbreiteten Betriebssystemen
-einsetzbar, nämlich Linux, MacOS und Windows. Das ist vor allem im Vergleich
+einsetzbar, nämlich Linux, Mac OS und Windows. Das ist vor allem im Vergleich
 mit Exel ein Vorteil, nicht zuletzt im Hinblick auf die Reproduzierbarkeit von
 Studien.
 
@@ -241,11 +242,11 @@ als "historisch bedingt". Zur Geschichte gibt es noch ein eigenes Kapitel.
 
 Das Alleinstellungsmerkmal von R sind aber sicherlich die umfangreichen
 frei verfügbaren Bibliotheken, die dem Wissenschaftler zur Verfügung stehen,
-um Daten aufzuarbeiten, zu analysiern und zu visualisieren. Auch wie
+um Daten aufzuarbeiten, zu analysieren und zu visualisieren. Auch wie
 das getan wird, ist wissenschaftlich fundiert. Die Schritte folgen
 definierten Grammatiken.
 
-Natürlich verabeiten alle Programmiersprachen Daten. Entscheidend ist also,
+Natürlich verarbeiten alle Programmiersprachen Daten. Entscheidend ist also,
 wie die Daten betrachtet und genutzt werden. In der Wissenschaft steht der
 Erkenntnisgewinn im Vordergrund. Charakteristisch sind die Umformung der
 Daten, die Analyse und die Visualisierung.
@@ -258,10 +259,10 @@ ganz andere Anforderungen an die Software stellt.
 
 Im Regelfall lädt R die Daten komplett in den Arbeitsspeicher, bevor es mit der
 weiteren Verarbeitung beginnt. Das hat den Vorteil, dass Du sehr schnell und
-flexibel auch mit grossen Datenmengen jonglieren kannst, Stichwort Exploration.
+flexibel auch mit großen Datenmengen jonglieren kannst, Stichwort Exploration.
 Für Twitter oder ein Betriebssystem wäre diese Herangehensweise gar nicht
 möglich, weil die Daten kontinuierlich strömen. Mit diesem Feature setzt sich R
-also zugleich auch eine wichtige Grenze. Für die Verabeitung von Datenstömen
+also zugleich auch eine wichtige Grenze. Für die Verarbeitung von Datenströmen
 ist R nicht optimiert.
 
 ### Ist R eine Programmiersprache oder ein Werkzeug?
@@ -293,40 +294,39 @@ ist, darauf fällt die Antwort sehr unterschiedlich aus, je nach Blickwinkel.
 Oft lautet auch Frage auch, was im Bereich der Datenwissenschaft die bessere
 Sprache ist, Python oder R. R hat in diesem Bereich die umfangreichere
 Werkzeugsammlung, die Infrastruktur von Python ist breiter aufgestellt und kann
-damit besser Brücken schlagen. In der Bioinformatik bespielsweise, wo
-Algorithmen stärker im Vordergrung stehen als Datentabellen, Statistiken und
+damit besser Brücken schlagen. In der Bioinformatik beispielsweise, wo
+Algorithmen stärker im Vordergrund stehen als Datentabellen, Statistiken und
 Diagramme, gibt es eine höhere Affinität zu Python. Beide Sprachen sind so
-leicht zu lernen, dass nichts dagegen spricht sie gemeinsam einzusetzten.
-Schliesslich werden Konzepte zur Datenberechnung, die sich in R bewährt haben
-auch in Python übernommen, so dass die Grenzen zwischen beiden Sprachen
-abnehmen.
+leicht zu lernen, dass nichts dagegen spricht sie gemeinsam einzusetzen.
+Schließlich werden Konzepte, die sich in R bewährt haben auch in Python
+übernommen, so dass die Grenzen zwischen beiden Sprachen abnehmen.
 
 Die Sprache alleine ist auch nicht das alles Entscheidende. Genauso wichtig
 sind die verfügbaren Bibliotheken, Interpreter und Compiler, um das optimale
-Einsatzgebiet einer Sprache zu bestimmen. R wurde von Wissenschaftleren für
+Einsatzgebiet einer Sprache zu bestimmen. R wurde von Wissenschaftlern für
 Wissenschaftler entwickelt und gepflegt. Das hat das Profil der vorhandenen
 Werkzeuge geprägt. Datenanalyse wird aber auch in weiten Bereichen der
-Wirtschaft, der Politik oder des Journalismus immer wichtiger. Ensprechend
+Wirtschaft, der Politik oder des Journalismus immer wichtiger. Entsprechend
 weitet sich aus das Spektrum der Bibliotheken aus.
 
-R ist heute u.a. geeignet, um datenzentierte Artikel und Bücher zu verfassen.
+R ist heute unter anderem geeignet, um datenzentierte Artikel und Bücher zu verfassen.
 Dieses Buch ist mithilfe solcher Bibliotheken erstellt. Es enstehen
 Bibliotheken, die die Veröffentlichung als Webseiten oder als mobile Apps
 unterstützen, mit zunehmenden interaktiven Möglichkeiten. IBM, Oracle,
-Microsoft, SAP, etc. implementieren Schnittstellen, um R als Werkzeug einbinden
+Microsoft, SAP, et cetera implementieren Schnittstellen, um R als Werkzeug einbinden
 zu können.
 
 Im Vergleich zu Java oder C++ ist R als universelle Programmiersprache heute
-noch weniger geeignet. Erstens ist sind seine objektorientieren Möglichkeiten
-noch nicht voll entwickelt, zweitens sind seine Bibliotheken sehr spezialisert
-und drittens setzt sein Speicherverhalten konzeptionlle Grenzen, die aber
+noch weniger geeignet. Erstens ist sind seine objektorientierten Möglichkeiten
+noch nicht voll entwickelt, zweitens sind seine Bibliotheken sehr spezialisiert
+und drittens setzt sein Speicherverhalten konzeptionelle Grenzen, die aber
 überwindbar sind.
 
-R besetzte eine verwandte Lücke, für die Perl ursprünglich konzeptioniert war,
-als "Practical Extraction and Report Language". Perl hat diese Nische
-unerwartet verlassen und wurde die erste Sprache der Internet Programmierung.
-In der Folge wurde es auf beiden Gebieten abgelöst, u.a wegen seiner Grenzen
-bei der Objektorientieren Programmierung und der zu langsamen Erneuerung der
+R besetzte eine verwandte Lücke, für die Perl ursprünglich entworfen wurde, als
+"Practical Extraction and Report Language". Perl hat diese Nische unerwartet
+verlassen und wurde die erste Sprache der Internet Programmierung.  In der
+Folge wurde es auf beiden Gebieten abgelöst, unter anderem wegen seiner Grenzen
+bei der objektorientierten Programmierung und der zu langsamen Erneuerung der
 Sprache, aber vielleicht auch wegen des Verlustes seiner Spezialisierung. Wir
 finden Parallelen in R, sowohl bei den Chancen als auch bei den Risiken. Die
 Unterstützung durch Industrie und Wissenschaft ist aber viel umfassender als in
@@ -342,7 +342,7 @@ der Geschichte von Perl.
 
 ### Hardware Anforderungen
 
-Ich setze in diesem Buch voraus, dass Du über einen zeitgemässen Rechner
+Ich setze in diesem Buch voraus, dass Du über einen zeitgemäßen Rechner
 verfügst, PC oder Mac. Damit meine ich dass er nicht unbedingt älter als 5
 Jahre ist. Grenzfälle lassen sich im Rahmen einer Einführung leider schlecht
 behandeln.
@@ -353,12 +353,12 @@ gleichzeitig noch viele andere Programme geöffnet hast.
 
 Der entscheidende Faktor ist die Menge der Daten, welche Du in den
 Arbeitsspeicher lädst. Für die Übungen in diesem Buch wirst Du da nicht an
-Grenzen stossen. Sobald Du aber mit realen Daten arbeitest, sind der Datenmenge
+Grenzen stoßen. Sobald Du aber mit realen Daten arbeitest, sind der Datenmenge
 nach oben keine Grenzen gesetzt, Deinem Arbeitsspeicher dagegen schon.
 
-Ohne besondere Massnahmen lädt R die Gesamtmenge der Daten in den
+Ohne besondere Maßnahmen lädt R die Gesamtmenge der Daten in den
 Arbeitsspeicher bevor es damit arbeiten kann. Man sagt daher als Faustregel,
-dass der Arbeitsspeicher mindestens doppelt so gross seine sollte, wie die
+dass der Arbeitsspeicher mindestens doppelt so groß seine sollte, wie die
 zu verarbeitende Datenmenge.
 
 Dabei liegt die Betonung auf mindestens, denn dann musst Du immer noch
@@ -368,7 +368,7 @@ Variable speichern? In der zweiten Hälfte Deines Arbeitsspeichers liegen ja
 auch Betriebssystem und Programme. Der Rechner würde wahrscheinlich heftig
 anfangen zu swappen.
 
-Swappen heisst, der Rechner schreibt unbenutzte Arbeitsspeicherbereiche auf die
+Swappen heißt, der Rechner schreibt unbenutzte Arbeitsspeicherbereiche auf die
 Festplatte und lädt sie, sobald sie wieder gebraucht werden. Das bremst bis zur
 Unbenutzbarkeit.
 
@@ -378,17 +378,17 @@ Unbenutzbarkeit.
 ### Programmausführung
 
 R ist eine interpretierte Sprache. Ein Programm muss nicht als Ganzes
-kompiliert werden um ausfürbar zu sein. Stattdessen wird eine Instruktion nach
+kompiliert werden um ausführbar zu sein. Stattdessen wird eine Instruktion nach
 der anderen entgegengenommen und direkt ausgeführt. Diese Instruktionen können
 entweder einzeln in der Shell eingegeben oder als Liste in eine Datei
 geschrieben werden. Damit erhältst Du dann ein Programmskript.
 
 #### Shell
 
-In der Shell gibtst Du Instruktionen ein, die Du nur einmalig ausführen willst
+In der Shell gibst Du Instruktionen ein, die Du nur einmalig ausführen willst
 und nicht speichern. Beispiele sind:
 
-* Aufruf von Programmenskripten.
+* Aufruf von Programmskripten.
 * Aufruf der Hilfe.
 * Austesten von Funktionen, um mehr über R zu lernen.
 * Testen von Programmschnipseln, bevor Du sie in Dateien einfügst.
@@ -411,8 +411,8 @@ selbst oder Du lädst Bibliotheken aus öffentlichen und privaten Repositories.
 
 #### IDE RStudio
 
-IDE heisst *integrated development environment*. *RStudio* integriert nicht nur
-Shell und Editor für Programmscripte, sondern zeigt zum Beispiel auch direk die
+IDE heißt *integrated development environment*. *RStudio* integriert nicht nur
+Shell und Editor für Programmskripte, sondern zeigt zum Beispiel auch direkt die
 erzeugten Diagramme an. Sie vereint also die verschiedenen Möglichkeiten zur
 Programmausführung, mit weiteren nützlichen Werkzeugen.
 
@@ -439,8 +439,8 @@ nicht ausgeführt.
 ################################################################################
 
 # Ein mehrzeiliger Kommentar muss natürlich nicht immer solche Rahmenbalken
-# haben. Ein solcher Rahmen eigent sich gut für das Copyright im Seitenkopf
-# einer Datai oder als Kopf über einer Funktionsdefinition. Auch um wichtige
+# haben. Ein solcher Rahmen eignet sich gut für das Copyright im Seitenkopf
+# einer Datei oder als Kopf über einer Funktionsdefinition. Auch um wichtige
 # Hinweise zu betonen, ist ein Rahmen geeignet.
 
 print("Hallo Welt!") # Der Kommentar kann auch hinter einer Instruktion stehen.
@@ -463,7 +463,7 @@ print("Das Zeichen # ist hier Bestandteil des Strings.")
 
 Schreibt die Raute dagegen vor eine Instruktion, so wird die Instruktion selbst
 zum Kommentar und damit nicht mehr ausgeführt. Das ist ein gängiges Mittel, um
-Bereiche im Programmcode vorrübergehend auszuschalten. Man nennt es
+Bereiche im Programmcode vorübergehend auszuschalten. Man nennt es
 Auskommentieren.
 
 
@@ -473,7 +473,7 @@ Auskommentieren.
 
 ### Instruktionen
 
-Instruktionen werden wie in C mittels Semicolon getrennt.
+Instruktionen werden wie in C mittels Semikolon getrennt.
 
 
 ```r
@@ -502,7 +502,8 @@ Programmcode wird in Bereiche eingeteilt, die gezielt ausführbar sind. Ein
 solcher Bereich wird Block genannt und besteht aus mehreren Zeilen von
 Instruktionen. Beispiele solcher Blöcke sind Funktionen, Schleifen oder die
 unterschiedlichen Zweige von If-Else-Bedingungen. Daraus ergibt sich, dass die
-Blöcke verschachtelt auftreten, wenn z.B. eine Funktion eine Schleife enthält.
+Blöcke verschachtelt auftreten, wenn zum Beispiel eine Funktion eine Schleife
+enthält.
 
 
 ```r
@@ -524,15 +525,16 @@ show()
 Wie werden solche Blöcke nun definiert?
 
 Drei Techniken sind bei Programmiersprachen verbreitet, erstens Schlüsselworte
-(Keywords), zweitens Einrückungstiefen (Indentation, Off-Side-Rule), drittens
+(Keywords), zweitens Einrückungen (Indentation, Off-Side-Rule), drittens
 geschweifte Klammern. Keywords wurden bereits in den 1950er von ALGOL benutzt.
-Heute findest Du sie z.B. in Ruby und Bash. Off-Side-Rule wird u.a. verwendet
-von Python, YAML und CoffeScript und lässt sich bis ins Jahr 1966 zurück
-verfolgen. Die geschweiften Klammern wurden 1972 mit C eingeführt und haben
-heute eine weite Verbreitung so in C++, Java, C#, JavaScript, Perl oder Go.
+Heute findest Du sie zum Beispiel in Ruby und Bash. Off-Side-Rule wird u.a.
+verwendet von Python, YAML und CoffeScript und lässt sich bis ins Jahr 1966
+zurück verfolgen. Die geschweiften Klammern wurden 1972 mit C eingeführt und
+haben heute eine weite Verbreitung so in C++, Java, C#, JavaScript, Perl oder
+Go.
 
 R verwendet geschweifte Klammern wie C. Gerade mit einer deutschen Tastatur
-sind diese Klammern lästig zu tippen und einrückem muss man den Code für die
+sind diese Klammern lästig zu tippen und einrücken muss man den Code für die
 Lesbarkeit genau so wie bei der Off-Side-Rule. Es ist vor allem mehr Arbeit. Im
 Vergleich zur Off-Side-Rule sieht ein solcher Text viel technischer und damit
 schlechter lesbar aus.
@@ -555,10 +557,10 @@ show <- function() { for(i in 1:3) { print(i); } }; show();
 Warum verwendet R geschweifte Klammern und warum sind
 sie so weit verbreitet?
 
-Sicherlich hat C einen grossen normativen Einfluss ausgeübt, gerade in der Zeit
+Sicherlich hat C einen großen normativen Einfluss ausgeübt, gerade in der Zeit
 als die Sprache entworfen wurde. Geschweifte Klammern sind im Vergleich zum
 Whitespace von Einrückungen leichter zu parsen. Fehler sind seltener. Gerade
-in grossen Projekten sind Fehler, die durch Einrückungsfehler entstehen,
+in großen Projekten sind Fehler, die durch Einrückungsfehler entstehen,
 schwierig zu finden. Werden Sprachen gemischt wird es mit Einrückungen
 besonders schwierig.
 
@@ -584,9 +586,12 @@ geschieht in R dagegen ziemlich eigentümlich mittels des Dollarzeichens.
 
 
 ```r
-a <- list("alpha" = 1, "beta" = 2) # Variable a befüllt mit einer Liste.
-a.dot <- "Punkt" # Eine unabhängige Variable, die nur aussieht wie Teil von a.
-print(a) # Die Liste a enthält nicht "Punkt" und wurde auch nicht überschrieben.
+# Variable greek befüllt mit einer Liste.
+greek <- list("alpha" = 1, "beta" = 2)
+# Eine unabhängige Variable, die nur aussieht wie Teil von greek.
+greek.dot <- "Punkt"
+# Die Liste greek enthält nicht "Punkt" und wurde auch nicht überschrieben.
+print(greek)
 ```
 
 ```
@@ -598,7 +603,8 @@ print(a) # Die Liste a enthält nicht "Punkt" und wurde auch nicht überschriebe
 ```
 
 ```r
-print(a.dot) # "Punkt" wird unabhängig ausgegeben.
+# "Punkt" wird unabhängig ausgegeben.
+print(greek.dot)
 ```
 
 ```
@@ -606,7 +612,8 @@ print(a.dot) # "Punkt" wird unabhängig ausgegeben.
 ```
 
 ```r
-print(a$beta) # Mit dem $-Zeichen wird ein Element von a angesprochen.
+# Mit dem $-Zeichen wird ein Element von greek angesprochen.
+print(greek$beta)
 ```
 
 ```
@@ -614,7 +621,8 @@ print(a$beta) # Mit dem $-Zeichen wird ein Element von a angesprochen.
 ```
 
 ```r
-print(a$dot) # Dieses gibt es dagegen nicht.
+# Dieses gibt es dagegen nicht.
+print(greek$dot)
 ```
 
 ```
@@ -626,7 +634,7 @@ verwendest Du den Punkt als Worttrenner nicht. Er ist eher eine Erblast als ein
 Feature. Die besseren Alternativen sind *unter_strich* oder *CamelCase*.
 
 Der Punkt als Namensbestandteil wird Dir aber gerade in den fundamentalen und
-daher besonders alten Funktionen und Parametern begegnen, das heist häufig.
+daher besonders alten Funktionen und Parametern begegnen, das heißt häufig.
 Häufiges Sehen verleitet dazu, es zu kopieren. Ich betrachte es dagegen als
 Chance meine Funktionen von den internen zu unterscheiden.
 
@@ -678,14 +686,14 @@ print(planets)
 Hier definiere ich eine Funktion und weise sie der Variablen `setupPlanets`
 mittels des `<-`-Operators zu.  Das speichern ganzer Funktionen in Variablen
 charakterisiert eine funktionale Programmiersprache. Eine solche Zuweisung
-erfolgt auch bei den Variablen `input` und `planets`, denen eine Liste bzw.
-einen Data-Frame zugewiesen wird.
+erfolgt auch bei den Variablen `input` und `planets`, denen eine Liste
+beziehungsweise einen Data-Frame zugewiesen wird.
 
 Sowohl beim Data-Frame als auch bei der Liste werden die einzelnen benannten
 Elemente mittels `=` zugewiesen.
 
 Das Gleichheitszeichen verwende ich auch, um den Parameter `star` bei der
-Funktionsdefinition mit einem Default-Wert vorzubelegen, hier `"Sonne"`.
+Funktionsdefinition mit einem Defaultwert vorzubelegen, hier `"Sonne"`.
 Beim Funktionsaufruf dient mir das Gleichheitszeichen schließlich dazu, die
 Parameter mit ihrem Namen statt mit ihrer Reihenfolge an zu sprechen.  Hier
 habe ich die Reihenfolge vertauscht, um das zu demonstrieren.
@@ -697,7 +705,7 @@ statt mittels `<-` zuzuweisen. Weil das ein Zeichen weniger zu tippen ist und
 den Zuweisungen in vielen anderen Programmiersprachen entspricht, wird Dir das
 im Code vieler Leute begegnen. Um einen klaren, einheitlichen Programmierstil
 zu pflegen, solltest Du aber konsequent `<-` für die Zuweisung von Variablen
-benutzen. Das ist einfach R-stylisch.
+benutzen. Das ist einfach R-stylish.
 
 Die Zuweisung mittels `<--` ist möglich, aber für die Zuweisung an
 übergeordnete Sichtbarkeitsbereiche gedacht. Du musst wissen, was du hiermit
@@ -710,12 +718,12 @@ Analog ist `-->` dasselbe `<--` und nicht intuitiv verständlich.
 
 Also:
 
-* `=` Ist nicht überall einsetzbar und nicht R-stylisch.
+* `=` Ist nicht überall einsetzbar und nicht R-stylish.
 * `->` Ist verwirrend.
 * `<--` Du solltest wissen, was Du tust.
 * `-->` Ist verwirrend und Du solltest wissen, was Du tust.
 
-**Tip**: Variablenzuweisung mittels `<-` bevorzugen.
+**Tip**: Zuweisung mittels `<-` bevorzugen.
 
 ### Namensräume
 
@@ -727,7 +735,7 @@ aufpassen, dass Du keine Namen von Funktionen oder Daten überschreibst,
 jedenfalls nicht solche, die Du später noch verwenden willst.
 
 Tust Du es doch, dann kannst du die Variablen der Pakte aber immer noch über
-ihren Full Qualified Name ansprechen. Das kann einerseits lohnenswert sein, um
+ihren Fully-Qualified-Name ansprechen. Das kann einerseits lohnenswert sein, um
 einen sprechenden Variablennamen wie "data" frei einsetzen zu können,
 andererseits  kann es auch eingefleischte R-Benutzer verwirren, wenn der
 vertraute Name "zweckentfremdet" wird.
@@ -764,7 +772,7 @@ print("Welt")
 ```
 
 ```r
-# Der Fully Qualified Name funktioniert weiterhin.
+# Der Fully-Qualified-Name funktioniert weiterhin.
 base::print("Welt")
 ```
 
@@ -783,9 +791,9 @@ print("Welt")
 ## [1] "Welt"
 ```
 
-### Coding Guidelines
+### Coding-Guidelines
 
-Es gibt keine verbindlichen Coding Guidlines für R, was sicherlich auch mit
+Es gibt keine verbindlichen Coding-Guidelines für R, was sicherlich auch mit
 dem freien Geist der Wissenschaft zusammenhängt. Gerade im Hinblick auf die
 wachsenden Ansprüche an die Reproduzierbarkeit von Studien, werden Standards
 aber auch hier wichtiger. Darum möchte ich ein paar Empfehlungen aussprechen,
@@ -799,7 +807,7 @@ Alles das hilft auch Bugs zu vermeiden, zu finden und zu fixen.
 
 Unter Dokumentation verstehe ich zuerst die Wahl sprechender Namen für Deine
 Variablen, zu allererst die der Funktionsnamen. Je mehr Dein Programmcode der
-gesprochenen Sprache nahe kommt, desto weniger musst Du in zusätlichen
+gesprochenen Sprache nahe kommt, desto weniger musst Du in zusätzlichen
 Kommentaren erklären. Kryptischer Programmcode ist kein Zeichen einer
 überlegenen Intelligenz, wie in den Kinofilmen gezeigt, sondern von
 suboptimalen Bezeichnern. Desto einfacher andere Deinen Code nachvollziehen
@@ -808,16 +816,16 @@ enthalten.
 
 Es ist eine gute Idee, einheitlich englische Bezeichner zu verwenden. Erstens
 hast Du dann niemals Probleme mit Umlauten, zweitens sind englische Bezeichner
-fast immer kürzer als deutsche und drittens arbeitest Du heute zuhnemend in
+fast immer kürzer als deutsche und drittens arbeitest Du heute zunehmend in
 internationalen Teams. Wenn Du aber deutsche Bezeichner benutzen willst, dann
 solltest Du auch darin möglichst konsequent sein.
 
-Auch wenn Dozenten Variablen wie x, y, z benutzen, sollte so etwas nicht in
-Deinem Code vorkommen, sondern ganze Worte. Wichtig ist, dass Du die
-Autovervollständigung Deines Editors kennen lernst, damit Du nicht jedes
-Zeichen einzeln tippen musst. Das spart Zeit und Tippfehler.
+Auch wenn Dozenten Variablen wie `x`, `y`, `z` benutzen, sollte so etwas nicht
+in Deinem Code vorkommen, sondern nur ganze Worte als Variablennamen. Wichtig
+ist, dass Du die Auto-Vervollständigung Deines Editors kennen lernst, damit Du
+nicht jedes Zeichen einzeln tippen musst. Das spart Zeit und Tippfehler.
 
-Sprechende Bezeichner bestehen oft aus zwei oder noch mehr Worteilen. Darum ist
+Sprechende Bezeichner bestehen oft aus zwei oder noch mehr Wortteilen. Darum ist
 es wichtig, wie Du Diese zusammenfügst. Für eine gute Lesbarkeit haben sich
 CamelCase oder die Benutzung des Unterstriches bewährt. Bei drei Wortteilen
 spart CamelCase im Vergleich zwei Unterstriche an Zeilenlänge. Da Deine Zeilen
@@ -839,7 +847,7 @@ s = "wie in Mathe" # Jetzt versteht Dich nur noch der Prozessor.
 
 80 Zeichen sind ein allgemeiner Richtwert, wie lang Programmzeilen sein
 sollten. Damit kannst Du auf einem normalen Monitor gut zwei Dateien
-nebeneinader öffnen inklusive Zeilennummern. Wenn Du professionell arbeitest,
+nebeneinander öffnen inklusive Zeilennummern. Wenn Du professionell arbeitest,
 ist ein solcher Split-View eher die Regel als die Ausnahme, besonders dann,
 wenn Du Code und Tests side-by-side erstellst. Diese Breite ist auch im
 Hinblick auf eine einfache Fokussierbarkeit des Textes wichtig. Bei längeren
@@ -851,7 +859,7 @@ Nachteile. Wichtig ist, dass Dein Team und Du hier eine einheitliche Richtlinie
 festlegen, weil beides durcheinander schlecht funktioniert.
 
 Der verbreitetste Standard bei den Einrückungen sind 8 Zeichen. Bei vier Ebenen
-sind dann aber schon 32 von 80 Zeichen damit verbraucht. Wenn Du zuammengestzte
+sind dann aber schon 32 von 80 Zeichen damit verbraucht. Wenn Du zusammengesetzte
 Worte als Bezeichner verwendest, bist schnell am Ende der Zeile. Was tun?
 
 1. Gute Bezeichner sind wichtiger als tiefe Einrückungen. Ich halte darum vier
@@ -862,10 +870,11 @@ Worte als Bezeichner verwendest, bist schnell am Ende der Zeile. Was tun?
    sollten selten länger als zwanzig Zeilen sein.
 3. Wenn der Platz nicht ausreicht, dann brich die Zeile um und rücke die zweite
    Zeile noch einmal eine Ebene ein. Du kannst in R aber nicht an beliebigen
-   Stellen umbrechen, weil das Zeilenende als Semicolon fehlinterpretiert
-   werden kann. So lange Du innerhalb einer geöffneten Klammer umbrichst, z.B.
-   innerhalb der Funktionsparameter, erkennt R, dass hier kein Instruktionsende
-   sein kann. Probiere einfach etwas herum, bis Du das routiniert meisterst.
+   Stellen umbrechen, weil das Zeilenende als Semikolon fehlinterpretiert
+   werden kann. So lange Du innerhalb einer geöffneten Klammer umbrichst, zum
+   Beispiel innerhalb der Funktionsparameter, erkennt R, dass hier kein
+   Instruktionsende sein kann. Probiere einfach etwas herum, bis Du das
+   routiniert meisterst.
 
 Auch wenn Du konsequent ganze Worte als Variablennamen verwendest, solltest Du
 immer noch Kommentare schreiben. Kommentare innerhalb von Funktionen sollten
@@ -898,10 +907,10 @@ Dein Code sieht aufgeräumt aus, wenn du wie in diesem Beispiel einen
 einheitlichen Rahmen um den Funktionskommentar zeichnest. Ich wähle auch hier
 eine Länge von 80 Zeichen, um dem Leser eine Fokussionshilfe zu geben.
 
-In R sind Funktionen, die in Variablen gespeicherst sind, zwar auch Objekte, In
-dem Moment, in dem die sie aufrufst, werden sie aber akitiv. Sie sind die
+In R sind Funktionen, die in Variablen gespeichert sind, zwar auch Objekte, In
+dem Moment, in dem die sie aufrufst, werden sie aber aktiv. Sie sind die
 Verben deines Programmcodes. Darum solltest Du sie auch immer mit Verben
-bennen. Der Standard ist, dazu den Imperativ zu verwenden, so wie im
+benennen. Der Standard ist, dazu den Imperativ zu verwenden, so wie im
 vorstehenden Beispiel `doNothing()`. Andere Beispiele wären `getName()`,
 `setName()`, `createTable()`, `translateToSomeThing()`, `format()`,
 `showResult()`.

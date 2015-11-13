@@ -5,6 +5,15 @@ wahrscheinlich willst Du R in Zukunft benutzen, um Daten zu analysieren und zu
 visualisieren. Wenn Du dieses Buch liest, hast Du Dich bereits grundlegend über
 R informiert.
 
+Ich schreibe dieses Buch nicht aus der Perspektive eines Experten in R, sondern
+aus der Perspektive eines erfahren Programmierers, der mit großer Neugierde
+selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Wir
+werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden seltener
+die trockene Dokumentation heran ziehen, als R immer wieder aktiv aus sein
+Verhalten testen, basierend auf meiner Erfahrung, was in der Programmierung
+wichtig ist. Learning-By-Doing und Testing sind zwei Prinzipien, die ich beim
+Lernen einer Programmiersprache für sehr wichtig halte.
+
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
 Gedanken über seine Leser machen, über Dich, darüber, was ich an Wissen und
 Erfahrung voraussetzen kann. Es macht natürlich einen großen Unterschied, ob
@@ -22,24 +31,24 @@ Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine sehr aktive
 Herangehensweise von Deiner Seite voraus, denn das Programmieren lernst Du nur
 indem Du es tust.
 
-Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, zum Beispiel
-mittels Wikipedia. Zweitens brauchst Du eine spielerische, aktive
-Herangehensweise.  Du musst viel ausprobieren, auch wenn Dich das Buch nicht
-direkt dazu auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee
-verstanden zu haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort
-verstehst, zu überspringen und das vor zu ziehen, was Dir zugänglicher
-erscheint.
+Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, zum Beispiel in
+der Wikipedia. Zweitens brauchst Du eine spielerische, aktive Herangehensweise.
+Du musst viel ausprobieren, auch wenn Dich das Buch nicht direkt dazu
+auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee verstanden zu
+haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort verstehst, zu
+überspringen und das vor zu ziehen, was Dir zugänglicher erscheint.
 
-Wenn diese aktive Herangehensweise nicht Deinem Naturell entspricht, empfehle
-ich, die Grundlagen des Programmierens auf andere Weise zu lernen, insbesondere
-in einem Kursus unter Anleitung. Solche Kurse als Einstieg in die
-Programmierung findest Du häufiger für andere Sprachen, wie Python, Java oder
-JavaScript. Die Denkmuster und Arbeitstechniken sind übertragbar. Die modernen
-Programmiersprachen sind sich ähnlicher als Du denkst.
+Wenn diese selbständig, aktive Herangehensweise nicht Deinem Naturell
+entspricht, empfehle ich, die Grundlagen des Programmierens auf andere Weise zu
+lernen, insbesondere in einem Kursus unter Anleitung. Solche Kurse als Einstieg
+in die Programmierung findest Du häufiger für andere Sprachen, wie Python, Java
+oder JavaScript. Die Denkmuster und Arbeitstechniken sind übertragbar. Die
+modernen Programmiersprachen sind sich ähnlicher als Du denkst.
 
-Als Nachschlagewerk ist dieses Buch nicht gedacht. R hat eine gut
-Online-Hilfe zum Nachschlagen der Funktionen. Rezepte für Problemstellungen
-findest Du sowieso am besten mit Hilfe einer Suchmaschine.
+Als Nachschlagewerk ist dieses Buch nicht gedacht. R hat eine sehr gute
+interaktive Hilfe zum Nachschlagen der Funktionen. Rezepte für konkrete
+Problemstellungen findest Du schneller mit Hilfe einer Suchmaschine als mit
+einem Buch.
 
 ## Einführung
 
