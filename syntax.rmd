@@ -219,10 +219,10 @@ Die Zuweisung mittels `<--` ist möglich, aber für die Zuweisung an
 übergeordnete Sichtbarkeitsbereiche gedacht. Du musst wissen, was du hiermit
 tust. Dazu mehr im Kapitel über die Sichtbarkeitsbereiche.
 
-`->` macht genau dasselbe wie `<-`. Nicht dass Du denkst die Variable käme dann
+`->` macht genau das Gleiche wie `<-`. Nicht dass Du denkst die Variable käme dann
 nach rechts. Es ist also nicht intuitiv verständlich.
 
-Analog ist `-->` dasselbe `<--` und nicht intuitiv verständlich.
+Analog ist `-->` das Gleiche wie `<--` und nicht intuitiv verständlich.
 
 Also:
 

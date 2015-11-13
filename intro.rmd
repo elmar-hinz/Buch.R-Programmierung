@@ -1,4 +1,4 @@
-## Ist das Dein Buch?
+## Eine aktive Entdeckungsreise in die Welt von R
 
 Du willst also R lernen? Cool! Dafür kann es manche Gründe geben, aber sehr
 wahrscheinlich willst Du R in Zukunft benutzen, um Daten zu analysieren und zu
@@ -6,27 +6,32 @@ visualisieren. Wenn Du dieses Buch liest, hast Du Dich bereits grundlegend über
 R informiert.
 
 Ich schreibe dieses Buch nicht aus der Perspektive eines Experten in R, sondern
-aus der Perspektive eines erfahren Programmierers, der mit großer Neugierde
-selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Wir
-werden Parallelen zu anderen Programmiersprachen ziehen.
+aus der Perspektive eines erfahren Programmierers, der mit großer **Neugierde**
+selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Ich
+lade Dich ein, mich auf meiner **Entdeckungsreise in die Welt von R** zu
+begleiten und mit mir gemeinsam das große mentale **Abenteuer** zu bestehen,
+diese Welt Meile für Meile zu erschließen.
 
-Wir werden seltener die trockene Dokumentation heran ziehen, als R immer wieder
-aktiv aus sein Verhalten testen, basierend auf meiner Erfahrung, was in der
-Programmierung wichtig ist. Im Zweifel ist das getestete Verhalten die
-Referenz. Dokumentation kann falsch oder veraltet sein. Learning-By-Doing und
-Testing sind darum zwei Prinzipien, die ich beim Lernen einer
-Programmiersprache für sehr wichtig halte.
+Wir werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden
+gemeinsam staunen und hinterfragen.  Wir werden seltener die trockene
+Dokumentation heran ziehen, als R immer wieder aktiv aus sein Verhalten zu
+testen, basierend auf meiner Erfahrung, was in der Programmierung wichtig ist.
+Im Zweifel ist das getestete Verhalten einer Sprache ihre Referenz.
+Dokumentation kann falsch, veraltet oder unverständlich sein.
+**Learning-by-Doing** und **Testing** sind darum zwei Prinzipien, die ich beim
+Lernen einer Programmiersprache für sehr wichtig halte.
 
-Wir werden auch behandeln, wie man Testing automatisiert. Ich empfehle das
+Wir werden auch sehen, wie man Testing automatisiert. Ich empfehle Dir das
 möglichst rasch zu lernen. Du kannst es später einsetzen, um die Qualität
-Deiner Programme abzusichern, aber auch sehr gut als aktive Form des Lernens.
-Du erhälst damit ein ausführbares Lernprotokoll, das Dir das Verhalten von R
-exakt dokumentiert und das Du kontinuierlich erweitern kannst.
+Deiner Programme abzusichern. Es eignet sich aber auch sehr gut als aktive Form
+des Lernens. Du erhälst damit ein ausführbares Reisetagebuch, das Dir das
+Verhalten von R exakt dokumentiert, das Du immer wieder abspielen kannst
+wie eine Diashow und das Du fortan kontinuierlich erweitern kannst.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
-Gedanken über seine Leser machen, über Dich, darüber, was ich an Wissen und
-Erfahrung voraussetzen kann. Es macht natürlich einen großen Unterschied, ob
-Du bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
+Gedanken über seine Leser machen, über Dich, darüber, was Du an Wissen und
+Erfahrung mitbringst. Es macht natürlich einen großen Unterschied, ob Du
+bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
 Programmierung einsteigst. Beide Szenarios schätze ich als häufig ein. Ist das
 also Dein Buch?
 
@@ -36,8 +41,8 @@ hast, macht das die Dinge einfacher, weil Du die Denkmuster und die
 Terminologie bereits kennst.
 
 Ich versuche die Beispiele einfach genug zu halten, dass Du auch ohne vorherige
-Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine sehr aktive
-Herangehensweise von Deiner Seite voraus, denn das Programmieren lernst Du nur
+Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine **sehr aktive
+Herangehensweise** von Deiner Seite voraus, denn das Programmieren lernst Du nur
 indem Du es tust.
 
 Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, zum Beispiel in

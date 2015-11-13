@@ -9,7 +9,7 @@ output:
 ---
 
 
-## Ist das Dein Buch?
+## Eine aktive Entdeckungsreise in die Welt von R
 
 Du willst also R lernen? Cool! Dafür kann es manche Gründe geben, aber sehr
 wahrscheinlich willst Du R in Zukunft benutzen, um Daten zu analysieren und zu
@@ -17,27 +17,32 @@ visualisieren. Wenn Du dieses Buch liest, hast Du Dich bereits grundlegend über
 R informiert.
 
 Ich schreibe dieses Buch nicht aus der Perspektive eines Experten in R, sondern
-aus der Perspektive eines erfahren Programmierers, der mit großer Neugierde
-selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Wir
-werden Parallelen zu anderen Programmiersprachen ziehen.
+aus der Perspektive eines erfahren Programmierers, der mit großer **Neugierde**
+selbst die Welt von R erkundet. Auf diese Reise will ich Dich mitnehmen. Ich
+lade Dich ein, mich auf meiner **Entdeckungsreise in die Welt von R** zu
+begleiten und mit mir gemeinsam das große mentale **Abenteuer** zu bestehen,
+diese Welt Meile für Meile zu erschließen.
 
-Wir werden seltener die trockene Dokumentation heran ziehen, als R immer wieder
-aktiv aus sein Verhalten testen, basierend auf meiner Erfahrung, was in der
-Programmierung wichtig ist. Im Zweifel ist das getestete Verhalten die
-Referenz. Dokumentation kann falsch oder veraltet sein. Learning-By-Doing und
-Testing sind darum zwei Prinzipien, die ich beim Lernen einer
-Programmiersprache für sehr wichtig halte.
+Wir werden Parallelen zu anderen Programmiersprachen ziehen. Wir werden
+gemeinsam staunen und hinterfragen.  Wir werden seltener die trockene
+Dokumentation heran ziehen, als R immer wieder aktiv aus sein Verhalten zu
+testen, basierend auf meiner Erfahrung, was in der Programmierung wichtig ist.
+Im Zweifel ist das getestete Verhalten einer Sprache ihre Referenz.
+Dokumentation kann falsch, veraltet oder unverständlich sein.
+**Learning-by-Doing** und **Testing** sind darum zwei Prinzipien, die ich beim
+Lernen einer Programmiersprache für sehr wichtig halte.
 
-Wir werden auch behandeln, wie man Testing automatisiert. Ich empfehle das
+Wir werden auch sehen, wie man Testing automatisiert. Ich empfehle Dir das
 möglichst rasch zu lernen. Du kannst es später einsetzen, um die Qualität
-Deiner Programme abzusichern, aber auch sehr gut als aktive Form des Lernens.
-Du erhälst damit ein ausführbares Lernprotokoll, das Dir das Verhalten von R
-exakt dokumentiert und das Du kontinuierlich erweitern kannst.
+Deiner Programme abzusichern. Es eignet sich aber auch sehr gut als aktive Form
+des Lernens. Du erhälst damit ein ausführbares Reisetagebuch, das Dir das
+Verhalten von R exakt dokumentiert, das Du immer wieder abspielen kannst
+wie eine Diashow und das Du fortan kontinuierlich erweitern kannst.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
-Gedanken über seine Leser machen, über Dich, darüber, was ich an Wissen und
-Erfahrung voraussetzen kann. Es macht natürlich einen großen Unterschied, ob
-Du bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
+Gedanken über seine Leser machen, über Dich, darüber, was Du an Wissen und
+Erfahrung mitbringst. Es macht natürlich einen großen Unterschied, ob Du
+bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
 Programmierung einsteigst. Beide Szenarios schätze ich als häufig ein. Ist das
 also Dein Buch?
 
@@ -47,8 +52,8 @@ hast, macht das die Dinge einfacher, weil Du die Denkmuster und die
 Terminologie bereits kennst.
 
 Ich versuche die Beispiele einfach genug zu halten, dass Du auch ohne vorherige
-Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine sehr aktive
-Herangehensweise von Deiner Seite voraus, denn das Programmieren lernst Du nur
+Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine **sehr aktive
+Herangehensweise** von Deiner Seite voraus, denn das Programmieren lernst Du nur
 indem Du es tust.
 
 Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, zum Beispiel in
@@ -174,9 +179,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1] 35 23 50 34 48 11 29 13 12 41 25 47  3 30 18 45 46  5 42 21 39 17 49
-## [24]  4 40 33 19 32 38 43 36  8 26 27 10 20  1 14 37  7 24 44  2  9 28 22
-## [47] 15  6 31 16
+##  [1] 49  4 37 27 35 21 29 31 13 25 16 50 24 45 15 33  1 20 41  6 42 40 34
+## [24]  3 22 43 39  2 14  8 46 17 11 19 38 10 12 36 44 47 23 48 28  7  5 32
+## [47]  9 18 26 30
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -732,10 +737,10 @@ Die Zuweisung mittels `<--` ist möglich, aber für die Zuweisung an
 übergeordnete Sichtbarkeitsbereiche gedacht. Du musst wissen, was du hiermit
 tust. Dazu mehr im Kapitel über die Sichtbarkeitsbereiche.
 
-`->` macht genau dasselbe wie `<-`. Nicht dass Du denkst die Variable käme dann
+`->` macht genau das Gleiche wie `<-`. Nicht dass Du denkst die Variable käme dann
 nach rechts. Es ist also nicht intuitiv verständlich.
 
-Analog ist `-->` dasselbe `<--` und nicht intuitiv verständlich.
+Analog ist `-->` das Gleiche wie `<--` und nicht intuitiv verständlich.
 
 Also:
 
@@ -1688,7 +1693,7 @@ Teilmengen zu arbeiten.
 Die Syntax der Listen ist dennoch gewöhnungsbedürftig, nicht nur weil sie eine
 Verschachtelung darstellen. Während die atomaren Vektoren skalare Daten
 verpacken, verpacken Listen unterschiedliche Objekte, wie atomare Vektoren,
-Funktionen oder anderen Listen. Verpackt eine Liste z.B. atomare Vektoren,
+Funktionen oder andere Listen. Verpackt eine Liste z.B. atomare Vektoren,
 erhalten wir damit eine zweidimensionale Datenstruktur. Verpacken wir Listen in
 verschachtelter Form, dann erhalten wir eine mehrdimensionale Struktur oder
 einen Datenbaum.
@@ -1814,7 +1819,7 @@ nested
 ```
 
 Die Liste `nested` enthält zwei Listen. Die erste Liste enthält wiederum 3
-Listen. Diese enthält drei Integer-Vektoren.
+Listen. Davon die erste enthält drei Integer-Vektoren.
 
 Der Index `[[1]][[1]][[1]]` adressiert den Integer-Vektor `1:3` auf der dritten
 Verschachtelungsebene.
