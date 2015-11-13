@@ -181,9 +181,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1]  1 35 37 11 38 12 23 48  5 10 15 40  2 24 25 27 49 32 50  3 33 20 28
-## [24] 19 39 47 30 46 45 26 21 18  6 16 43  8 13 34 44 14  4  9 42 22 29 31
-## [47] 41 36 17  7
+##  [1] 30 11 26  7 15 47 40  5 39 20 32  1 44 21 29  2 45 36 41 18 27 33 14
+## [24] 24 49 12 10 16  3 31 43 19 38  8 48 34 37 50 46 35  9 42 17  6 22 23
+## [47] 25 13  4 28
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -1695,10 +1695,10 @@ Teilmengen zu arbeiten.
 Die Syntax der Listen ist dennoch gewöhnungsbedürftig, nicht nur weil sie eine
 Verschachtelung darstellen. Während die atomaren Vektoren skalare Daten
 verpacken, verpacken Listen unterschiedliche Objekte, wie atomare Vektoren,
-Funktionen oder andere Listen. Verpackt eine Liste z.B. atomare Vektoren,
-erhalten wir damit eine zweidimensionale Datenstruktur. Verpacken wir Listen in
-verschachtelter Form, dann erhalten wir eine mehrdimensionale Struktur oder
-einen Datenbaum.
+Funktionen oder andere Listen. Verpackt eine Liste zum Beispiel atomare
+Vektoren, erhalten wir damit eine zweidimensionale Datenstruktur. Verpacken wir
+Listen in verschachtelter Form, dann erhalten wir eine mehrdimensionale
+Struktur oder einen Datenbaum.
 
 
 ```r
@@ -1833,8 +1833,8 @@ adressierst.
 nach, was *recursive* genau bewirkt.
 
 Jetzt wollen wir den Baum etwas editieren. Die verschachtelten Listen nenne ich
-Äste, die Nicht-Listen-Elemente, d.h. die Integer-Vektoren, nenne ich Zweige.
-Den einzelnen Integer-Werte entsprechen damit einem Blatt.
+Äste, die Nicht-Listen-Elemente, das heißt die Integer-Vektoren, nenne ich
+Zweige. Den einzelnen Integer-Werte entsprechen damit einem Blatt.
 
 ##### Ein Blatt verändern
 
@@ -1946,7 +1946,7 @@ identical(numbers, numbers[1:5])
 ```
 
 Die Verschachtelung ist eine Natur der Listen, aber nicht die Natur des
-Vektors. Hier operieren wir aber auf der Ebene des Vektors. Am Ende seteht eine
+Vektors. Hier operieren wir aber auf der Ebene des Vektors. Am Ende steht eine
 einfach Eckige Klammer. Der Vektor kennt nur Mengen und Teilmengen. Die
 doppelte eckige Klammer schachtelt dagegen das Element darunter und
 charakterisiert die Natur der Liste.
@@ -2165,7 +2165,7 @@ nested[[1]]
 ```
 
 Fazit: Dieser letzte Schritt war jetzt straightforward. Wir hatten auch
-schon gesehen, dass das Löschen meherer Elemente nur ein Spezialfall des
+schon gesehen, dass das Löschen mehrerer Elemente nur ein Spezialfall des
 Veränderns der übergeordneten Ebene ist.
 
 Gesamt-Fazit: In einem verschachtelten Baum von Vektoren entspricht das Löschen
@@ -2173,7 +2173,7 @@ von Elementen dem Verändern des Vektors auf der übergeordneten Ebene. Dies
 lässt sich damit erklären, dass beim Löschen der Index des übergeordneten
 Vektors neu durchgezählt werden muss.
 
-#### Die Funktion Combine c() mit Listen
+#### Die Funktion Combine `c()` mit Listen
 
 Prüfe jetzt, wie sich die Funktion Combine `c()` für Listen verhält. Was
 erwartest Du als kleinsten gemeinsamen Nenner? Bei den atomaren Vektoren war
@@ -2224,13 +2224,96 @@ combined
 
 Die Verschachtelung der Listen-Vektoren bleibt erhalten. Die atomaren Vektoren
 werden in eine Liste umgewandelt und deren Elemente dann in die kombinierte
-Liste eingereiht. Dadurch werden sie bildlich aufgeribbelt.
+Liste eingereiht. Dadurch werden sie bildlich aufgeribbelt. Die Art der
+Umwandlung im ersten Schritt entspricht der Anwendung der Funktion
+`as.list()`.
 
-Dieses Aufribbeln in einen gemeinsame Liste entspricht zwar genau dem Verhalten
-der Funktion `c()` mit atomaren Vektoren, kann im Zusammenhang mit einer Liste
-trotzdem befremden. Eine Liste wäre nämlich auch in der Lage, die atomaren Vektoren
+Eine Liste wäre nämlich auch in der Lage, die atomaren Vektoren
 als Unterelemente aufzunehmen, was den intuitiven Erwartungen eventuell näher
-käme. Also lieber zwei mal testen.
+käme. Das entspräche der Anwendung von `list()`. So verhält sich
+die Funktion `c()` mit Listen aber nicht.
+
+#### Vergleich der Funktionen `as.list()` und `list()`
+
+Ziel: Wende die Funktionen `as.list()` und `list()` auf den Vektor `1:3` an und
+erkläre das unterschiedliche Ergebnis.
+
+
+```r
+as.list(1:3)
+```
+
+```
+## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 3
+```
+
+```r
+list(1:3)
+```
+
+```
+## [[1]]
+## [1] 1 2 3
+```
+
+Wendet man die Funktion `as.list()` auf einen Vektor an, dann hat der
+entstehende Listenvektor dieselbe Länge. Im Falle von `list()` hat der
+entstehende Listenvektor dagegen die Länge eins und das einzige Element enthält
+den übergebenen Vektor.
+
+Den Unterschied verraten schon die Namen der Funktionen. Das Ziel der Funktion
+`as.list()` ist eine **Typumwandlung**. Die Länge des Vektors wird aber nicht
+verändert. Die Funktion `list()` dient dazu, eine **neue** Liste aus den
+übergebenen Elementen zu bilden, ohne die Elemente selbst zu verändern. Ist die
+Anzahl der übergebenen Elemente zufällig nur eins, dann dann ist auch die Länge
+nur eins.
+
+
+```r
+numbers <- list(1:3)
+length(numbers[[1]])
+```
+
+```
+## [1] 3
+```
+
+```r
+typeof(numbers[[1]])
+```
+
+```
+## [1] "integer"
+```
+
+Bei der Funktion `as.list()` wird der Vektor in Vektoren der Länge eins
+desselben Typs umgewandelt und dann jeder davon einzeln in die entstehende
+Liste eingefügt.
+
+
+```r
+numbers <- as.list(1:3)
+length(numbers[[1]])
+```
+
+```
+## [1] 1
+```
+
+```r
+typeof(numbers[[1]])
+```
+
+```
+## [1] "integer"
+```
 
 ### NA und NaN
 
