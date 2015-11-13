@@ -92,7 +92,7 @@ wie die Fläche im Quadrat ansteigt.
 plot(radii, surfaces)
 ```
 
-![plot of chunk planetsPlot](figure/planetsPlot-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 **Aufgabe:** Wie viel Zeilen Code wäre in anderen Programmiersprache, die Du
 kennst, nötig, um Listen von Daten zu berechnen und in einem Diagramm zu
@@ -155,9 +155,9 @@ print(sample(1:50))
 ```
 
 ```
-##  [1]  5 12  4 34 37 18 21 17 28 42 41 11 36 40  3 39 48 26 10 24 23 33 15
-## [24]  8  7 44 32 47  2 25 50 20 46 49  1 31 19 43 35 45 29  9 38 22  6 30
-## [47] 16 14 13 27
+##  [1] 47 23 31 28 29 24 22  3 20 40 49  9 45  6 38 13 33 41 12 44  5 25 34
+## [24] 14 30 32 17 37 16 18 36  7 42 43  2 39 19  4 11 26 35 50  8  1 46 27
+## [47] 48 15 10 21
 ```
 
 **Aufgabe:** Welche Zahl hat den Index 30?
@@ -713,7 +713,7 @@ Also:
 * `=` Ist nicht überall einsetzbar und nicht R-stylisch.
 * `->` Ist verwirrend.
 * `<--` Du solltest wissen, was Du tust.
-* `-->` Ist verwirrent und Du solltest wissen, was Du tust.
+* `-->` Ist verwirrend und Du solltest wissen, was Du tust.
 
 **Tip**: Variablenzuweisung mittels `<-` bevorzugen.
 
@@ -933,12 +933,12 @@ anderen Sprachen verwendet werden. Dazu später.
 ### Vektoren
 
 Vektoren, wie klingt das für Dich? Spannend, abschreckend, kompliziert,
-wissenschftlich oder nach gymnasialer Oberstufe? Wie auch immer, es ist das
+wissenschaftlich oder nach gymnasialer Oberstufe? Wie auch immer, es ist das
 Feature in R, welches Du ziemlich bald in anderen Programmiersprachen vermissen
 wirst, falls Du mit anderen Sprachen arbeitest.
 
 Warum? So wissenschaftlich der Begriff auch klingen mag, der Vektor entspricht
-ziemlich ganau dem, wie wir natürlicherweise über Dinge denken und wie wir über
+ziemlich genau dem, wie wir natürlicherweise über Dinge denken und wie wir über
 den Umgang mit Dingen denken. Fast möchte ich sagen, er sei quasi neuronal.
 
 Nehmen wir an, Du willst eine Party feiern, und hast eine Liste mit Leuten im
@@ -964,7 +964,7 @@ Wie ist das möglich? Erinnere Dich an die Oberstufe. Der Vektor packt eine
 kleine Liste von Elementen zusammen, die alle gemeinsam verarbeitet werden
 und zwar jedes in der gleichen Weise.
 
-Der Vektor ist die kleinste Recheneinheit in R. Er hat eins oder merhrere
+Der Vektor ist die kleinste Recheneinheit in R. Er hat eins oder mehrere
 Elemente, aber Du kannst sie nicht aus dem Vektor nehmen. Wenn Du ein Element
 aus dem Vektor nimmst, dann erhältst Du nämlich wieder einen Vektor und zwar
 einen mit der Länge eins.
@@ -1000,9 +1000,9 @@ positionTwoVector
 ```
 
 Wenn Du einen Vektor mit sieben multiplizierst, dann wird jedes Element im
-Vektor mit sieben multiplziert und das Ergebnis ist ein neuer Vektor. Wenn Du
+Vektor mit sieben multipliziert und das Ergebnis ist ein neuer Vektor. Wenn Du
 jedes Element mit einem eigenen Wert multiplizieren willst, dann nimmst Du
-einen zweiten Vektor, der diese Werte enthält. Du multiplziert beide Vektoren
+einen zweiten Vektor, der diese Werte enthält. Du multiplizierst beide Vektoren
 und brauchst immer noch keine Schleife.
 
 
@@ -1028,7 +1028,7 @@ implementiert. In der Datenwissenschaft verarbeiten wir typischerweise
 Tabellen, in denen jede Spalte genau so eine einheitliche Liste elementarer
 Typen darstellt. Deswegen ist dieser Ansatz in der Datenwissenschaft ungeheuer
 produktiv. Es wäre interessant zu überlegen, wie weit er sich auch auf
-komplexere Objekte ausdehnen liesse. Könnten wir dann weitgehend auf Schleifen
+komplexere Objekte ausdehnen ließe. Könnten wir dann weitgehend auf Schleifen
 verzichten?
 
 Ein verwandtes Verfahren Schleifen für komplexere Objekte zu vermeiden,
@@ -1038,7 +1038,7 @@ in der Anwendung wie Vektoren. Dazu ein eigenes Kapitel.
 Hast Du schon einmal mit SQL gearbeitet? Dann werden Dir Parallelen auffallen.
 Auch in SQL formulierst Du eine Instruktion so, als hättest Du es mit einem
 einzelnen Datensatz zu tun. Dann wird die Instruktion auf alle Datensätze
-angewendet. Dabei entspricht jede Spalte der Datenbank einem Vector.
+angewendet. Dabei entspricht jede Spalte der Datenbank einem Vektor.
 
 > One observation I would make is that with vectorisation and
 > subsetting, a lot of operations in R are more like SQL operations on
@@ -1058,7 +1058,7 @@ atomaren Vektortypen:
 * integer
 * double (Synonym "numeric")
 * complex
-* charakter
+* character
 * raw
 
 Literale Schreibweisen skalarer Typen erzeugen einen Vektor der Länge eins.
@@ -1130,10 +1130,10 @@ is.vector(as.raw(15)) # raw, keine literale Schreibweise
 
 Bei den literalen Schreibweisen musst Du also besonders beachten, dass auch die
 einfache Schreibweise eines Integers `7` einen Vektor vom Typ *double* erzeugt.
-Um einen Integer-Vektor zu erzwingen, stellst Du ein grosses **L** dahinter
+Um einen Integer-Vektor zu erzwingen, stellst Du ein großes **L** dahinter
 `7L`.
 
-**Aufgabe**: Schreibe für jeden der atomaren Vektortypen einen eigenen Wert und
+**Aufgabe:** Schreibe für jeden der atomaren Vektortypen einen eigenen Wert und
 teste ihn auf seinen Typ mit der Funktion `typeof()`, ob Du es richtig gemacht
 hast.
 
@@ -1221,7 +1221,7 @@ identical(c(1, 2, 1, 2, 3, 4), c(c(1, 2), c(1, 2, c(3)), 4))
 ## [1] TRUE
 ```
 
-Dabei wird die Gesamtreihenfolge nicht verändert. Wir sehen hier auch, dass
+Dabei wird die Reihenfolge nicht verändert. Wir sehen hier auch, dass
 derselbe skalare Wert mehrfach in einem Vektor enthalten sein kann.
 
 Was aber passiert, wenn wir unterschiedliche Typen zusammenfügen wollen?
@@ -1250,9 +1250,9 @@ vertreten ist, wird als Kombinationstyp gewählt.
 * integer
 * double (Synonym "numeric")
 * complex
-* charakter
+* character
 
-**Aufgabe**: Was erwartest Du als Ergebnis von `c(TRUE, 3i)`, `c(as.raw(15), TRUE)`
+**Aufgabe:** Was erwartest Du als Ergebnis von `c(TRUE, 3i)`, `c(as.raw(15), TRUE)`
 und `c(as.raw(0), "Hallo")`? Teste es.
 
 **Dokumentation**: `?c`
@@ -1261,8 +1261,8 @@ und `c(as.raw(0), "Hallo")`? Teste es.
 
 Der **Colon Operator** ist eine Kurzschreibweise für die Funktion `seq(from,
 to)`. Er ist ein sehr gängiges Verfahren, um eine Sequenz von Integer-Zahlen zu
-erzeugen. In dieser Funktion wird er hier kurz angschnitten. Er wird
-regelmässig in `for`-Schleifen eingesetzt.
+erzeugen. In dieser Funktion wird er hier kurz angeschnitten. Er wird
+regelmäßig in `for`-Schleifen eingesetzt.
 
 
 ```r
@@ -1339,7 +1339,7 @@ Du kannst mit negativen Zahlen arbeiten.
 ## [1]  3  2  1  0 -1 -2 -3
 ```
 
-**Aufgabe**: Probiere folgende Varianten aus:
+**Aufgabe:** Probiere folgende Varianten aus:
 
 * `2:4`
 * `1L:10L`
@@ -1350,8 +1350,8 @@ Du kannst mit negativen Zahlen arbeiten.
 ### Vektorelemente lesen, bearbeiten und löschen
 
 Du hast jetzt gelernt, wie Du atomare Vektoren erzeugst. Wenn Du Daten
-verabeitest sind Vektoren Teil des Inputs. Um sie zu verabeiten, ist es jetzt
-wichtig zu lernen, wie Du sie veränderst und Teilmengen daraus heraus ziehtst.
+verarbeitest sind Vektoren Teil des Inputs. Um sie zu verarbeiten, ist es jetzt
+wichtig zu lernen, wie Du sie veränderst und Teilmengen daraus heraus ziehst.
 
 Fangen wir damit an, ein einzelnes Element zu lesen. Wir sprechen es mit seinem
 Index an.
@@ -1366,7 +1366,7 @@ input[3]
 ## [1] "drei"
 ```
 
-Was passiert, wenn Du mit einem negativen Index arbeitst? Wird dann von hinten
+Was passiert, wenn Du mit einem negativen Index arbeitest? Wird dann von hinten
 gezählt? Probiere es!
 
 
@@ -1409,7 +1409,7 @@ input
 ## [1] "eins" "zwei" "drei" "vier"
 ```
 
-**Aufgabe**: Nimm die Zahl `pi` als Selektor. Welches Ergebnis erwartest Du?
+**Aufgabe:** Nimm die Zahl `pi` als Selektor. Welches Ergebnis erwartest Du?
 
 Bis hierher haben wir einen Vektor der Länge eins als Selektor genommen. Wenn
 Du die Idee der Vektoren verstanden hast, fragst Du dich sicher schon, was
@@ -1454,7 +1454,7 @@ input
 ```
 
 Erinnere Dich, dass Du den Vektor `c(2L, 3L, 4L)` auch mit dem *Colon Operator*
-erzeugen kannst, als `2:4`! In den eckinge Klammern entfaltet das seine volle
+erzeugen kannst, als `2:4`! In den eckigen Klammern entfaltet das seine volle
 Magie.
 
 
@@ -1486,7 +1486,7 @@ Diese Operationen sind in anderen Sprachen als `unshift` und `push` bekannt.
 
 
 ```r
-input <- c("null", input) #unshift
+input <- c("null", input) # unshift
 input <- c(input, "fünf")
 input
 ```
@@ -1496,7 +1496,7 @@ input
 ```
 
 Du löscht Elemente, indem Du die verbleibende Teilmenge in die originale
-Variable zurückschreibst. Gerade hierführ eignet sich die Negativauswahl
+Variable zurückschreibst. Gerade hierfür eignet sich die Negativauswahl
 besonders gut, weil Du dabei einfach die zu löschenden Elemente indizierst.
 
 
@@ -1509,7 +1509,7 @@ input
 ## [1] "null" "drei" "vier" "fünf"
 ```
 
-**Zusammenfassung**: Datenverabeiteung ist vollständig, wenn der CRUD-Zyklus
+**Zusammenfassung**: Datenverarbeitung ist vollständig, wenn der CRUD-Zyklus
 vollständig ist, nämlich *create*, *read*, *update* und *delete*.
 
 
@@ -1531,7 +1531,7 @@ words[2:1]
 ## [1] "vier" "EINS"
 ```
 
-**Aufgabe**: Spiele den CRUD-Zypklus für einen Zahlenvektor durch. Beachte
+**Aufgabe:** Spiele den CRUD-Zyklus für einen Zahlenvektor durch. Beachte
 dabei, dass sich beim Löschen der Index verkürzt.
 
 **Dokumentation**: `?"["`
@@ -1565,7 +1565,7 @@ positiven Elemente über ihren Index aufzählst, musst Du im zweiten Fall für
 jedes einzelne Element angeben, ob es berücksichtigt werden soll oder nicht.
 
 Warum solltest Du das tun? Es so zu schreiben macht wenig Sinn. Eine logische
-Abfrage gegen einen Vekotor gibt aber einen logischen Vektor zurück, mit dem Du
+Abfrage gegen einen Vektor gibt aber einen logischen Vektor zurück, mit dem Du
 dann so etwas tun kannst.
 
 Hier benutzen wir den Modulo-Operator, um ungrade Zahlen zu finden und
@@ -1602,16 +1602,16 @@ numbers[numbers %% 2 > 0]
 ## [1] 11 13 15 17 19
 ```
 
-Vielleicht nimmst Du daran Anstoss, dass Du hier `numbers` zwei mal schreiben
-musst. Damit hast Du im Sinne einer menschenorientierten Lesbarkeit vollkommen
+Vielleicht nimmst Du daran Anstoß, dass Du hier `numbers` zwei mal schreiben
+musst. Damit hast Du im Sinne einer natürlichen Lesbarkeit vollkommen
 recht. Wendet man R so an wie hier, dann wird es ziemlich kryptisch.
 
 Bei diesem Gebrauch können die eckigen Klammern nicht wissen, dass der logische
-Vektor aus derselben Menge berechnet wurde, wie der Nummernvektor selbst. Daher
+Vektor aus derselben Menge berechnet wurde, wie der Zahlenvektor selbst. Daher
 musst Du `numbers` zwei mal schreiben.
 
-Es ähnelt einer mathematischen Formel, in der diesebe Variable mehrfach
-vorkommt, und aus der Mathematik stammmen die eckigen Klammern ja auch. Wie in
+Es ähnelt einer mathematischen Formel, in der dieselbe Variable mehrfach
+vorkommt, und aus der Mathematik stammen die eckigen Klammern ja auch. Wie in
 anderen Programmiersprachen auch, gehören sie aber so sehr zu den Grundlagen,
 dass sie bald zur zweiten Natur werden.
 
@@ -1622,13 +1622,592 @@ Tabellenspalten in SQL hinweisen.
 SELECT numbers FROM table WHERE numbers %% 2 > 0
 ```
 
-**Aufgabe**: Mische die Zahlen von 1 bis 100 `numbers <- sample(100)`. Benutze
+**Aufgabe:** Mische die Zahlen von 1 bis 100 `numbers <- sample(100)`. Benutze
 einen logischen Vektor, um alle Zahlen zu selektieren, die grösser als 50
 sind, wobei die Zufallsreihenfolge erhalten bleiben soll.
 
 ### Listen
 
-### NA und NAN
+#### Was sind Listen?
+
+
+```r
+is.vector(list())
+```
+
+```
+## [1] TRUE
+```
+
+```r
+typeof(list())
+```
+
+```
+## [1] "list"
+```
+
+Listen sind Vektoren, aber keine atomaren Vektoren. Sie vereinigen Objekte
+unterschiedlicher Typen. Damit sind auch keine gemeinsamen Operationen mit
+diesen Objekten möglich, wie sie für die atomaren Vektoren charakteristisch
+sind. Mit den atomaren Vektoren teilen Listen jedoch die Operationen, mit
+Teilmengen zu arbeiten.
+
+#### Doppelte eckige Klammern
+
+Die Syntax der Listen ist dennoch gewöhnungsbedürftig, nicht nur weil sie eine
+Verschachtelung darstellen. Während die atomaren Vektoren skalare Daten
+verpacken, verpacken Listen unterschiedliche Objekte, wie atomare Vektoren,
+Funktionen oder anderen Listen. Verpackt eine Liste z.B. atomare Vektoren,
+erhalten wir damit eine zweidimensionale Datenstruktur. Verpacken wir Listen in
+verschachtelter Form, dann erhalten wir eine mehrdimensionale Struktur oder
+einen Datenbaum.
+
+
+```r
+# Eine Liste mit zwei atomaren Vektoren und einer Funktion
+mixed <- list(5:7, "Hallo", print)
+mixed
+```
+
+```
+## [[1]]
+## [1] 5 6 7
+## 
+## [[2]]
+## [1] "Hallo"
+## 
+## [[3]]
+## function (x, ...) 
+## UseMethod("print")
+## <bytecode: 0x7f9b597acd10>
+## <environment: namespace:base>
+```
+
+Betrachte die Ausgabe `mixed` des vorstehenden Beispiels. Du siehst doppelte
+eckige Klammern, die den Index der Liste darstellen `[[1]], [[2]], [[3]]`. Bei
+den beiden atomaren Vektoren findest Du einfache eckige Klammern, die Du
+bereits für atomare Vektoren kennst. Bei der Funktion `function(x, ...)`
+findest Du keine eckigen Klammern, denn Funktionen sind keine Vektoren, sondern
+Einzelelemente.
+
+Dieses Beispiel soll veranschaulichen, dass sich die doppelten eckigen Klammern
+nicht etwa auf eine Mehrdimensionalität beziehen, denn sie treten auch bei
+der Funktion auf. Sie beziehen sich also allein auf die Indizierung der Liste.
+
+Um das zweite Element des ersten Vektors anzusprechen, wird folgende
+Schreibweise nötig.
+
+
+```r
+mixed[[1]][2]
+```
+
+```
+## [1] 6
+```
+
+Warum nicht einfach `mixed[1][2]`? Das wäre doch intuitiver und einfacher!
+(Oder gleich `mixed.1.2`? Das wäre so elegant zu tippen!)
+
+In diesem Fall müsste `mixed[1]` den Integer-Vektor zurückgeben, damit das
+zweite Klammerpaar das zweite Element daraus wählen kann. Listen sind aber auch
+Vektoren. Bei Vektoren haben wir die Regel, dass die Teilmenge vom selben Typ
+ist. Darum muss `mixed[1]` wiederum eine Liste zurückgeben. Also wird eine
+alternative Schreibweise notwendig, um das eigentliche Element in dieser
+Teilmenge anzusprechen:
+
+
+```r
+typeof(mixed[1]) # die Teilmenge ist eine Liste
+```
+
+```
+## [1] "list"
+```
+
+```r
+typeof(mixed[[1]]) # das Element in der Teilmenge ist der Integer-Vektor
+```
+
+```
+## [1] "integer"
+```
+
+**Aufgabe:** Teste,  was bei `mixed[1][2]` heraus kommt! Kannst Du das Ergebnis
+erklären?
+
+#### Verschachtelte Listen
+
+Erzeugen wir eine verschachtelte Liste.
+
+
+```r
+nested <- list(
+    list(
+        list(1:3, 4:6, 7:9),
+        list(10:12),
+        list(13:15)
+    ),
+    list(16:18)
+)
+nested
+```
+
+```
+## [[1]]
+## [[1]][[1]]
+## [[1]][[1]][[1]]
+## [1] 1 2 3
+## 
+## [[1]][[1]][[2]]
+## [1] 4 5 6
+## 
+## [[1]][[1]][[3]]
+## [1] 7 8 9
+## 
+## 
+## [[1]][[2]]
+## [[1]][[2]][[1]]
+## [1] 10 11 12
+## 
+## 
+## [[1]][[3]]
+## [[1]][[3]][[1]]
+## [1] 13 14 15
+## 
+## 
+## 
+## [[2]]
+## [[2]][[1]]
+## [1] 16 17 18
+```
+
+Die Liste `nested` enthält zwei Listen. Die erste Liste enthält wiederum 3
+Listen. Diese enthält drei Integer-Vektoren.
+
+Der Index `[[1]][[1]][[1]]` adressiert den Integer-Vektor `1:3` auf der dritten
+Verschachtelungsebene.
+
+**Aufgabe:** Druck die Zahl 14 aus der Liste `nested` aus, indem Du sie richtig
+adressierst.
+
+**Aufgabe:** Teste `c(nested, recursive = TRUE)`. Schlage in der Dokumentation
+nach, was *recursive* genau bewirkt.
+
+Jetzt wollen wir den Baum etwas editieren. Die verschachtelten Listen nenne ich
+Äste, die Nicht-Listen-Elemente, d.h. die Integer-Vektoren, nenne ich Zweige.
+Den einzelnen Integer-Werte entsprechen damit einem Blatt.
+
+##### Blätter verändern
+
+Ziel: Setze das Blatt 18 auf 180.
+
+Überlege:
+
+* Wie wird das Blatt adressiert?
+* Wie wird das Blatt ersetzt?
+
+
+```r
+# Das Blatt adressieren
+nested[[2]][[1]][3]
+```
+
+```
+## [1] 18
+```
+
+```r
+# Das Blatt verändern
+nested[[2]][[1]][3] <- 180
+
+# Teilbaum anzeigen
+nested[[2]]
+```
+
+```
+## [[1]]
+## [1]  16  17 180
+```
+
+Bei den atomaren Vektoren, hatten wir bereits gesehen, wie Teile einer
+Variablen mit Hilfe der eckigen Klammern verändert werden. Die ganze Variable
+zu ersetzen, kann man als Maximalform davon betrachten. Hier ersetzen wir einen
+Teil, den wir über einen Pfad in der Variable `nested` adressieren.
+
+##### Mehrere Blätter verändern
+
+Ziel: Setze das Blatt 16 und 17 auf 160 und 170.
+
+
+```r
+nested[[2]][[1]][1:2] <- c(160, 170)
+nested[[2]]
+```
+
+```
+## [[1]]
+## [1] 160 170 180
+```
+
+##### Blätter löschen
+
+Ziel: Lösche das Blatt 160.
+
+Überlege:
+
+* Wie unterscheidet sich das Löschen vom Bearbeiten?
+* Was musst Du in diesem Falle adressieren?
+
+Rekapitulation: Zum Löschen eines Elementes in einem atomaren Vektor muss die
+Variable mit der Teilmenge neu beschrieben werden.
+
+Genauer formuliert, es geht nicht immer um die ganze Variable, sondern um den
+Speicherbereich des Vektors. Die ganze Variable `nested` muss nämlich nicht neu
+geschrieben werden, sondern nur der Zweig, in dem das Blatt gelöscht wird.
+
+
+```r
+# Pfad des Vektors
+nested[[2]][[1]]
+```
+
+```
+## [1] 160 170 180
+```
+
+```r
+# Beschreiben mit der Teilmenge
+nested[[2]][[1]] <- nested[[2]][[1]][-1]
+
+# Teilbaum anzeigen
+nested[[2]]
+```
+
+```
+## [[1]]
+## [1] 170 180
+```
+
+Ist es nicht verwirrend, dass drei Ebenen äquivalent zu zwei Ebenen sein
+sollen?
+
+Die Verschachtelung ist eine Natur der Listen, aber nicht die Natur des
+Vektors. Der Vektor kennt Mengen und Teilmengen. Hier operieren wir auf der
+Ebene des Vektors, der einfachen eckigen Klammer, nicht der doppelten. Die
+doppelte schachtelt (bei Listen) das Element darunter.
+
+
+```r
+numbers <- 11:15
+# Mit oder ohne eckige Klammer, hier wird die Gesamtmenge es Vektors
+# aufgerufen.
+identical(numbers, numbers[1:5])
+```
+
+```
+## [1] TRUE
+```
+
+##### Einen Zweig verändern
+
+Technisch betrachtet, gehört der Punkt "Blätter löschen" schon zum
+Kapitel "Zweige verändern", weil der gesamte Vektor ersetzt wird.
+Die Technik wendest Du jetzt an um um den Vektor als ganze zu verändern.
+
+Ziel: Stelle den letzten Vektor wieder her als `16:18`.
+
+
+```r
+# Neu beschreiben
+nested[[2]][[1]] <- 16:18
+
+# Teilbaum anzeigen
+nested[[2]]
+```
+
+```
+## [[1]]
+## [1] 16 17 18
+```
+
+##### Einen Zweig im Typ verändern
+
+Ziel: Ersetze den Zweig mit einem analogen Character-Vektor.
+
+
+```r
+# Neu beschreiben
+nested[[2]][[1]] <- c("sechzehn", "siebzehn", "achtzehn")
+
+# Teilbaum anzeigen
+nested[[2]]
+```
+
+```
+## [[1]]
+## [1] "sechzehn" "siebzehn" "achtzehn"
+```
+
+##### Einen Zweig auf NULL setzen
+
+Ziel: Setze den Zweig auf NULL und teste, was passiert.
+
+
+```r
+# Teilbaum vorher
+nested[[2]]
+```
+
+```
+## [[1]]
+## [1] "sechzehn" "siebzehn" "achtzehn"
+```
+
+```r
+# Mit NULL beschreiben
+nested[[2]][[1]] <- NULL
+
+# Teilbaum nachher
+nested[[2]]
+```
+
+```
+## list()
+```
+
+Zurück bleibt eine leere Liste. Indem der Vektor `nested[[2]][[1]]` auf *NULL*
+gesetzt wurde, wurde auch sein Listenindex `nested[[2]][1]` entfernt.
+
+Indem man die Prozedur für andere Positionen wiederholt könnte man auch mehrere
+Zweige entfernen. Im Geiste der Vektor-Operationen ist eine solche Wiederholung
+aber nicht. Wir wollen mehrere Zweige löschen, indem wir einen Vektor mit den
+zu löschenden Indizes übergeben. Dies hier ist also eher eine Sackgasse oder
+ein Workaround.
+
+Stelle den Vektor mit der folgenden Zeile darum wieder her.
+
+
+```r
+nested[[2]] <- list(16:18)
+nested[[2]]
+```
+
+```
+## [[1]]
+## [1] 16 17 18
+```
+
+Ziel: Vergleiche was passiert, wenn Du dasselbe mit nur einer eckigen Klammer
+machst. Also indem du den Listenvektor statt des zugehörigen atomaren Vektors
+ansprichst.
+
+
+```r
+nested[[2]][1] <- NULL
+nested[[2]]
+```
+
+```
+## list()
+```
+
+Das Ergebnis bleibt sich gleich.
+
+##### Mehrere Zweige zugleich löschen
+
+Wie uns bei den Blättern das Löschen eine Ebene höher führte, so wird es das
+sicherlich auch bei den Zweigen tun, von den Zweigen auf die Ebene des Astes,
+vom atomaren Vektor auf die Ebene der Liste.
+
+
+
+
+Überlege:
+
+* Was genau ist dieser Ast?
+* Wie wird der Ast gelöscht?
+* Wie wird `nested` anschließend aussehen?
+
+Hast Du deine Hypothesen aufgestellt? Los geht's!
+
+Was enthält der Ast?
+
+
+```r
+typeof(nested[[1]][[1]][2])
+```
+
+```
+## [1] "list"
+```
+
+```r
+nested[[1]][[1]][2]
+```
+
+```
+## [[1]]
+## [1] 4 5 6
+```
+
+Der Ast enthält eine Liste, denn das letzte Klammerpaar ist einfach.
+Andernfalls würde es den Integer-Vektor adressieren.
+
+Wie wird der Ast gelöscht?
+
+Wir haben bereits gesehen, dass Vektoren gelöscht werden, indem man die
+verbleibende Teilmenge in die original Variable zurück schreibt. Das
+gilt grundsätzlich auch für Listen-Vektoren.
+
+Bei verschachtelten Listen müssen wir das allerdings auf der Ebene eines Astes
+praktizieren, und zwar auf der Ebene oberhalb des zu löschenden Asts. Um im
+Bild zu bleiben, sägen wir von diesem übergeordneten Ast den zu entfernenden
+Ast ab.
+
+Der übergeordnete Ast adressiert den Vektor seiner Unteräste. Das ist die
+Menge mit der wir arbeiten. Genau dahin schreiben wir den Satz der
+verbleibenden Unteräste.
+
+
+```r
+# Der übergeordnete Ast adressiert den Vektor seiner Unteräste
+nested[[1]][[1]]
+```
+
+```
+## [[1]]
+## [1] 1 2 3
+## 
+## [[2]]
+## [1] 4 5 6
+## 
+## [[3]]
+## [1] 7 8 9
+```
+
+```r
+# Die Teilmenge entsteht durch Entfernung des Zielastes
+nested[[1]][[1]][-2]
+```
+
+```
+## [[1]]
+## [1] 1 2 3
+## 
+## [[2]]
+## [1] 7 8 9
+```
+
+```r
+# Zurückschreiben der Teilmenge
+nested[[1]][[1]] <- nested[[1]][[1]][-2]
+# Ergebnis
+nested
+```
+
+```
+## [[1]]
+## [[1]][[1]]
+## [[1]][[1]][[1]]
+## [1] 1 2 3
+## 
+## [[1]][[1]][[2]]
+## [1] 7 8 9
+## 
+## 
+## [[1]][[2]]
+## [[1]][[2]][[1]]
+## [1] 10 11 12
+## 
+## 
+## [[1]][[3]]
+## [[1]][[3]][[1]]
+## [1] 13 14 15
+## 
+## 
+## 
+## [[2]]
+## list()
+```
+
+#### Die Funktion Combine c() mit Listen
+
+Prüfe jetzt, wie sich die Funktion Combine `c()` für Listen verhält. Was
+erwartest Du als kleinsten gemeinsamen Nenner? Bei den atomaren Vektoren war
+der Charakter-Vektor der kleinste gemeinsame Nenner. Kombiniere eine Liste mit
+einem Charakter-Vektor und einem Integer-Vektor:
+
+
+```r
+combined <- c(c("Hallo", "Welt"), list(list("Liste1"), list("Liste2")), 1:2)
+typeof(combined)
+```
+
+```
+## [1] "list"
+```
+
+`combined` ist eine Liste. Offenbar ist die *list* der kleinste gemeinsame
+Nenner noch unterhalb von *charakter*. Schaue Dir `comined` selbst an!
+
+
+```r
+combined
+```
+
+```
+## [[1]]
+## [1] "Hallo"
+## 
+## [[2]]
+## [1] "Welt"
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] "Liste1"
+## 
+## 
+## [[4]]
+## [[4]][[1]]
+## [1] "Liste2"
+## 
+## 
+## [[5]]
+## [1] 1
+## 
+## [[6]]
+## [1] 2
+```
+
+#### CRUD - Create, Read, Update, Delete mit Listen
+
+Kommen wir zum CRUD-Zyklus einer Liste:
+
+
+```r
+# Create
+names <- c("Merkur", "Venus", "Welt", "Mars")
+radii <- c(2440, 6052, 6371, 3389)
+planets <- list(names, radii)
+
+# Update
+
+# Read
+planets
+```
+
+```
+## [[1]]
+## [1] "Merkur" "Venus"  "Welt"   "Mars"  
+## 
+## [[2]]
+## [1] 2440 6052 6371 3389
+```
+
+
+### NA und NaN
 
 ### Wahr und falsch
 
@@ -1638,7 +2217,7 @@ sind, wobei die Zufallsreihenfolge erhalten bleiben soll.
 
 Das **L** steht hier vermutlich für *long* im Vergleich zu *double*. Würdest Du
 Dir die Wortpaare *integer* und *float* wünschen? Das ist aber leider nicht die
-Terminologie von R. Prüfen wir, wie beide offiziell heissen:
+Terminologie von R. Prüfen wir, wie beide offiziell heißen:
 
 
 ```r
@@ -1673,10 +2252,10 @@ class(7)
 ## [1] "numeric"
 ```
 Das ist nicht gerade konsistent, nicht wahr, und sicherlich ein Hinweis auf die
-Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinvoller und
+Entwicklungsgeschichte von R. Welche Wortpaarung ist sprachlich sinnvoller und
 damit vermutlich jünger?
 
-**Aufgabe**: Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
+**Aufgabe:** Teste `7` und `7L` jeweils mit den Funktionen `is.integer()`,
 `is.double()` und `is.numeric()`. Stimmt das Ergebnis mit Deinen Erwartungen
 überein?
 

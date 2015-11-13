@@ -2,7 +2,7 @@
 title: "Einführung in die Programmierung mit R"
 author: "Elmar Alexander Hinz"
 date: "2015"
-output: 
+output:
   html_document:
     keep_md: yes
     toc: yes
@@ -14,7 +14,7 @@ output:
 ```{r gettingStarted, child="gettingStarted.rmd"}
 ```
 
-```{r sytax, child="syntax.rmd"}
+```{r syntax, child="syntax.rmd"}
 ```
 
 ```{r dataTypes, child="dataTypes.rmd"}

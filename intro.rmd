@@ -7,7 +7,7 @@ R informiert.
 
 Damit dieses Buch ein durchgängiges Anspruchsniveau erhält, muss ich mir
 Gedanken über seine Leser machen, über Dich, darüber, was ich an Wissen und
-Erfahrung voraussetzen kann. Es macht natürlich einen grossen Unterschied, ob
+Erfahrung voraussetzen kann. Es macht natürlich einen großen Unterschied, ob
 Du bereits mit anderen Sprachen gearbeitet hast oder mit R ganz neu in die Welt
 Programmierung einsteigst. Beide Szenarios schätze ich als häufig ein. Ist das
 also Dein Buch?
@@ -22,12 +22,13 @@ Programmiererfahrung dem Buch folgen kannst. Das setzt aber eine sehr aktive
 Herangehensweise von Deiner Seite voraus, denn das Programmieren lernst Du nur
 indem Du es tust.
 
-Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, z.B. mittels
-Wikipedia. Zweitens brauchst Du eine spielerische, aktive Herangehensweisea.
-Du musst viel ausprobieren, auch wenn Dich das Buch nicht direkt dazu
-auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee verstanden zu
-haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort verstehst, zu
-überspringen und das vor zu ziehen, was Dir zugänglicher erscheint.
+Erstens solltest Du Begriffe, die Dir fremd sind nachschlagen, zum Beispiel
+mittels Wikipedia. Zweitens brauchst Du eine spielerische, aktive
+Herangehensweise.  Du musst viel ausprobieren, auch wenn Dich das Buch nicht
+direkt dazu auffordert, also aus eigenem Antrieb, bis Du fühlst, die Idee
+verstanden zu haben. Drittens brauchst Du den Mut Kapitel, die du nicht sofort
+verstehst, zu überspringen und das vor zu ziehen, was Dir zugänglicher
+erscheint.
 
 Wenn diese aktive Herangehensweise nicht Deinem Naturell entspricht, empfehle
 ich, die Grundlagen des Programmierens auf andere Weise zu lernen, insbesondere
@@ -44,18 +45,18 @@ findest Du sowieso am besten mit Hilfe einer Suchmaschine.
 
 ### Hallo Welt in R
 
-```{r helloWorld}
+```{r}
 print("Hallo Welt!")
 ```
 
 Bist Du enttäuscht? Nichts Neues im Vergleich zu anderen Sprachen?  R ist eben
 leicht zu lernen.
 
-Charakteristisches für R zeigt dieses kleine Programm. Wir berechen die
-Oberflächen meherer Planeten anhand ihres Radius, ohne dass eine Schleife
+Charakteristisches für R zeigt dieses kleine Programm. Wir berechnen die
+Oberflächen mehrerer Planeten anhand ihres Radius, ohne dass eine Schleife
 nötig wird.
 
-```{r planets}
+```{r}
 names <- c("Merkur", "Venus", "Erde", "Mars")
 radii <- c(2440, 6052, 6371, 3389)
 surfaces <- round(4 * pi * radii^2 / 1000) * 1000
@@ -65,13 +66,13 @@ paste(names, ":", radii, "km, ", surfaces, "km^2")
 Davon machen wir noch - quick and dirty - einen explorativen Plot, um zu sehen,
 wie die Fläche im Quadrat ansteigt.
 
-```{r planetsPlot}
+```{r}
 plot(radii, surfaces)
 ```
 
 **Aufgabe:** Wie viel Zeilen Code wäre in anderen Programmiersprache, die Du
 kennst, nötig, um Listen von Daten zu berechnen und in einem Diagramm zu
-visualieren?
+visualisieren?
 
 ### Die Funktion print()
 
@@ -97,7 +98,7 @@ Jetzt zähle ich von 1 bis 50
 print(1:50)
 ```
 
-Du siehtst, dass die Zahl in eckigen Klammern dem Index der ersten Zahl in
+Du siehst, dass die Zahl in eckigen Klammern dem Index der ersten Zahl in
 jeder Reihe entspricht.
 
 **Aufgabe:** Fängt die Aufzählung mit null oder eins an?
@@ -113,8 +114,8 @@ print(sample(1:50))
 
 Meist wird die Funktion `print()` aber im Verborgenen ausgeführt. Werte werden
 automatisch ausgedruckt, wenn Du sie nicht in eine Variable schreibst oder
-anders weiter verwendst. Von diesem Feature mache ich in fast allen Beispielen
-dieses Buches gebrauch.
+anders weiter verwendest. Von diesem Feature mache ich in fast allen Beispielen
+dieses Buches Gebrauch.
 
 ```{r}
 hallo <- "hallo" # wird nicht ausgedruckt
@@ -151,21 +152,21 @@ installierst hast.
     * funktional
     * eingeschränkt objektorientiert
 * R ist eine freie Software Sammlung
-    * für statisiche Berechnungen und ihre Visualisierung
+    * für statistische Berechnungen und ihre Visualisierung
     * mit Interpreter, Shell, IDE und Bibliotheken
-    * die unter Unix, MacOs und Windows benutzt werden kann
+    * die unter Unix, Mac OS und Windows benutzt werden kann
 * R ist in vielen Bereichen der Wissenschaft der de facto Standard zur
   Erstellung und Veröffentlichung von statistischen Forschungsergebnissen.
-* R ist ein Werkzeug, das als Schnittstelle von grossen IT-Firmen in ihre
+* R ist ein Werkzeug, das als Schnittstelle von großen IT-Firmen in ihre
   Produkte implementiert wird.
 
 ### Was macht R besonders?
 
-Zwei der besondere Stärken von R hast Du gerade kennen gerlernt. Erstens die
+Zwei der besondere Stärken von R hast Du gerade kennen gelernt. Erstens die
 unkomplizierte Weise, ganze Listen von Daten so einfach zu verarbeiten, als sei
 das ein einzelner Wert, zweitens die komfortablen Möglichkeiten, Daten als
 Diagramme zu visualisieren. R ist zudem auf allen verbreiteten Betriebssystemen
-einsetzbar, nämlich Linux, MacOS und Windows. Das ist vor allem im Vergleich
+einsetzbar, nämlich Linux, Mac OS und Windows. Das ist vor allem im Vergleich
 mit Exel ein Vorteil, nicht zuletzt im Hinblick auf die Reproduzierbarkeit von
 Studien.
 
@@ -179,11 +180,11 @@ als "historisch bedingt". Zur Geschichte gibt es noch ein eigenes Kapitel.
 
 Das Alleinstellungsmerkmal von R sind aber sicherlich die umfangreichen
 frei verfügbaren Bibliotheken, die dem Wissenschaftler zur Verfügung stehen,
-um Daten aufzuarbeiten, zu analysiern und zu visualisieren. Auch wie
+um Daten aufzuarbeiten, zu analysieren und zu visualisieren. Auch wie
 das getan wird, ist wissenschaftlich fundiert. Die Schritte folgen
 definierten Grammatiken.
 
-Natürlich verabeiten alle Programmiersprachen Daten. Entscheidend ist also,
+Natürlich verarbeiten alle Programmiersprachen Daten. Entscheidend ist also,
 wie die Daten betrachtet und genutzt werden. In der Wissenschaft steht der
 Erkenntnisgewinn im Vordergrund. Charakteristisch sind die Umformung der
 Daten, die Analyse und die Visualisierung.
@@ -196,10 +197,10 @@ ganz andere Anforderungen an die Software stellt.
 
 Im Regelfall lädt R die Daten komplett in den Arbeitsspeicher, bevor es mit der
 weiteren Verarbeitung beginnt. Das hat den Vorteil, dass Du sehr schnell und
-flexibel auch mit grossen Datenmengen jonglieren kannst, Stichwort Exploration.
+flexibel auch mit großen Datenmengen jonglieren kannst, Stichwort Exploration.
 Für Twitter oder ein Betriebssystem wäre diese Herangehensweise gar nicht
 möglich, weil die Daten kontinuierlich strömen. Mit diesem Feature setzt sich R
-also zugleich auch eine wichtige Grenze. Für die Verabeitung von Datenstömen
+also zugleich auch eine wichtige Grenze. Für die Verarbeitung von Datenströmen
 ist R nicht optimiert.
 
 ### Ist R eine Programmiersprache oder ein Werkzeug?
@@ -231,40 +232,39 @@ ist, darauf fällt die Antwort sehr unterschiedlich aus, je nach Blickwinkel.
 Oft lautet auch Frage auch, was im Bereich der Datenwissenschaft die bessere
 Sprache ist, Python oder R. R hat in diesem Bereich die umfangreichere
 Werkzeugsammlung, die Infrastruktur von Python ist breiter aufgestellt und kann
-damit besser Brücken schlagen. In der Bioinformatik bespielsweise, wo
-Algorithmen stärker im Vordergrung stehen als Datentabellen, Statistiken und
+damit besser Brücken schlagen. In der Bioinformatik beispielsweise, wo
+Algorithmen stärker im Vordergrund stehen als Datentabellen, Statistiken und
 Diagramme, gibt es eine höhere Affinität zu Python. Beide Sprachen sind so
-leicht zu lernen, dass nichts dagegen spricht sie gemeinsam einzusetzten.
-Schliesslich werden Konzepte zur Datenberechnung, die sich in R bewährt haben
-auch in Python übernommen, so dass die Grenzen zwischen beiden Sprachen
-abnehmen.
+leicht zu lernen, dass nichts dagegen spricht sie gemeinsam einzusetzen.
+Schließlich werden Konzepte, die sich in R bewährt haben auch in Python
+übernommen, so dass die Grenzen zwischen beiden Sprachen abnehmen.
 
 Die Sprache alleine ist auch nicht das alles Entscheidende. Genauso wichtig
 sind die verfügbaren Bibliotheken, Interpreter und Compiler, um das optimale
-Einsatzgebiet einer Sprache zu bestimmen. R wurde von Wissenschaftleren für
+Einsatzgebiet einer Sprache zu bestimmen. R wurde von Wissenschaftlern für
 Wissenschaftler entwickelt und gepflegt. Das hat das Profil der vorhandenen
 Werkzeuge geprägt. Datenanalyse wird aber auch in weiten Bereichen der
-Wirtschaft, der Politik oder des Journalismus immer wichtiger. Ensprechend
+Wirtschaft, der Politik oder des Journalismus immer wichtiger. Entsprechend
 weitet sich aus das Spektrum der Bibliotheken aus.
 
-R ist heute u.a. geeignet, um datenzentierte Artikel und Bücher zu verfassen.
+R ist heute unter anderem geeignet, um datenzentierte Artikel und Bücher zu verfassen.
 Dieses Buch ist mithilfe solcher Bibliotheken erstellt. Es enstehen
 Bibliotheken, die die Veröffentlichung als Webseiten oder als mobile Apps
 unterstützen, mit zunehmenden interaktiven Möglichkeiten. IBM, Oracle,
-Microsoft, SAP, etc. implementieren Schnittstellen, um R als Werkzeug einbinden
+Microsoft, SAP, et cetera implementieren Schnittstellen, um R als Werkzeug einbinden
 zu können.
 
 Im Vergleich zu Java oder C++ ist R als universelle Programmiersprache heute
-noch weniger geeignet. Erstens ist sind seine objektorientieren Möglichkeiten
-noch nicht voll entwickelt, zweitens sind seine Bibliotheken sehr spezialisert
-und drittens setzt sein Speicherverhalten konzeptionlle Grenzen, die aber
+noch weniger geeignet. Erstens ist sind seine objektorientierten Möglichkeiten
+noch nicht voll entwickelt, zweitens sind seine Bibliotheken sehr spezialisiert
+und drittens setzt sein Speicherverhalten konzeptionelle Grenzen, die aber
 überwindbar sind.
 
-R besetzte eine verwandte Lücke, für die Perl ursprünglich konzeptioniert war,
-als "Practical Extraction and Report Language". Perl hat diese Nische
-unerwartet verlassen und wurde die erste Sprache der Internet Programmierung.
-In der Folge wurde es auf beiden Gebieten abgelöst, u.a wegen seiner Grenzen
-bei der Objektorientieren Programmierung und der zu langsamen Erneuerung der
+R besetzte eine verwandte Lücke, für die Perl ursprünglich entworfen wurde, als
+"Practical Extraction and Report Language". Perl hat diese Nische unerwartet
+verlassen und wurde die erste Sprache der Internet Programmierung.  In der
+Folge wurde es auf beiden Gebieten abgelöst, unter anderem wegen seiner Grenzen
+bei der objektorientierten Programmierung und der zu langsamen Erneuerung der
 Sprache, aber vielleicht auch wegen des Verlustes seiner Spezialisierung. Wir
 finden Parallelen in R, sowohl bei den Chancen als auch bei den Risiken. Die
 Unterstützung durch Industrie und Wissenschaft ist aber viel umfassender als in

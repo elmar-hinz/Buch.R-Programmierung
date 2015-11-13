@@ -2,7 +2,7 @@
 
 ### Hardware Anforderungen
 
-Ich setze in diesem Buch voraus, dass Du über einen zeitgemässen Rechner
+Ich setze in diesem Buch voraus, dass Du über einen zeitgemäßen Rechner
 verfügst, PC oder Mac. Damit meine ich dass er nicht unbedingt älter als 5
 Jahre ist. Grenzfälle lassen sich im Rahmen einer Einführung leider schlecht
 behandeln.
@@ -13,12 +13,12 @@ gleichzeitig noch viele andere Programme geöffnet hast.
 
 Der entscheidende Faktor ist die Menge der Daten, welche Du in den
 Arbeitsspeicher lädst. Für die Übungen in diesem Buch wirst Du da nicht an
-Grenzen stossen. Sobald Du aber mit realen Daten arbeitest, sind der Datenmenge
+Grenzen stoßen. Sobald Du aber mit realen Daten arbeitest, sind der Datenmenge
 nach oben keine Grenzen gesetzt, Deinem Arbeitsspeicher dagegen schon.
 
-Ohne besondere Massnahmen lädt R die Gesamtmenge der Daten in den
+Ohne besondere Maßnahmen lädt R die Gesamtmenge der Daten in den
 Arbeitsspeicher bevor es damit arbeiten kann. Man sagt daher als Faustregel,
-dass der Arbeitsspeicher mindestens doppelt so gross seine sollte, wie die
+dass der Arbeitsspeicher mindestens doppelt so groß seine sollte, wie die
 zu verarbeitende Datenmenge.
 
 Dabei liegt die Betonung auf mindestens, denn dann musst Du immer noch
@@ -28,7 +28,7 @@ Variable speichern? In der zweiten Hälfte Deines Arbeitsspeichers liegen ja
 auch Betriebssystem und Programme. Der Rechner würde wahrscheinlich heftig
 anfangen zu swappen.
 
-Swappen heisst, der Rechner schreibt unbenutzte Arbeitsspeicherbereiche auf die
+Swappen heißt, der Rechner schreibt unbenutzte Arbeitsspeicherbereiche auf die
 Festplatte und lädt sie, sobald sie wieder gebraucht werden. Das bremst bis zur
 Unbenutzbarkeit.
 
@@ -38,17 +38,17 @@ Unbenutzbarkeit.
 ### Programmausführung
 
 R ist eine interpretierte Sprache. Ein Programm muss nicht als Ganzes
-kompiliert werden um ausfürbar zu sein. Stattdessen wird eine Instruktion nach
+kompiliert werden um ausführbar zu sein. Stattdessen wird eine Instruktion nach
 der anderen entgegengenommen und direkt ausgeführt. Diese Instruktionen können
 entweder einzeln in der Shell eingegeben oder als Liste in eine Datei
 geschrieben werden. Damit erhältst Du dann ein Programmskript.
 
 #### Shell
 
-In der Shell gibtst Du Instruktionen ein, die Du nur einmalig ausführen willst
+In der Shell gibst Du Instruktionen ein, die Du nur einmalig ausführen willst
 und nicht speichern. Beispiele sind:
 
-* Aufruf von Programmenskripten.
+* Aufruf von Programmskripten.
 * Aufruf der Hilfe.
 * Austesten von Funktionen, um mehr über R zu lernen.
 * Testen von Programmschnipseln, bevor Du sie in Dateien einfügst.
@@ -71,8 +71,8 @@ selbst oder Du lädst Bibliotheken aus öffentlichen und privaten Repositories.
 
 #### IDE RStudio
 
-IDE heisst *integrated development environment*. *RStudio* integriert nicht nur
-Shell und Editor für Programmscripte, sondern zeigt zum Beispiel auch direk die
+IDE heißt *integrated development environment*. *RStudio* integriert nicht nur
+Shell und Editor für Programmskripte, sondern zeigt zum Beispiel auch direkt die
 erzeugten Diagramme an. Sie vereint also die verschiedenen Möglichkeiten zur
 Programmausführung, mit weiteren nützlichen Werkzeugen.
 
